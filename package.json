@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "ic_chatbot_assets",
   "version": "0.1.0",
   "description": "Internet Computer ChatBot",
@@ -8,6 +9,12 @@
     "JavaScript",
     "Canister"
   ],
+=======
+  "name": "rust_profile_assets",
+  "version": "0.1.0",
+  "description": "Internet Computer starter application",
+  "keywords": ["Internet Computer", "Motoko", "JavaScript", "Canister"],
+>>>>>>> bb7457b (initital commit)
   "scripts": {
     "build": "webpack",
     "prebuild": "npm run copy:types",
@@ -28,15 +35,22 @@
     "stream-browserify": "3.0.0",
     "terser-webpack-plugin": "5.1.1",
     "util": "0.12.3",
+<<<<<<< HEAD
     "webpack": "5.24.4",
     "webpack-cli": "4.5.0",
     "webpack-dev-server": "^3.11.2"
+=======
+    "webpack-cli": "4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "webpack": "5.24.4"
+>>>>>>> bb7457b (initital commit)
   },
   "browserslist": [
     "last 2 chrome version",
     "last 2 firefox version",
     "last 2 safari version",
     "last 2 edge version"
+<<<<<<< HEAD
   ],
   "dependencies": {
     "@progress/kendo-licensing": "^1.2.0",
@@ -50,4 +64,7 @@
     "ts-loader": "^9.2.5",
     "typescript": "^4.3.5"
   }
+=======
+  ]
+>>>>>>> bb7457b (initital commit)
 }

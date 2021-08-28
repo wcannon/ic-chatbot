@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/williamcannon/hackathon/rust_profile/target/release/build/typenum-505920a53ff63171/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/Users/williamcannon/hackathon/rust_profile/target/release/build/typenum-505920a53ff63171/out/op.rs
