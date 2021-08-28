@@ -1,21 +1,10 @@
 {
   "canisters": {
     "ic_chatbot": {
-      "main": "src/ic_chatbot/main.mo",
-      "type": "motoko"
-    },
-    "ic_chatbot_assets": {
-      "dependencies": [
-        "ic_chatbot"
-      ],
-      "frontend": {
-        "entrypoint": "src/ic_chatbot_assets/src/index.html"
-      },
-      "source": [
-        "src/ic_chatbot_assets/assets",
-        "dist/ic_chatbot_assets/"
-      ],
-      "type": "assets"
+      "build": "cargo build --target wasm32-unknown-unknown --package  ic_chatbot --release",
+      "candid": "src/ic_chatbot/main.did",
+      "wasm": "target/wasm32-unknown-unknown/release/ic_chatbot.wasm",
+      "type": "custom"
     }
   },
   "defaults": {

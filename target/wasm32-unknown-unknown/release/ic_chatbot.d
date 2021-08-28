@@ -1,0 +1,1 @@
+/Users/satya/work/hackathon/ic_chatbot/target/wasm32-unknown-unknown/release/ic_chatbot.wasm: /Users/satya/work/hackathon/ic_chatbot/src/ic_chatbot/src/block.rs /Users/satya/work/hackathon/ic_chatbot/src/ic_chatbot/src/lib.rs
