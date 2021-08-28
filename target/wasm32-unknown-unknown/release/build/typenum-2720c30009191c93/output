@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/williamcannon/hackathon/rust_profile/target/wasm32-unknown-unknown/release/build/typenum-2720c30009191c93/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/Users/williamcannon/hackathon/rust_profile/target/wasm32-unknown-unknown/release/build/typenum-2720c30009191c93/out/op.rs
