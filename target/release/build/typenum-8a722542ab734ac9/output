@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/satya/work/hackathon/ic_chatbot/target/release/build/typenum-8a722542ab734ac9/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/Users/satya/work/hackathon/ic_chatbot/target/release/build/typenum-8a722542ab734ac9/out/op.rs

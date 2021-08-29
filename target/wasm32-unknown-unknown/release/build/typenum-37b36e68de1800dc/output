@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/Users/satya/work/hackathon/ic_chatbot/target/wasm32-unknown-unknown/release/build/typenum-37b36e68de1800dc/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/Users/satya/work/hackathon/ic_chatbot/target/wasm32-unknown-unknown/release/build/typenum-37b36e68de1800dc/out/op.rs
