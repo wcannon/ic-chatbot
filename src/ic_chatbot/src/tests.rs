@@ -1,6 +1,9 @@
 
 #[cfg(test)]
 mod tests {
+    extern crate natural;
+    use natural::distance::jaro_winkler_distance;
+    use natural::distance::levenshtein_distance;
 
 
     #[test]
@@ -44,7 +47,7 @@ mod tests {
 
         println!("Loaded the following json: "); 
         println!("{:#?}", blk); 
-        assert_eq!(String::from("254c74b0-006d-11ec-b5a7-737ac2dca7c8"), blk.id);
+        assert_eq!(String::from("254c74b0-006d-11ec-b5a7-737ac2dca7c8"), blk.get_id());
         
         let json_response = blk.convert_to_json();
         println!("Converted to the following json: "); 
@@ -52,6 +55,20 @@ mod tests {
 
         assert_eq!(json_response, 
                 r#"{"component_type":"text","text":"Hey %%username%, how can we help you? ","delay":500,"end_conversation":false,"alternate_replies":["Hello buddy, we have something exciting waiting for you. Let's first get to know each other. My name's blockchain. What's your name? ","What's your name by the way? "]}"#);
+    }
+
+    #[test]
+    fn compute_edit_distance() {
+        // println!("Distance between kitten, sitting: {}", levenshtein_distance("kitten", "sitting"));
+        // println!("Distance between dixon, dicksonx: {}", jaro_winkler_distance("dixon", "dicksonx")); 
+        assert_eq!(levenshtein_distance("kitten", "sitting"), 3);
+        assert_eq!(jaro_winkler_distance("dixon", "dicksonx"), 0.76666665); 
+    }
+
+    #[test]
+    fn test_files() {
+        pub use crate::factory::Factory;
+        crate::factory::FactoryImpl::load_json_files("/Users/satya/work/hackathon/botmock-dialogflow-export/output/upload/intents");
     }
 
     #[test]

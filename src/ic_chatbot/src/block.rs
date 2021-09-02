@@ -11,26 +11,26 @@ pub trait Block {
 
 
 	//Getter Methods 
-	// fn get_id(&self) -> &'static String; 
+	fn get_id(&self) -> &str; 
 
-	// fn get_component_type(&self) -> &'static String; 
+	fn get_component_type(&self) -> &str; 
 
-	// fn get_node_name(&self) -> &'static String; 
+	fn get_node_name(&self) -> &str; 
 
-	// fn get_delay(&self) -> &'static u16; 
+	// fn get_delay(&self) -> &u16; 
 
-	// fn get_end_conversation(&self) -> &'static bool; 
+	// fn get_end_conversation(&self) -> &bool; 
 }
 
 
 
 
 
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq, Debug, Default)]
 pub struct TextBlock {
-	pub id : String,
-	pub component_type : String,
-	pub node_name : String,
+	id : String,
+	component_type : String,
+	node_name : String,
 	next_block_info : NextBlockInfo,
 	delay : u16,
 	end_conversation : bool,
@@ -62,18 +62,6 @@ impl Block for TextBlock {
 		}
 	}
 
-	// fn load_from_json(&mut self, json_text : &str) {
-	// 	let parsed = json::parse(json_text).unwrap();
-		
-	// 	self.id = parsed["id"].to_string();
-	// 	self.component_type = parsed["component_type"].to_string();
-	// 	self.node_name = parsed["nodeName"].to_string();
-	// 	self.text = parsed["text"].to_string();
-	// 	// self.alternate_replies = parsed["alternate_replies"];
-	// 	self.delay = parsed["delay"].as_u16().unwrap();
-	// 	self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
-	// }
-
 	fn convert_to_json(&self) -> String {
 		let mut data = json::JsonValue::new_object();
 
@@ -91,23 +79,23 @@ impl Block for TextBlock {
 	}
 
 	//Getter methods
-	// fn get_id(&'static self) -> &'static String {
-	// 	&self.id
-	// }
+	fn get_id(&self) -> &str {
+		&self.id
+	}
 
-	// fn get_component_type(&'static self) -> &'static String {
-	// 	&self.component_type
-	// } 
+	fn get_component_type(&self) -> &str {
+		&self.component_type
+	}
 
-	// fn get_node_name(&'static self) -> &'static String {
-	// 	&self.node_name
-	// }
+	fn get_node_name(&self) -> &str {
+		&self.node_name
+	}
 
-	// fn get_delay(&'static self) -> &'static u16 {
+	// fn get_delay(&self) -> &u16 {
 	// 	&self.delay
 	// }
 
-	// fn get_end_conversation(&'static self) ->  &'static bool {
+	// fn get_end_conversation(&self) ->  &bool {
 	// 	&self.end_conversation
 	// }
 
