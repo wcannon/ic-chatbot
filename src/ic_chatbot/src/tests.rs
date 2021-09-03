@@ -64,7 +64,7 @@ mod tests {
 
         let mut blk = crate::block::ButtonBlock::new(); 
         blk.from_json(r#"{
-            "component_type": "text",
+            "component_type": "button",
             "nodeName": "Help Question",
             "context": [
               {
@@ -77,8 +77,7 @@ mod tests {
               }
             ],
             "text": "Hey %%username%, how can we help you? ",
-            "alternate_replies": ["Hello buddy, we have something exciting waiting for you. Let's first get to know each other. My name's blockchain. What's your name? ",
-              "What's your name by the way? "],
+            "buttons": ["One","Two"],
             "audio_file": "",
             "ssml": "",
             "delay": 500,
@@ -94,7 +93,6 @@ mod tests {
               }
             ],
             "end_conversation": false,
-            "buttons": [],
             "id": "254c74b0-006d-11ec-b5a7-737ac2dca7c8"
           }"#);
 
@@ -107,7 +105,7 @@ mod tests {
         //println!("{:#?}", json_response); 
 
         assert_eq!(json_response, 
-                r#"{"component_type":"button","text":"Hey %%username%, how can we help you? ","delay":500,"end_conversation":false,buttons":["One","Two"]}"#);
+                r#"{"component_type":"button","text":"Hey %%username%, how can we help you? ","delay":500,"end_conversation":false,"buttons":["One","Two"]}"#);
     }
 
     #[test]
