@@ -153,3 +153,84 @@ pub struct QuickRepliesBlock {
 	text : String,
 	// alternate_replies : Vec<String>
 }
+
+
+
+#[derive(PartialEq, Eq, Debug, Default)]
+pub struct ButtonBlock {
+	id : String,
+	component_type : String,
+	node_name : String,
+	next_block_info : NextBlockInfo,
+	delay : u16,
+	end_conversation : bool,
+
+	text : String,
+	buttons : Vec<String>
+}
+
+impl ButtonBlock {
+	pub fn new() -> Self {
+		ButtonBlock { 
+			id : String::new(), 
+			component_type : String::new(),
+			node_name : String::new(),
+			next_block_info : NextBlockInfo::new(),
+			delay : 0, 
+			end_conversation : false, 
+			text : String::new(),
+			buttons : Vec::<String>::new()
+		}
+	}
+}
+
+impl Block for ButtonBlock {
+	
+	fn from_json(&mut self, json_text : &str) {
+		let parsed = json::parse(json_text).unwrap();		
+		assert_eq!(parsed["component_type"], "button"); 
+
+		let mut buttons : Vec<String> = Vec::<String>::new();
+		for button in parsed["buttons"].members() {
+			buttons.push(button.to_string());
+		}
+		
+		self.id 			= parsed["id"].to_string();
+		self.component_type = parsed["component_type"].to_string();
+		self.node_name 		= parsed["nodeName"].to_string();
+		self.next_block_info.from_json(&parsed["metadata"].to_string());
+		self.text 			= parsed["text"].to_string();
+		self.delay 			= parsed["delay"].as_u16().unwrap();
+		self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
+		self.buttons = buttons;
+	}
+
+	fn convert_to_json(&self) -> String {
+		let mut data = json::JsonValue::new_object();
+
+		data["component_type"] = self.component_type.clone().into();
+		data["text"] = self.text.clone().into();
+		data["delay"] = self.delay.into();
+		data["end_conversation"] = self.end_conversation.into();
+		data["buttons"] = self.buttons.clone().into();
+		// assert_eq!(data.dump(), r#"{"answer":42,"foo":"bar"}"#);
+		data.dump()
+	}
+	
+	fn perform_action(&mut self) {
+
+	}
+
+	//Getter methods
+	fn get_id(&self) -> &str {
+		&self.id
+	}
+
+	fn get_component_type(&self) -> &str {
+		&self.component_type
+	}
+
+	fn get_node_name(&self) -> &str {
+		&self.node_name
+	}
+}
