@@ -3,7 +3,7 @@ pub use crate::metadata::MetaData;
 
 pub trait Block {
 
-	fn from_json(json_text : &str) -> Self;
+	fn from_json(&mut self, json_text : &str);
 
 	fn convert_to_json(&self) -> String;
 	
@@ -39,9 +39,24 @@ pub struct TextBlock {
 	alternate_replies : Vec<String>
 }
 
-impl Block for TextBlock {
+impl TextBlock {
+	pub fn new() -> Self {
+		TextBlock { 
+			id : String::new(), 
+			component_type : String::new(),
+			node_name : String::new(),
+			next_block_info : NextBlockInfo::new(),
+			delay : 0, 
+			end_conversation : false, 
+			text : String::new(),
+			alternate_replies : Vec::<String>::new()
+		}
+	}
+}
 
-	fn from_json(json_text : &str) -> Self {
+impl Block for TextBlock {
+	
+	fn from_json(&mut self, json_text : &str) {
 		let parsed = json::parse(json_text).unwrap();		
 		assert_eq!(parsed["component_type"], "text"); 
 
@@ -49,18 +64,37 @@ impl Block for TextBlock {
 		for alternate_reply in parsed["alternate_replies"].members() {
 			alternate_replies.push(alternate_reply.to_string());
 		}
-
-		TextBlock {
-			id : parsed["id"].to_string(),
-			component_type : parsed["component_type"].to_string(),
-			node_name : parsed["nodeName"].to_string(),
-			next_block_info : crate::metadata::NextBlockInfo::from_json(&parsed["metadata"].to_string()),
-			text : parsed["text"].to_string(),
-			delay : parsed["delay"].as_u16().unwrap(),
-			end_conversation : parsed["end_conversation"].as_bool().unwrap(),
-			alternate_replies : alternate_replies
-		}
+		
+		self.id 			= parsed["id"].to_string();
+		self.component_type = parsed["component_type"].to_string();
+		self.node_name 		= parsed["nodeName"].to_string();
+		self.next_block_info.from_json(&parsed["metadata"].to_string());
+		self.text 			= parsed["text"].to_string();
+		self.delay 			= parsed["delay"].as_u16().unwrap();
+		self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
+		self.alternate_replies = alternate_replies;
 	}
+
+	// fn from_json(json_text : &str) -> Self {
+	// 	let parsed = json::parse(json_text).unwrap();		
+	// 	assert_eq!(parsed["component_type"], "text"); 
+
+	// 	let mut alternate_replies : Vec<String> = Vec::<String>::new();
+	// 	for alternate_reply in parsed["alternate_replies"].members() {
+	// 		alternate_replies.push(alternate_reply.to_string());
+	// 	}
+
+	// 	TextBlock {
+	// 		id : parsed["id"].to_string(),
+	// 		component_type : parsed["component_type"].to_string(),
+	// 		node_name : parsed["nodeName"].to_string(),
+	// 		next_block_info : crate::metadata::NextBlockInfo::from_json(&parsed["metadata"].to_string()),
+	// 		text : parsed["text"].to_string(),
+	// 		delay : parsed["delay"].as_u16().unwrap(),
+	// 		end_conversation : parsed["end_conversation"].as_bool().unwrap(),
+	// 		alternate_replies : alternate_replies
+	// 	}
+	// }
 
 	fn convert_to_json(&self) -> String {
 		let mut data = json::JsonValue::new_object();

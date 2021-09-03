@@ -10,7 +10,8 @@ mod tests {
     fn test_load_from_json() {
         pub use crate::block::Block;
 
-        let blk = crate::block::TextBlock::from_json(r#"{
+        let mut blk = crate::block::TextBlock::new(); 
+        blk.from_json(r#"{
             "component_type": "text",
             "nodeName": "Help Question",
             "context": [
@@ -68,7 +69,8 @@ mod tests {
     #[test]
     fn test_files() {
         pub use crate::factory::Factory;
-        crate::factory::FactoryImpl::load_json_files("/Users/satya/work/hackathon/botmock-dialogflow-export/output/upload/intents");
+        crate::factory::FactoryImpl::load_json_files("/Users/satya/work/hackathon/botmock-dialogflow-export/output/upload/intents", 
+                                                    "/Users/satya/work/hackathon/botmock-dialogflow-export/output/webhook/blocks.json");
     }
 
     #[test]

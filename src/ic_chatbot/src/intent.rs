@@ -3,7 +3,7 @@ use crate::trainingphrase::TrainingPhraseImpl;
 
 pub trait Intent {
 
-	fn from_json(&mut self, intent_json_text : String, training_phrase_json_text: String);
+	fn from_json(&mut self, intent_json_text : &str, training_phrase_json_text: &str);
 
 	fn match_user_input_with_intent(&self, user_input : &str) -> (String, f64); 	//Outputs training phrase with 
 
@@ -31,16 +31,16 @@ impl IntentImpl {
 
 impl Intent for IntentImpl {
 	
-	fn from_json(&mut self, intent_json_text : String, training_phrase_json_text: String) {
+	fn from_json(&mut self, intent_json_text : &str, training_phrase_json_text: &str) {
 		
 		//Loading the id and name of the intent
-		let parsed = json::parse(intent_json_text.as_str()).unwrap();
+		let parsed = json::parse(intent_json_text).unwrap();
 		self.id = parsed["id"].to_string();
 		self.intent_name = parsed["responses"][0]["action"].to_string();
 		println!("Processing Intent : {:#?}", self.intent_name); 
 		
 		//Loading all the training phrases
-		let parsed = json::parse(training_phrase_json_text.as_str()).unwrap();
+		let parsed = json::parse(training_phrase_json_text).unwrap();
 		for member in parsed.members() {
 			let mut training_phrase = TrainingPhraseImpl::new(); 
 			training_phrase.from_json(member.to_string().as_str());
