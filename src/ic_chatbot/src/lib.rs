@@ -9,6 +9,8 @@ use ic_cdk_macros::update;
 
 pub mod block;
 pub mod metadata; 
+pub mod quickreply;
+pub mod button;
 pub mod factory;
 pub mod intent;
 pub mod trainingphrase;
@@ -35,19 +37,19 @@ fn init_session () -> JsonText {
 
 
 /*
-Returns a Json string corresponding to a vector blocks. 
+Returns a Json string corresponding to a vector of blocks. 
 [
 	{
 		"component_type" : "text",
-		"text"			 : "These articles might be of help",
+		"text"			 : "Internet Computer is Cloud 3.0.",
 		"delay"			 : "500"
 		"end_conversation" : false,
-		"alternate_replies" : ["Here are some nice articles", 
-								"You would love to read this"]
+		"alternate_replies" : ["Internet Computer is a next generation cloud service.", 
+								"Internet Computer is developed by Dfinity foundation."]
 	},
 	{
 		"component_type" : "quick_replies",
-		"text"			 : "These articles might be of help",
+		"text"			 : "Are you interested in grant programs?",
 		"delay"			 : "500"
 		"end_conversation" : false,
 		"quick_replies"	 : [
@@ -55,13 +57,13 @@ Returns a Json string corresponding to a vector blocks.
 					                "content_type": "text",
 					                "title": "Yes",
 					                "image_url": "",
-					                "payload": "Some"
+					                "payload": "Some payload"
 					            },
 					            {
 					                "content_type": "text",
 					                "title": "No",
 					                "image_url": "",
-					                "payload": "Thing"
+					                "payload": "Some payload"
 					            }
 						   ]
 	},
@@ -86,5 +88,9 @@ Returns a Json string corresponding to a vector blocks.
 */
 #[update]
 fn get_next_block (id : store::SessionId, user_input : String) -> JsonText {
-	TextBlock::static_block()
+	let mut result = json::JsonValue::new_array();
+	result.push(TextBlock::static_block());
+	result.push(QuickRepliesBlock::static_block());
+	result.push(ButtonBlock::static_block());
+	result.dump()
 }

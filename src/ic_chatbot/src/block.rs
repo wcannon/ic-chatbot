@@ -1,11 +1,12 @@
-pub use crate::metadata::NextBlockInfo;
-pub use crate::metadata::MetaData;
+pub use crate::metadata::{*};
+pub use crate::quickreply::{*};
+pub use crate::button::{*};
 
 pub trait Block {
 
 	fn from_json(&mut self, json_text : &str);
 
-	fn convert_to_json(&self) -> String;
+	fn convert_to_json(&self) -> json::JsonValue;
 	
 	fn perform_action(&mut self);
 
@@ -48,18 +49,19 @@ impl TextBlock {
 		}
 	}
 
-	pub fn static_block() -> String {
+	pub fn static_block() -> json::JsonValue {
 		let mut data = json::JsonValue::new_object();
 
 		data["component_type"] = "text".into();
-		data["text"] = "These articles might be of help".into();
+		data["text"] = "Internet Computer is Cloud 3.0.".into();
 		data["delay"] = 500.into();
 		data["end_conversation"] = false.into();
 		let mut alt_replies : Vec<String> = Vec::new();
-		alt_replies.push("Here are some nice articles".to_string()); 
-		alt_replies.push("You would love to read this".to_string()); 
+		alt_replies.push("Internet Computer is a next generation cloud service.".to_string()); 
+		alt_replies.push("Internet Computer is developed by Dfinity foundation.".to_string()); 
 		data["alternate_replies"] = alt_replies.into();
-		data.dump()
+		// data.dump()
+		data
 	}
 }
 
@@ -105,7 +107,7 @@ impl Block for TextBlock {
 	// 	}
 	// }
 
-	fn convert_to_json(&self) -> String {
+	fn convert_to_json(&self) -> json::JsonValue {
 		let mut data = json::JsonValue::new_object();
 
 		data["component_type"] = self.component_type.clone().into();
@@ -113,8 +115,7 @@ impl Block for TextBlock {
 		data["delay"] = self.delay.into();
 		data["end_conversation"] = self.end_conversation.into();
 		data["alternate_replies"] = self.alternate_replies.clone().into();
-		// assert_eq!(data.dump(), r#"{"answer":42,"foo":"bar"}"#);
-		data.dump()
+		data
 	}
 	
 	fn perform_action(&mut self) {
@@ -174,23 +175,17 @@ impl Block for StartBlock {
 		self.next_block_info.from_json(&parsed["metadata"].to_string());
 	}
 
-	fn convert_to_json(&self) -> String {
+	fn convert_to_json(&self) -> json::JsonValue {
 		let mut data = json::JsonValue::new_object();
 
 		data["component_type"] = self.component_type.clone().into();
-		data.dump()
+		// data.dump()
+		data
 	}
 
 	fn perform_action(&mut self) {
 
 	}
-
-	// fn copy_from(&mut self, block : Self) {
-	// 	self.id 			= block.id;
-	// 	self.component_type = block.component_type; 
-	// 	self.node_name 		= block.node_name;
-	// 	self.next_block_info = block.next_block_info; 
-	// }
 
 	//Getter methods
 	fn get_id(&self) -> &str {
@@ -213,15 +208,89 @@ impl Block for StartBlock {
 
 
 
-#[derive(PartialEq, Eq, Debug)]
+#[derive(PartialEq, Eq, Clone, Debug, Default)]
 pub struct QuickRepliesBlock {
-	pub id : String,
-	pub component_type : String,
+	id : String,
+	component_type : String,
 	node_name : String,
-	// metadata : Box<metadata>,
+	next_block_info : NextBlockInfo,
 	delay : u16,
 	end_conversation : bool,
 
 	text : String,
-	// alternate_replies : Vec<String>
+	quick_replies : Vec<QuickReplyImpl>
+}
+
+impl QuickRepliesBlock {
+	pub fn new() -> Self {
+		QuickRepliesBlock { 
+			id : String::new(),
+			component_type : String::new(),
+			node_name : String::new(),
+			next_block_info : NextBlockInfo::new(),
+			end_conversation : false,
+			delay : 0,
+			
+			text : String::new(),
+			quick_replies : Vec::<QuickReplyImpl>::new()
+		}
+	}
+
+	pub fn static_block() -> json::JsonValue {
+		let mut data = json::JsonValue::new_object();
+
+		data["component_type"] = "quick_replies".into();
+		data["text"] = "Are you interested in grant programs?".into();
+		data["delay"] = 500.into();
+		data["end_conversation"] = false.into();
+		let mut replies = json::JsonValue::new_array();
+		replies.push(QuickReplyImpl::static_block("yes".to_string()));
+		replies.push(QuickReplyImpl::static_block("no".to_string()));
+		data["quick_replies"] = replies.into(); 
+		data
+	}
+
+}
+
+
+
+#[derive(PartialEq, Eq, Debug, Default)]
+pub struct ButtonBlock {
+	id : String,
+	component_type : String,
+	node_name : String,
+	next_block_info : NextBlockInfo,
+	delay : u16,
+	end_conversation : bool,
+
+	text : String,
+	buttons : Vec<ButtonImpl>
+}
+
+impl ButtonBlock {
+	pub fn new() -> Self {
+		ButtonBlock { 
+			id : String::new(), 
+			component_type : String::new(),
+			node_name : String::new(),
+			next_block_info : NextBlockInfo::new(),
+			delay : 0, 
+			end_conversation : false, 
+			text : String::new(),
+			buttons : Vec::<ButtonImpl>::new()
+		}
+	}
+
+	pub fn static_block() -> json::JsonValue {
+		let mut data = json::JsonValue::new_object();
+
+		data["component_type"] = "buttons".into();
+		data["text"] = "Are you interested in grant programs?".into();
+		data["delay"] = 500.into();
+		data["end_conversation"] = false.into();
+		let mut buttons = json::JsonValue::new_array();
+		buttons.push(ButtonImpl::static_block());
+		data["buttons"] = buttons.into(); 
+		data
+	}
 }

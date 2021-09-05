@@ -8,8 +8,8 @@ use ic_cdk_macros::post_upgrade;
 
 pub type SessionId = String;
 pub type JsonText = String; 
-const INTENT_DIR: &str = "/Users/satya/work/hackathon/botmock-dialogflow-export/output/upload/intents";
-const BLOCK_FILE: &str = "/Users/satya/work/hackathon/botmock-dialogflow-export/output/webhook/blocks.json"; 
+const INTENT_DIR: &str = "../../flow_chart/intents";
+const BLOCK_FILE: &str = "../../flow_chart/blocks.json"; 
 
 thread_local! {
   static STATE: State = State {
@@ -114,21 +114,25 @@ impl Session {
 
 #[post_upgrade]
 fn initialize_state() {
-	let (blocks, intents) = FactoryImpl::load_json_files(INTENT_DIR, BLOCK_FILE);
-					
-	STATE.with(|s| {
-					for block in blocks {
-						s.push_block(block); //blocks;
-					}
-					for intent in intents {
-						s.push_intent(intent); //blocks;
-					}
-					// // s.intents = intents;
-					// for block in blocks {
-					// 	if block.get_component_type() == "start_block" {
-					// 		s.set_start_block(block);
-					// 	}
-					// }
-				}
-			);
+	// use std::env;
+ //    let path = env::current_dir();
+ //    println!("The current directory is {}", path.unwrap().display());
+        
+	// let (blocks, intents) = FactoryImpl::load_json_files(INTENT_DIR, BLOCK_FILE);
+	
+	// STATE.with(|s| {
+	// 				for block in blocks {
+	// 					s.push_block(block); //blocks;
+	// 				}
+	// 				for intent in intents {
+	// 					s.push_intent(intent); //blocks;
+	// 				}
+	// 				// // s.intents = intents;
+	// 				// for block in blocks {
+	// 				// 	if block.get_component_type() == "start_block" {
+	// 				// 		s.set_start_block(block);
+	// 				// 	}
+	// 				// }
+	// 			}
+	// 		);
 }
