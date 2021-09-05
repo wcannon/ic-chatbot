@@ -4,7 +4,7 @@ use crate::intent::IntentImpl;
 use crate::block::{*}; 
 
 pub trait Factory {
-	fn load_json_files(intent_directory : &str, blocks_file : &str); 
+	fn load_json_files(intent_directory : &str, blocks_file : &str) -> (Vec::<Box<dyn Block>>, Vec::<Box<dyn Intent>>); 
 }
 
 pub struct FactoryImpl {
@@ -13,7 +13,7 @@ pub struct FactoryImpl {
 
 impl Factory for FactoryImpl {
 	
-	fn load_json_files(intent_directory : &str, blocks_file : &str) {
+	fn load_json_files(intent_directory : &str, blocks_file : &str) -> (Vec::<Box<dyn Block>>, Vec::<Box<dyn Intent>>) {
 		let mut intents = Vec::<Box<dyn Intent>>::new();
 		let mut blocks = Vec::<Box<dyn Block>>::new();
 
@@ -55,5 +55,7 @@ impl Factory for FactoryImpl {
 				blocks.push(Box::new(block));
 			}
 		}
+		
+		(blocks, intents)
 	}
 }

@@ -9,7 +9,6 @@ pub trait Block {
 	
 	fn perform_action(&mut self);
 
-
 	//Getter Methods 
 	fn get_id(&self) -> &str; 
 
@@ -22,11 +21,7 @@ pub trait Block {
 	// fn get_end_conversation(&self) -> &bool; 
 }
 
-
-
-
-
-#[derive(PartialEq, Eq, Debug, Default)]
+#[derive(PartialEq, Eq, Debug, Clone, Default)]
 pub struct TextBlock {
 	id : String,
 	component_type : String,
@@ -134,6 +129,69 @@ impl Block for TextBlock {
 	// }
 
 }
+
+#[derive(PartialEq, Eq, Debug, Clone, Default)]
+pub struct StartBlock {
+	id : String,
+	component_type : String,
+	node_name : String,
+	next_block_info : NextBlockInfo
+}
+
+impl StartBlock {
+	pub fn new() -> Self {
+		StartBlock {
+			id : String::new(),
+			component_type : String::new(),
+			node_name : String::new(),
+			next_block_info : NextBlockInfo::new()
+		}
+	}
+}
+
+impl Block for StartBlock {
+	fn from_json(&mut self, json_text : &str) {
+		let parsed = json::parse(json_text).unwrap();		
+		assert_eq!(parsed["component_type"], "start_block"); 
+
+		self.id 			= parsed["id"].to_string();
+		self.component_type = parsed["component_type"].to_string();
+		self.node_name 		= parsed["nodeName"].to_string();
+		self.next_block_info.from_json(&parsed["metadata"].to_string());
+	}
+
+	fn convert_to_json(&self) -> String {
+		let mut data = json::JsonValue::new_object();
+
+		data["component_type"] = self.component_type.clone().into();
+		data.dump()
+	}
+
+	fn perform_action(&mut self) {
+
+	}
+
+	// fn copy_from(&mut self, block : Self) {
+	// 	self.id 			= block.id;
+	// 	self.component_type = block.component_type; 
+	// 	self.node_name 		= block.node_name;
+	// 	self.next_block_info = block.next_block_info; 
+	// }
+
+	//Getter methods
+	fn get_id(&self) -> &str {
+		&self.id
+	}
+
+	fn get_component_type(&self) -> &str {
+		&self.component_type
+	}
+
+	fn get_node_name(&self) -> &str {
+		&self.node_name
+	}
+}
+
 
 
 

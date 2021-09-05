@@ -11,7 +11,7 @@ pub trait MetaData {
 	// fn perform_action(&mut self);
 }
 
-#[derive(PartialEq, Eq, Debug, Default)]
+#[derive(PartialEq, Eq, Clone, Debug, Default)]
 pub struct NextBlockInfo {
 	next_block : HashMap<String, String>
 }

@@ -9,7 +9,7 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-ic-cdk = "0.3"
-ic-cdk-macros = "0.3"
+ic-cdk = "0.3.1"
+ic-cdk-macros = "0.3.1"
 json = "0.12.4"
 natural = "0.3.0"
