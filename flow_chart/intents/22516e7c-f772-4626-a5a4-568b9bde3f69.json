@@ -1,0 +1,96 @@
+{
+  "id": "22516e7c-f772-4626-a5a4-568b9bde3f69",
+  "name": "Grants__path_2__2",
+  "auto": true,
+  "contexts": [
+    "NameIntent-Welcome"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Grants",
+      "affectedContexts": [
+        {
+          "name": "Grants-NameIntent-Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Reponse-Yes",
+              "item_value": "Grant_Yes Answer"
+            },
+            {
+              "item_key": "Response-No",
+              "item_value": "Grant_No Answer"
+            }
+          ],
+          "title": "Are you interested in our grant programs? ",
+          "replies": [
+            "Yes",
+            "No"
+          ],
+          "id": "49ec5fee-89a0-4420-b92a-173a3c8a3552"
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [],
+          "speech": [
+            "Oh, boy! We have a lot of info you need. "
+          ],
+          "suggestions": [],
+          "id": "6090f2d4-c84b-48f6-96a4-96a5e2343cdc"
+        },
+        {
+          "type": 1,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [],
+          "title": "Card 1",
+          "subtitle": "Subtitle goes here",
+          "imageUrl": "https://botmock.s3.amazonaws.com/1629946814.png",
+          "buttons": [
+            {
+              "text": "Button1"
+            },
+            {
+              "text": "Button2"
+            }
+          ],
+          "id": "14885ca4-a78d-425e-948b-de81a9d84cdc"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_Grants__path_2__2"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false,
+  "parentId": "0b18585e-6ce5-4732-9019-a815ceafff98"
+}

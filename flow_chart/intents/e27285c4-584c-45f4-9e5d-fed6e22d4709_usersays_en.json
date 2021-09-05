@@ -1,0 +1,54 @@
+[
+  {
+    "id": "5a898e8d-a9eb-4437-896d-d7958723256d",
+    "data": [
+      {
+        "text": "Internet Computer ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "e8946115-4956-4078-8a75-a5f842aaeb15",
+    "data": [
+      {
+        "text": "Dfinity ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "917949bb-90d1-49f1-a85a-ab77352a7fef",
+    "data": [
+      {
+        "text": "Developer Platform ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "398516e3-1702-450c-93c8-d58903fd67bd",
+    "data": [
+      {
+        "text": "Learn about IC ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

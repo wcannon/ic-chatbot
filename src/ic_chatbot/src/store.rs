@@ -7,6 +7,7 @@ use crate::factory::{*};
 use ic_cdk_macros::post_upgrade;
 
 pub type SessionId = String;
+pub type JsonText = String; 
 const INTENT_DIR: &str = "/Users/satya/work/hackathon/botmock-dialogflow-export/output/upload/intents";
 const BLOCK_FILE: &str = "/Users/satya/work/hackathon/botmock-dialogflow-export/output/webhook/blocks.json"; 
 
@@ -43,7 +44,6 @@ impl State {
 		// let start_block = self.start_block.borrow_mut();
 		// start_block = block;
 	}
-
 }
 
 enum SequenceElement {
@@ -52,13 +52,19 @@ enum SequenceElement {
 	UserInput(String)
 }
 
-struct Session {
+
+
+
+
+
+
+pub struct Session {
 	session_id : SessionId,
 	visited_sequence : Vec<SequenceElement>
 }
 
 impl Session {
-
+	// ctr : static i32 = 0;
 	pub fn new() -> Self {	//Initializes latest_block with StartBlock
 		let mut visited_sequence : Vec<SequenceElement> = Vec::new();
 		// let start_block = STATE.with (|s| s.start_block);
@@ -85,6 +91,13 @@ impl Session {
 		String::from("new_session")
 	}
 
+	pub fn convert_to_json (&self) -> JsonText {
+		let mut data = json::JsonValue::new_object();
+		data["component_type"] = "session_id".into(); 
+		data["session_id"] = self.session_id.clone().into(); 
+		data.dump()
+	}
+
 	// pub fn get_session (session_id : SessionId) -> Option<&Session> {
 	// 	STATE.with (|s| { s.session_info.get(&session_id) } ); 
 	// } 
@@ -93,6 +106,11 @@ impl Session {
 		String::new()
 	}
 }
+
+
+
+
+
 
 #[post_upgrade]
 fn initialize_state() {

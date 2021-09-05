@@ -37,15 +37,29 @@ pub struct TextBlock {
 impl TextBlock {
 	pub fn new() -> Self {
 		TextBlock { 
-			id : String::new(), 
+			id : String::new(),
 			component_type : String::new(),
 			node_name : String::new(),
 			next_block_info : NextBlockInfo::new(),
-			delay : 0, 
-			end_conversation : false, 
+			delay : 0,
+			end_conversation : false,
 			text : String::new(),
 			alternate_replies : Vec::<String>::new()
 		}
+	}
+
+	pub fn static_block() -> String {
+		let mut data = json::JsonValue::new_object();
+
+		data["component_type"] = "text".into();
+		data["text"] = "These articles might be of help".into();
+		data["delay"] = 500.into();
+		data["end_conversation"] = false.into();
+		let mut alt_replies : Vec<String> = Vec::new();
+		alt_replies.push("Here are some nice articles".to_string()); 
+		alt_replies.push("You would love to read this".to_string()); 
+		data["alternate_replies"] = alt_replies.into();
+		data.dump()
 	}
 }
 

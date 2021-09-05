@@ -1,0 +1,54 @@
+[
+  {
+    "id": "0c912f43-6c12-4881-b92f-f9aed41d09cc",
+    "data": [
+      {
+        "text": "Fellowships ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "519c6b47-0440-49bd-8771-8174d932d472",
+    "data": [
+      {
+        "text": "Scholarships ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "1bc688cd-f2a8-4fd9-a96b-cd41df77da6b",
+    "data": [
+      {
+        "text": "Developer Grants ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "95aae850-9e81-4fd5-b026-e8fcb897c452",
+    "data": [
+      {
+        "text": "Discounts ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "id": "e27285c4-584c-45f4-9e5d-fed6e22d4709",
+  "name": "IC__path_1__2",
+  "auto": true,
+  "contexts": [
+    "NameIntent-Welcome"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "IC",
+      "affectedContexts": [
+        {
+          "name": "IC-NameIntent-Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [],
+          "speech": [
+            "You wanna know about the internet computer? We call it cloud breaker. "
+          ],
+          "suggestions": [],
+          "id": "eb5f7131-09c3-42bf-b701-9d04ce892688"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_IC__path_1__2"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false,
+  "parentId": "0b18585e-6ce5-4732-9019-a815ceafff98"
+}

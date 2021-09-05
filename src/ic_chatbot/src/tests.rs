@@ -67,10 +67,14 @@ mod tests {
     }
 
     #[test]
-    fn test_files() {
+    fn test_files() { //-> std::io::Result<()> {
+        // use std::env;
+        // let path = env::current_dir()?;
+        // println!("The current directory is {}", path.display());
         pub use crate::factory::Factory;
-        crate::factory::FactoryImpl::load_json_files("/Users/satya/work/hackathon/botmock-dialogflow-export/output/upload/intents", 
-                                                    "/Users/satya/work/hackathon/botmock-dialogflow-export/output/webhook/blocks.json");
+        crate::factory::FactoryImpl::load_json_files("../../flow_chart/intents", 
+                                                    "../../flow_chart/blocks.json");
+        // Ok(())
     }
 
     #[test]

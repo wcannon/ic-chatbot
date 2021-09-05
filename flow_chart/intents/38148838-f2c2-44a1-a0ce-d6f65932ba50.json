@@ -1,0 +1,59 @@
+{
+  "id": "38148838-f2c2-44a1-a0ce-d6f65932ba50",
+  "name": "Default_Welcome_Intent",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Default_Welcome_Intent",
+      "affectedContexts": [
+        {
+          "name": "Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Intent-NameIntent",
+              "item_value": "Help Question"
+            }
+          ],
+          "speech": [
+            "Welcome to Dfinity! We have a surprise for you. \nWhat's your sweet name by the way? ",
+            "Hello buddy, we have something exciting waiting for you. Let's first get to know each other. My name's blockchain. What's your name? ",
+            "What's your name by the way? "
+          ],
+          "suggestions": [],
+          "id": "61cecdb1-5af8-4747-8cb4-0a94950cd24f"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_Default_Welcome_Intent"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false
+}

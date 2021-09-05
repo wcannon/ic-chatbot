@@ -1,0 +1,28 @@
+[
+  {
+    "id": "7cc3dd03-0762-49e6-bb5f-4a2d12755289",
+    "data": [
+      {
+        "text": "%$username ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "5fc08742-d453-418b-82ee-6b660810d6b0",
+    "data": [
+      {
+        "text": "It is %$username ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

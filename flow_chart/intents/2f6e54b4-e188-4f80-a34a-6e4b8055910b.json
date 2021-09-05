@@ -1,0 +1,55 @@
+{
+  "id": "2f6e54b4-e188-4f80-a34a-6e4b8055910b",
+  "name": "CanisterTutorials__path_9__2",
+  "auto": true,
+  "contexts": [
+    "NameIntent-Welcome"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "CanisterTutorials",
+      "affectedContexts": [
+        {
+          "name": "CanisterTutorials-NameIntent-Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [],
+          "speech": [
+            "Do you want tutorials on canisters? "
+          ],
+          "suggestions": [],
+          "id": "83286ee4-80c8-4c16-8af6-7219d38d372c"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_CanisterTutorials__path_9__2"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false,
+  "parentId": "0b18585e-6ce5-4732-9019-a815ceafff98"
+}

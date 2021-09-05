@@ -1,0 +1,54 @@
+{
+  "254c7340-006d-11ec-98a3-a556a22a0764": {
+    "en": {
+      "generic": {
+        "blocks": [
+          {
+            "id": "254c7340-006d-11ec-98a3-a556a22a0764"
+          }
+        ]
+      }
+    }
+  },
+  "254c74b0-006d-11ec-b5a7-737ac2dca7c8": {
+    "en": {
+      "generic": {
+        "blocks": [
+          {
+            "component_type": "text",
+            "nodeName": "Help Question",
+            "context": [
+              {
+                "id": "9e75b110-01c7-11ec-9825-31b611849613",
+                "name": "%%username%",
+                "type": "text",
+                "entity": "botmock.name",
+                "default_value": "buddy",
+                "start_index": 4
+              }
+            ],
+            "text": "Hey %%username%, how can we help you? ",
+            "alternate_replies": [],
+            "audio_file": "",
+            "ssml": "",
+            "delay": 500,
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Intent-Grants",
+                "item_value": "Grant Question"
+              },
+              {
+                "item_key": "Intent-IC",
+                "item_value": "Common Question"
+              }
+            ],
+            "end_conversation": false,
+            "buttons": [],
+            "id": "254c74b0-006d-11ec-b5a7-737ac2dca7c8"
+          }
+        ]
+      }
+    }
+  }
+}
