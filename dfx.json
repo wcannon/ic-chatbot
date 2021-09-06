@@ -5,6 +5,19 @@
       "candid": "src/ic_chatbot/main.did",
       "wasm": "target/wasm32-unknown-unknown/release/ic_chatbot.wasm",
       "type": "custom"
+    },
+    "ic_chatbot_assets": {
+      "dependencies": [
+        "ic_chatbot"
+      ],
+      "frontend": {
+        "entrypoint": "src/ic_chatbot_assets/src/index.html"
+      },
+      "source": [
+        "src/ic_chatbot_assets/assets",
+        "dist/ic_chatbot_assets/"
+      ],
+      "type": "assets"
     }
   },
   "defaults": {
