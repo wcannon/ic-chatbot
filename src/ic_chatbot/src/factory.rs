@@ -2,6 +2,7 @@ use std::fs;
 use crate::intent::Intent;
 use crate::intent::IntentImpl;
 use crate::block::{*}; 
+use std::borrow::Borrow;
 
 pub trait Factory {
 	fn load_json_files(intent_directory : &str, blocks_file : &str) -> (Vec::<Box<dyn Block>>, Vec::<Box<dyn Intent>>); 

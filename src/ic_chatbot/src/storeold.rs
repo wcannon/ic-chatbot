@@ -27,14 +27,14 @@ thread_local! {
 struct State {
 	// blocks : RefCell<Vec<Box<dyn Block>>>,
 	// intents : RefCell<Vec<Box<dyn Intent>>>,
-	blocks : RefCell<HashMap<NodeName, Box<Block>>>,
+	blocks : RefCell<HashMap<NodeName, &'static dyn Block>>,
 	intents : RefCell<HashMap<NodeName, Box<Intent>>>,
 	// start_block : Box<dyn Block>,
 	session_info : RefCell<HashMap<SessionId, Session>>
 }
 
 impl State {
-	pub fn push_block (& self, block : Box<Block>) {
+	pub fn push_block (& self, block : &'static dyn Block) {
 		self.blocks.borrow_mut().insert(block.get_node_name().to_string(), block);
 	}
 
@@ -77,7 +77,7 @@ impl Session {
 	// ctr : static i32 = 0;
 	pub fn new() -> Self {	//Initializes latest_block with StartBlock
 		let mut visited_sequence : Vec<SequenceElement> = Vec::new();
-		let start_block = STATE.with (|s| (s.blocks.borrow().get(&"StartBlock".to_string()).unwrap().clone()) );
+		// let start_block = STATE.with (|s| s.start_block);
 		// let start_block : Box<dyn Block> = start_block;
 		
 		// STATE.with(|s| {
@@ -89,7 +89,7 @@ impl Session {
 		// 					}
 		// 				}
 		// 			}); 
-		visited_sequence.push( SequenceElement::VisitedBlock(start_block) );
+		// visited_sequence.push( SequenceElement::VisitedBlock(start_block) );
 
 		Session {
 			session_id : Session::gen_new_session_id(),
@@ -125,7 +125,7 @@ impl Session {
 
 
 
-pub fn store_blocks_in_state (blocks: Vec::<Box<dyn Block>>) {
+pub fn store_blocks_in_state (blocks: Vec::<&'static dyn Block>) {
 	STATE.with(|s| {
 		for block in blocks {
 			s.push_block(block);

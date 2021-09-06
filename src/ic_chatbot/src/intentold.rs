@@ -1,8 +1,7 @@
 use crate::trainingphrase::TrainingPhrase;
 use crate::trainingphrase::TrainingPhraseImpl;
 
-
-pub trait Intent : IntentClone {
+pub trait Intent {
 
 	fn from_json(&mut self, intent_json_text : &str, training_phrase_json_text: &str);
 
@@ -15,26 +14,7 @@ pub trait Intent : IntentClone {
 	fn get_intent_name(&self) -> &str;
 }
 
-pub trait IntentClone {
-	fn clone_box(&self) -> Box<dyn Intent>;
-}
-
-impl <T> IntentClone for T 
-where 
-	T : 'static + Intent + Clone,
-{
-	fn clone_box(&self) -> Box <dyn Intent> {
-		Box::new(self.clone())
-	}
-}
-
-impl Clone for Box<dyn Intent> {
-	fn clone(&self) -> Box<dyn Intent> {
-		self.clone_box()
-	}
-}
-
-#[derive(Clone, Default)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub struct IntentImpl {
 	id : String,
 	intent_name : String, 

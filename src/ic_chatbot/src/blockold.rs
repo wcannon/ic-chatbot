@@ -3,7 +3,7 @@ pub use crate::quickreply::{*};
 pub use crate::button::{*};
 use std::borrow::Borrow;
 
-pub trait Block : BlockClone {
+pub trait Block {
 
 	fn from_json(&mut self, json_text : &str);
 
@@ -21,25 +21,6 @@ pub trait Block : BlockClone {
 	// fn get_delay(&self) -> &u16; 
 
 	// fn get_end_conversation(&self) -> &bool; 
-}
-
-pub trait BlockClone {
-	fn clone_box(&self) -> Box<dyn Block>; 
-}
-
-impl<T> BlockClone for T
-where 
-	T : 'static + Block + Clone,
-{
-	fn clone_box(&self) -> Box<dyn Block> {
-		Box::new(self.clone())
-	}
-}
-
-impl Clone for Box<dyn Block> {
-	fn clone(&self) -> Box<dyn Block> {
-		self.clone_box()
-	}
 }
 
 #[derive(PartialEq, Eq, Debug, Clone, Default)]
