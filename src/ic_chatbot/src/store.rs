@@ -8,13 +8,16 @@ use ic_cdk_macros::post_upgrade;
 
 pub type SessionId = String;
 pub type JsonText = String; 
+pub type NodeName = String; 
 const INTENT_DIR: &str = "../../flow_chart/intents";
 const BLOCK_FILE: &str = "../../flow_chart/blocks.json"; 
 
 thread_local! {
   static STATE: State = State {
       blocks : RefCell::new(Vec::new()),
+      // blocks : RefCell::new(HashMap::new())
       intents : RefCell::new(Vec::new()),
+      // intents : RefCell::new(HashMap::new()),
       start_block : Box::new(StartBlock::new()),
       session_info : RefCell::new(HashMap::new())
   }
@@ -23,6 +26,7 @@ thread_local! {
 struct State {
 	blocks : RefCell<Vec<Box<dyn Block>>>,
 	intents : RefCell<Vec<Box<dyn Intent>>>,
+	// blocks : RefCell<HashMap<NodeName, >>
 	start_block : Box<dyn Block>,
 	session_info : RefCell<HashMap<SessionId, Session>>
 }
@@ -103,6 +107,11 @@ impl Session {
 	// } 
 
 	fn process_user_input(&mut self, user_input : String) -> String {
+
+
+		self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) ); 
+		// self.
+
 		String::new()
 	}
 }
@@ -110,6 +119,22 @@ impl Session {
 
 
 
+pub fn store_blocks_in_state (blocks: Vec::<Box<dyn Block>>) {
+	STATE.with(|s| {
+		for block in blocks {
+			s.push_block(block);
+		}
+	});
+}
+
+
+pub fn store_intents_in_state (intents: Vec::<Box<dyn Intent>>) {
+	STATE.with(|s| {
+		for intent in intents {
+			s.push_intent(intent);
+		}
+	});
+}
 
 
 #[post_upgrade]

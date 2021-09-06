@@ -5,6 +5,7 @@ use crate::block::{*};
 
 pub trait Factory {
 	fn load_json_files(intent_directory : &str, blocks_file : &str) -> (Vec::<Box<dyn Block>>, Vec::<Box<dyn Intent>>); 
+	fn load_blocks_json (blocks_json_text : String) -> Vec::<Box<dyn Block>>; 
 }
 
 pub struct FactoryImpl {
@@ -58,4 +59,31 @@ impl Factory for FactoryImpl {
 		
 		(blocks, intents)
 	}
+
+
+	fn load_blocks_json (blocks_json_text : String) -> Vec::<Box<dyn Block>> {
+		//Loading all the blocks into blocks vector. 
+		let mut blocks = Vec::<Box<dyn Block>>::new();
+		// let blocks_json_text = fs::read_to_string(blocks_file).expect("Something went wrong reading the intent file");
+		let parsed = json::parse(blocks_json_text.as_str()).unwrap();
+		// println!("{:#?}", parsed); 
+		for (id, member) in parsed.entries() {
+			let member = &member["en"]["generic"]["blocks"][0];
+			if member.has_key("component_type") {
+				println!("{}, {:#?}", id, member);
+				let mut block = match member["component_type"].to_string().as_str() {
+					"text" => TextBlock::new(),
+					_ => TextBlock::new()
+				};
+
+				block.from_json(member.to_string().as_str());
+				blocks.push(Box::new(block));
+			}
+		}
+		blocks
+	}
+
+	// fn load_intents_json ( ) {
+
+	// }
 }

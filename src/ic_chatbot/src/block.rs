@@ -240,7 +240,7 @@ impl QuickRepliesBlock {
 		let mut data = json::JsonValue::new_object();
 
 		data["component_type"] = "quick_replies".into();
-		data["text"] = "Are you interested in grant programs?".into();
+		data["text"] = "Does this answer your question?".into();
 		data["delay"] = 500.into();
 		data["end_conversation"] = false.into();
 		let mut replies = json::JsonValue::new_array();
@@ -285,7 +285,7 @@ impl ButtonBlock {
 		let mut data = json::JsonValue::new_object();
 
 		data["component_type"] = "buttons".into();
-		data["text"] = "Are you interested in grant programs?".into();
+		data["text"] = "Here are some articles that you requested.".into();
 		data["delay"] = 500.into();
 		data["end_conversation"] = false.into();
 		let mut buttons = json::JsonValue::new_array();
