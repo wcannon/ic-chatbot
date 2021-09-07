@@ -1,7 +1,11 @@
 pub use crate::metadata::{*};
 pub use crate::quickreply::{*};
 pub use crate::button::{*};
-use std::borrow::Borrow;
+pub use crate::types::{*};
+pub use crate::intent::{*};
+use std::collections::HashMap;
+use std::cell::{Cell, RefCell};  
+
 
 pub trait Block : BlockClone {
 
@@ -9,7 +13,7 @@ pub trait Block : BlockClone {
 
 	fn convert_to_json(&self) -> json::JsonValue;
 	
-	fn perform_action(&mut self);
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName);
 
 	//Getter Methods 
 	fn get_id(&self) -> &str; 
@@ -138,8 +142,8 @@ impl Block for TextBlock {
 		data
 	}
 	
-	fn perform_action(&mut self) {
-
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+		self.next_block_info.get_next_block(user_input, intents)
 	}
 
 	//Getter methods
@@ -203,9 +207,10 @@ impl Block for StartBlock {
 		data
 	}
 
-	fn perform_action(&mut self) {
-
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+		self.next_block_info.get_next_block(user_input, intents)
 	}
+
 
 	//Getter methods
 	fn get_id(&self) -> &str {

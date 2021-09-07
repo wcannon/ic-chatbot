@@ -6,12 +6,8 @@ pub trait Intent : IntentClone {
 
 	fn from_json(&mut self, intent_json_text : &str, training_phrase_json_text: &str);
 
-	fn match_user_input_with_intent(&self, user_input : &str) -> (String, f64); 	//Outputs training phrase with 
-
-	// fn convert_to_json(&self) -> String;
+	fn get_matching_score(&self, user_input : &str) -> usize;
 	
-	// fn perform_action(&mut self);
-
 	fn get_intent_name(&self) -> &str;
 }
 
@@ -19,8 +15,8 @@ pub trait IntentClone {
 	fn clone_box(&self) -> Box<dyn Intent>;
 }
 
-impl <T> IntentClone for T 
-where 
+impl <T> IntentClone for T
+where
 	T : 'static + Intent + Clone,
 {
 	fn clone_box(&self) -> Box <dyn Intent> {
@@ -37,7 +33,7 @@ impl Clone for Box<dyn Intent> {
 #[derive(Clone, Default)]
 pub struct IntentImpl {
 	id : String,
-	intent_name : String, 
+	intent_name : String,
 	training_phrases : Vec::<Box<dyn TrainingPhrase>>
 }
 
@@ -70,8 +66,8 @@ impl Intent for IntentImpl {
 		}
 	}
 
-	fn match_user_input_with_intent(&self, user_input : &str) -> (String, f64) {
-		(String::new(), 0.0)
+	fn get_matching_score(&self, user_input : &str) -> usize {
+		*self.training_phrases.iter().map(|phrase| {phrase.get_matching_score(user_input)}).collect::<Vec<usize>>().iter().min().unwrap()
 	}
 
 	fn get_intent_name(&self) -> &str {

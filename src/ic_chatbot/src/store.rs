@@ -2,13 +2,11 @@ use std::collections::HashMap;
 use std::cell::{Cell, RefCell};  
 use crate::intent::{*};
 use crate::block::{*};
-use crate::factory::{*};
+// use crate::factory::{*};
 // use dfn_core::{api::trap_with, over, over_async, stable};
 use ic_cdk_macros::post_upgrade;
+pub use crate::types::{*};
 
-pub type SessionId = String;
-pub type JsonText = String; 
-pub type NodeName = String; 
 const INTENT_DIR: &str = "../../flow_chart/intents";
 const BLOCK_FILE: &str = "../../flow_chart/blocks.json"; 
 
@@ -27,14 +25,14 @@ thread_local! {
 struct State {
 	// blocks : RefCell<Vec<Box<dyn Block>>>,
 	// intents : RefCell<Vec<Box<dyn Intent>>>,
-	blocks : RefCell<HashMap<NodeName, Box<Block>>>,
-	intents : RefCell<HashMap<NodeName, Box<Intent>>>,
+	blocks : RefCell<HashMap<NodeName, Box<dyn Block>>>,
+	intents : RefCell<HashMap<NodeName, Box<dyn Intent>>>,
 	// start_block : Box<dyn Block>,
 	session_info : RefCell<HashMap<SessionId, Session>>
 }
 
 impl State {
-	pub fn push_block (& self, block : Box<Block>) {
+	pub fn push_block (& self, block : Box<dyn Block>) {
 		self.blocks.borrow_mut().insert(block.get_node_name().to_string(), block);
 	}
 
@@ -113,8 +111,20 @@ impl Session {
 	// } 
 
 	fn process_user_input(&mut self, user_input : String) -> String {
+		assert!(self.visited_sequence.len() > 0); 
+		let last_block = match self.visited_sequence.last().unwrap() {
+			SequenceElement::VisitedBlock(block) => block,
+			SequenceElement::TriggeredIntent(_) => panic!("Last visited element is an intent"), 
+			SequenceElement::UserInput(_) => panic!("Last visited element is a user input")
+		};
 
+		let (IntentName, BlockName) = last_block.perform_action(&user_input, &STATE.with(|s| s.intents.clone())); 
 
+		//possibilities could be either 
+		// let possibilities = last_block.next_possibilities();
+		
+
+		// assert!(last_block == SequenceElement::VisitedBlock(_)); 	
 		self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) ); 
 		// self.
 

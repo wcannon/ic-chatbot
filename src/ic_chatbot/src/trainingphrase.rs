@@ -1,5 +1,10 @@
+extern crate natural;
+use natural::distance::jaro_winkler_distance;
+use natural::distance::levenshtein_distance;
+
 pub trait TrainingPhrase : TrainingPhraseClone {
 	fn from_json(&mut self, json_text : &str); 
+	fn get_matching_score(&self, user_input : &str) -> usize; 
 }
 
 pub trait TrainingPhraseClone {
@@ -48,7 +53,7 @@ impl TrainingPhrase for TrainingPhraseImpl {
 		println!("{:#?} {:#?}", self.id, self.text);
 	}
 
-	// fn match_user_input_with_training_phrase(user_input : &str) -> f64 {
-		
-	// }
+	fn get_matching_score (&self, user_input : &str) -> usize {
+		levenshtein_distance(&self.text, user_input)
+	}
 }

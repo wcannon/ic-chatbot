@@ -4,7 +4,7 @@ This is the main file of the project.
 This file provides the external API that can be used by the frontend. 
 
 */
-use std::io;
+// use std::io;
 use ic_cdk_macros::update;
 
 pub mod block;
@@ -15,13 +15,13 @@ pub mod factory;
 pub mod intent;
 pub mod trainingphrase;
 pub mod store; 
+pub mod types;
 mod tests;
 
-use crate::store::{*}; 
+use crate::types::{*};
 use crate::block::{*};
+use crate::store::{*}; 
 use crate::factory::{*}; 
-// pub type JsonText = String; 
-
 
 /*Returns a Json string of the form 
 	{

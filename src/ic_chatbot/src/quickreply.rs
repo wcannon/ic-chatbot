@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 
 pub trait QuickReply {
 	fn from_json(&mut self, json_text : &str);
