@@ -1,6 +1,7 @@
 
 pub trait Button {
 	fn from_json(&mut self, json_text : &str);
+	fn convert_to_json(&self) -> json::JsonValue;
 }
 							
 #[derive(PartialEq, Eq, Clone, Debug, Default)]
@@ -29,9 +30,21 @@ impl ButtonImpl {
 	}
 }
 
-// impl Button for ButtonImpl {
+impl Button for ButtonImpl {
 
-// 	fn from_json(&mut self, json_text : &str) {
-// 		let parsed = json::parse(json_text).unwrap();
-// 	}
-// }
+	fn from_json(&mut self, json_text : &str) {
+		let parsed = json::parse(json_text).unwrap();
+
+		self.button_type 	= parsed["type"].to_string();
+		self.title 			= parsed["title"].to_string();
+		self.payload 		= parsed["payload"].to_string();
+	}
+
+	fn convert_to_json(&self) -> json::JsonValue {
+		let mut data = json::JsonValue::new_object();
+		data["type"] 		 = self.button_type.clone().into();
+		data["title"] 		 = self.title.clone().into();
+		data["payload"]		 = self.payload.clone().into();
+		data
+	}
+}

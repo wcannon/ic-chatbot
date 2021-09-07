@@ -268,6 +268,12 @@ impl Block for QuickRepliesBlock {
 		self.text 			= parsed["text"].to_string();
 		self.delay 			= parsed["delay"].as_u16().unwrap();
 		self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
+		
+		for member in parsed["quick_replies"].members() {
+			let mut quick_reply = QuickReplyImpl::new();
+			quick_reply.from_json(&member.to_string()); 
+ 			self.quick_replies.push(quick_reply);
+ 		}
 	}
 
 	fn convert_to_json(&self) -> json::JsonValue {
@@ -303,21 +309,13 @@ impl Block for QuickRepliesBlock {
 		&self.node_name
 	}
 
-	// fn get_delay(&self) -> &u16 {
-	// 	&self.delay
-	// }
-
-	// fn get_end_conversation(&self) ->  &bool {
-	// 	&self.end_conversation
-	// }
-
 }
 
 
 
 
 
-#[derive(PartialEq, Eq, Debug, Default)]
+#[derive(PartialEq, Eq, Debug, Clone, Default)]
 pub struct ButtonBlock {
 	id : String,
 	component_type : String,
@@ -357,3 +355,60 @@ impl ButtonBlock {
 		data
 	}
 }
+
+impl Block for ButtonBlock {
+	
+	fn from_json(&mut self, json_text : &str) {
+		let parsed = json::parse(json_text).unwrap();		
+		assert_eq!(parsed["component_type"], "quick_replies"); 
+		
+		self.id 			= parsed["id"].to_string();
+		self.component_type = parsed["component_type"].to_string();
+		self.node_name 		= parsed["nodeName"].to_string();
+		self.next_block_info.from_json(&parsed["metadata"].to_string());
+		self.text 			= parsed["text"].to_string();
+		self.delay 			= parsed["delay"].as_u16().unwrap();
+		self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
+	
+		for member in parsed["buttons"].members() {
+			let mut button = ButtonImpl::new();
+			button.from_json(&member.to_string()); 
+ 			self.buttons.push(button);
+ 		}
+	}
+
+	fn convert_to_json(&self) -> json::JsonValue {
+		let mut data = json::JsonValue::new_object();
+
+		let mut buttons = json::JsonValue::new_array();
+		for button in self.buttons.iter() {
+			buttons.push(button.convert_to_json());
+		}
+
+		data["component_type"] = self.component_type.clone().into();
+		data["text"] = self.text.clone().into();
+		data["delay"] = self.delay.into();
+		data["end_conversation"] = self.end_conversation.into();
+		data["buttons"] = buttons.into();
+		data
+	}
+	
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+		self.next_block_info.get_next_block(user_input, intents)
+	}
+
+	//Getter methods
+	fn get_id(&self) -> &str {
+		&self.id
+	}
+
+	fn get_component_type(&self) -> &str {
+		&self.component_type
+	}
+
+	fn get_node_name(&self) -> &str {
+		&self.node_name
+	}
+}
+
+
