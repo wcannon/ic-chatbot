@@ -200,6 +200,15 @@ mod tests {
         // Ok(())
     }
 
+    #[test] 
+    fn test_init_session() {
+        pub use crate::store::{*};
+        pub use crate::{*};
+        initialize_state();
+        println!("InitSession response: {:#?}", init_session());
+        println!("Processing input: {:#?}", get_next_block ("new_session".to_string(), "username".to_string()));
+    }
+
     #[test]
     fn parse_json() {
 

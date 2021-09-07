@@ -6,5 +6,4 @@ type UserInput = text;
 service : () -> {
 	init_session : () -> (JsonText);
 	get_next_block : (SessionId, UserInput) -> (JsonText);
-	load_blocks_from_json : (JsonText) -> ();
 }

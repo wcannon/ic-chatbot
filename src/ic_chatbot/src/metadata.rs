@@ -69,7 +69,9 @@ impl MetaData for NextBlockInfo {
 		}
 		let min_score = *intent_scores.values().cloned().collect::<Vec<usize>>().iter().min().unwrap();
 		let intent = intent_scores.iter().find_map(|(key, &val)| if val == min_score { Some(key) } else { None }).unwrap();
-		(LinkType::intent, intent.to_string(), self.next_block.get(intent).unwrap().clone())
+		let mut prefixedIntent = "Intent-".to_string();
+		prefixedIntent.push_str(&intent.clone()); 
+		(LinkType::intent, intent.to_string(), self.next_block.get(&prefixedIntent).unwrap().clone())
 	}
 
 	//If there is an outlink from the block with "Default" tag, then no user input is required to proceed. 

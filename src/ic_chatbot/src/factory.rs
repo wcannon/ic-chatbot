@@ -40,20 +40,23 @@ impl Factory for FactoryImpl {
 		}
 
 		//Loading all the blocks into blocks vector. 
-		let blocks_json_text = fs::read_to_string(blocks_file).expect("Something went wrong reading the intent file");
+		let blocks_json_text = fs::read_to_string(blocks_file).expect("Something went wrong reading the blocks file");
 		let parsed = json::parse(blocks_json_text.as_str()).unwrap();
 		// println!("{:#?}", parsed); 
 		for (id, member) in parsed.entries() {
 			let member = &member["en"]["generic"]["blocks"][0];
 			if member.has_key("component_type") {
 				println!("{}, {:#?}", id, member);
-				let mut block = match member["component_type"].to_string().as_str() {
-					"text" => TextBlock::new(),
-					_ => TextBlock::new()
+				let mut block : Box::<dyn Block> = match member["component_type"].to_string().as_str() {
+					"text" => Box::new(TextBlock::new()),
+					"quick_replies" => Box::new(QuickRepliesBlock::new()),
+					"jump" => Box::new(JumpBlock::new()),
+					"button" => Box::new(ButtonBlock::new()),
+					"start_block" => Box::new(StartBlock::new()),
+					_ => Box::new(TextBlock::new())
 				};
-
 				block.from_json(member.to_string().as_str());
-				blocks.push(Box::new(block));
+				blocks.push(block);
 			}
 		}
 		

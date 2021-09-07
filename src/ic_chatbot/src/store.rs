@@ -2,9 +2,9 @@ use std::collections::HashMap;
 use std::cell::{Cell, RefCell};  
 use crate::intent::{*};
 use crate::block::{*};
-// use crate::factory::{*};
+use crate::factory::{*};
 // use dfn_core::{api::trap_with, over, over_async, stable};
-use ic_cdk_macros::post_upgrade;
+use ic_cdk_macros::init;
 pub use crate::types::{*};
 use std::convert::TryInto;
 // use ic_test_utilities::universal_canister::{call_args, wasm};
@@ -37,17 +37,19 @@ thread_local! {
   }
 }
 
+#[derive(Clone)]
 struct State {
 	// blocks : RefCell<Vec<Box<dyn Block>>>,
 	// intents : RefCell<Vec<Box<dyn Intent>>>,
 	blocks : RefCell<HashMap<NodeName, Box<dyn Block>>>,
 	intents : RefCell<HashMap<NodeName, Box<dyn Intent>>>,
 	// start_block : Box<dyn Block>,
-	session_info : RefCell<HashMap<SessionId, Session>>
+	session_info : RefCell<HashMap<SessionId, RefCell<Session>>>
 }
 
 impl State {
 	pub fn push_block (& self, block : Box<dyn Block>) {
+		println!("Indexing {}", block.get_node_name());
 		self.blocks.borrow_mut().insert(block.get_node_name().to_string(), block);
 	}
 
@@ -100,9 +102,25 @@ impl Session {
 			session_id : Session::gen_new_session_id(),
 		 	visited_sequence : visited_sequence
 		};
-		STATE.with(|s| s.session_info.borrow_mut().insert(session.get_session_id().to_string(), session.clone()));
+		STATE.with(|s| s.session_info.borrow_mut().insert(session.get_session_id().to_string(), RefCell::new(session.clone()) ));
 		session
 	}
+
+	pub fn process_user_input(session_id : SessionId, user_input : String) -> json::JsonValue {
+		println!("Processing session : \"{}\"", session_id); 
+		if STATE.with(|s| s.session_info.borrow().contains_key(&session_id)) {
+			STATE.with(|s| s.session_info.borrow_mut().get(&session_id).expect("Invalid session id").borrow_mut().process_user_input_for_session(user_input))
+		}
+		else {
+			// println!("{}", session);
+			let mut result = json::JsonValue::new_object();
+			result["component_type"] = "Error".into();
+			result["text"] = "Invalid session id ".into();
+			result
+		}
+
+	}
+
 
 	// fn gen_rand_vector() -> [u8; 32] {
 		// let res = match call(Principal::management_canister(), "raw_rand", ()) {
@@ -153,7 +171,7 @@ impl Session {
 		panic!("No blocks left in visited sequence");
 	}
 
-	pub fn process_user_input(&mut self, user_input : String) -> json::JsonValue {
+	pub fn process_user_input_for_session(&mut self, user_input : String) -> json::JsonValue {
 		let mut last_block = self.get_last_visited_block();
 		let mut result_path = json::JsonValue::new_array();
 		self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) );
@@ -202,8 +220,35 @@ pub fn store_intents_in_state (intents: Vec::<Box<dyn Intent>>) {
 }
 
 
-#[post_upgrade]
-fn initialize_state() {
+#[init]
+pub fn initialize_state() {
+	// use std::env;
+ //    let path = env::current_dir();
+ //    println!("The current directory is {}", path.unwrap().display());
+        
+	let (blocks, intents) = FactoryImpl::load_json_files(INTENT_DIR, BLOCK_FILE);
+	
+	STATE.with(|s| {
+					for block in blocks {
+						s.push_block(block); //blocks;
+					}
+					for intent in intents {
+						s.push_intent(intent); //intents;
+					}
+					// // s.intents = intents;
+					// for block in blocks {
+					// 	if block.get_component_type() == "start_block" {
+					// 		s.set_start_block(block);
+					// 	}
+					// }
+				}
+			);
+}
+
+
+
+// #[post_upgrade]
+// fn initialize_state() {
 	// use std::env;
  //    let path = env::current_dir();
  //    println!("The current directory is {}", path.unwrap().display());
@@ -225,4 +270,4 @@ fn initialize_state() {
 	// 				// }
 	// 			}
 	// 		);
-}
+// }
