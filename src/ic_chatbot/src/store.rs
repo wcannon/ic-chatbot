@@ -6,6 +6,21 @@ use crate::block::{*};
 // use dfn_core::{api::trap_with, over, over_async, stable};
 use ic_cdk_macros::post_upgrade;
 pub use crate::types::{*};
+use std::convert::TryInto;
+// use ic_test_utilities::universal_canister::{call_args, wasm};
+// use ic_types::{
+//     ic00,
+//     ic00::{EmptyBlob, Method},
+//     ingress::WasmResult,
+//     messages::MAX_INTER_CANISTER_PAYLOAD_IN_BYTES,
+//     time::current_time_and_expiry_time,
+//     user_error::ErrorCode,
+//     CanisterId, NumBytes, RegistryVersion,
+// };
+
+use ic_cdk::api::call::call;
+use ic_cdk::export::candid::{CandidType, Deserialize, Func, Principal};
+use ic_cdk::api::{caller, data_certificate, id, set_certified_data, time, trap};
 
 const INTENT_DIR: &str = "../../flow_chart/intents";
 const BLOCK_FILE: &str = "../../flow_chart/blocks.json"; 
@@ -76,17 +91,6 @@ impl Session {
 	pub fn new() -> Self {	//Initializes latest_block with StartBlock
 		let mut visited_sequence : Vec<SequenceElement> = Vec::new();
 		let start_block = STATE.with (|s| (s.blocks.borrow().get(&"StartBlock".to_string()).unwrap().clone()) );
-		// let start_block : Box<dyn Block> = start_block;
-		
-		// STATE.with(|s| {
-		// 				for block in s.blocks.borrow().iter() {
-		// 					if block.get_component_type() == "start_block" {
-		// 						let start_block = block.clone(); 
-		// 						visited_sequence.push( SequenceElement::VisitedBlock(*start_block) );
-		// 						break;
-		// 					}
-		// 				}
-		// 			}); 
 		visited_sequence.push( SequenceElement::VisitedBlock(start_block) );
 
 		Session {
@@ -95,7 +99,23 @@ impl Session {
 		}
 	}
 
-	fn gen_new_session_id () -> SessionId {
+	// fn gen_rand_vector() -> [u8; 32] {
+		// let res = match call(Principal::management_canister(), "raw_rand", ()) {
+	 //        					Ok((res,)) => res,
+	 //        					Err((_, err)) => trap(&format!("failed to get salt: {}", err)),
+  //   						};
+  //   	let salt: [u8; 32] = res[..].try_into().unwrap_or_else(|_| {
+  //       trap(&format!(
+  //           "expected raw randomness to be of length 32, got {}",
+  //           res.len()
+  //       	));
+	 //    });
+    	// salt
+	// }
+
+ 	fn gen_new_session_id () -> SessionId {
+		// let rand_vec : [u8;32] = Session::gen_rand_vector();
+		// std::str::from_utf8(&rand_vec).unwrap().to_string()
 		String::from("new_session")
 	}
 
@@ -110,23 +130,42 @@ impl Session {
 	// 	STATE.with (|s| { s.session_info.get(&session_id) } ); 
 	// } 
 
-	fn process_user_input(&mut self, user_input : String) -> String {
+	fn get_last_visited_block(&self) -> Box<dyn Block> {
 		assert!(self.visited_sequence.len() > 0); 
-		let last_block = match self.visited_sequence.last().unwrap() {
+		let last_visited_block = match self.visited_sequence.last().unwrap() {
 			SequenceElement::VisitedBlock(block) => block,
 			SequenceElement::TriggeredIntent(_) => panic!("Last visited element is an intent"), 
 			SequenceElement::UserInput(_) => panic!("Last visited element is a user input")
 		};
+		last_visited_block.clone()
+	}
 
-		let (IntentName, BlockName) = last_block.perform_action(&user_input, &STATE.with(|s| s.intents.clone())); 
+	fn process_user_input(&mut self, user_input : String) -> String {
+		let mut last_block = self.get_last_visited_block();
+		let mut result_path = json::JsonValue::new_array();
+		self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) );
+			
+		loop {
+			let (link, intent, nodename) = last_block.perform_action(&user_input, &STATE.with(|s| s.intents.clone()));
+			if (link == LinkType::intent) {
+				self.visited_sequence.push( SequenceElement::TriggeredIntent(STATE.with(|s| s.intents.borrow().get(&intent).unwrap().clone())) );
+			}
+			last_block = STATE.with(|s| s.blocks.borrow().get(&nodename).unwrap().clone());
+			self.visited_sequence.push( SequenceElement::VisitedBlock(last_block.clone()) );
+			result_path.push(last_block.convert_to_json()); 
 
-		//possibilities could be either 
-		// let possibilities = last_block.next_possibilities();
-		
+			if !last_block.can_perform_action_on_empty_input() {
+				break;
+			}
+		}
+
+		// while last_block.can_perform_action_on_empty_input() {
+			
+		// 	let (IntentName, BlockName) = last_block.perform_action(&user_input, &STATE.with(|s| s.intents.clone())); 
+
+		// }
 
 		// assert!(last_block == SequenceElement::VisitedBlock(_)); 	
-		self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) ); 
-		// self.
 
 		String::new()
 	}

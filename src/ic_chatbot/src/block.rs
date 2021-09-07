@@ -13,7 +13,9 @@ pub trait Block : BlockClone {
 
 	fn convert_to_json(&self) -> json::JsonValue;
 	
-	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName);
+	fn can_perform_action_on_empty_input(&self) -> bool;
+
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName);
 
 	//Getter Methods 
 	fn get_id(&self) -> &str; 
@@ -121,7 +123,11 @@ impl Block for TextBlock {
 		data
 	}
 	
-	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+	fn can_perform_action_on_empty_input(&self) -> bool {	
+		self.next_block_info.can_perform_action_on_empty_input()
+	}
+
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
 		self.next_block_info.get_next_block(user_input, intents)
 	}
 
@@ -185,8 +191,12 @@ impl Block for StartBlock {
 		// data.dump()
 		data
 	}
+	
+	fn can_perform_action_on_empty_input (&self) -> bool {
+		self.next_block_info.can_perform_action_on_empty_input()
+	}
 
-	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
 		self.next_block_info.get_next_block(user_input, intents)
 	}
 
@@ -287,7 +297,11 @@ impl Block for QuickRepliesBlock {
 		data
 	}
 	
-	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+	fn can_perform_action_on_empty_input (&self) -> bool {
+		false
+	}
+
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
 		self.next_block_info.get_next_block(user_input, intents)
 	}
 
@@ -395,7 +409,11 @@ impl Block for ButtonBlock {
 		data
 	}
 	
-	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+	fn can_perform_action_on_empty_input(&self) -> bool {	
+		self.next_block_info.can_perform_action_on_empty_input()
+	}
+
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
 		self.next_block_info.get_next_block(user_input, intents)
 	}
 
@@ -495,8 +513,12 @@ impl Block for JumpBlock {
 		data
 	}
 	
-	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
-		(String::new(), String::new())
+	fn can_perform_action_on_empty_input (&self) -> bool {
+		true
+	}
+
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
+		(LinkType::jump, String::new(), self.jump_to_nodename.clone())
 	}
 
 	//Getter methods
