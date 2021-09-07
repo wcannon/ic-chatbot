@@ -88,7 +88,7 @@
             "reprompt": [],
             "metadata": [
               {
-                "item_key": "Reponse-Yes",
+                "item_key": "Response-Yes",
                 "item_value": "Grant_Yes Answer"
               },
               {
@@ -108,7 +108,7 @@
         "blocks": [
           {
             "component_type": "text",
-            "nodeName": "Grant_yes Response",
+            "nodeName": "Grant_Yes Answer",
             "context": [],
             "text": "Oh, boy! We have a lot of info you need. ",
             "audio_file": "",
@@ -130,7 +130,7 @@
         "blocks": [
           {
             "component_type": "text",
-            "nodeName": "Grant_no Says",
+            "nodeName": "Grant_No Answer",
             "context": [
               {
                 "id": "9e75b110-01c7-11ec-9825-31b611849613",
@@ -189,11 +189,11 @@
             "reprompt": [],
             "metadata": [
               {
-                "item_key": "YES",
+                "item_key": "Response-YES",
                 "item_value": "Develop_Yes_Response"
               },
               {
-                "item_key": "NO",
+                "item_key": "Response-NO",
                 "item_value": "Develop_No_Response"
               }
             ],

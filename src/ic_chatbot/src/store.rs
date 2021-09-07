@@ -225,7 +225,7 @@ pub fn initialize_state() {
 	// use std::env;
  //    let path = env::current_dir();
  //    println!("The current directory is {}", path.unwrap().display());
-        
+    // panic!("The code panics");
 	let (blocks, intents) = FactoryImpl::load_json_files(INTENT_DIR, BLOCK_FILE);
 	
 	STATE.with(|s| {

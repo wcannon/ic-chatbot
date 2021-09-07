@@ -59,19 +59,26 @@ impl MetaData for NextBlockInfo {
 			}
 			else if key.starts_with("Response-") {
 				let response = key.trim_start_matches("Response-");
-				if (user_input == response) {
-					return (LinkType::response, String::new(), self.next_block.get(response).unwrap().clone()); 
+				if (user_input.to_lowercase() == response.to_lowercase()) {
+					return (LinkType::response, String::new(), val.clone()); 
 				}
 			}
 			else {
 				panic!("Metadata should start with Intent or Response");
 			}
 		}
-		let min_score = *intent_scores.values().cloned().collect::<Vec<usize>>().iter().min().unwrap();
-		let intent = intent_scores.iter().find_map(|(key, &val)| if val == min_score { Some(key) } else { None }).unwrap();
-		let mut prefixedIntent = "Intent-".to_string();
-		prefixedIntent.push_str(&intent.clone()); 
-		(LinkType::intent, intent.to_string(), self.next_block.get(&prefixedIntent).unwrap().clone())
+
+		//If at least a few links with intents exist, choose the best intent 
+		if (intent_scores.len() > 0) {
+			let min_score = *intent_scores.values().cloned().collect::<Vec<usize>>().iter().min().unwrap();
+			let intent = intent_scores.iter().find_map(|(key, &val)| if val == min_score { Some(key) } else { None }).unwrap();
+			let mut prefixedIntent = "Intent-".to_string();
+			prefixedIntent.push_str(&intent.clone()); 
+			(LinkType::intent, intent.to_string(), self.next_block.get(&prefixedIntent).unwrap().clone())
+		} 
+		else {	//If there is no link with an intent, and if the user input doesn't match with any response, send nolink. 
+			return (LinkType::nolink, String::new(), String::new()); 
+		}
 	}
 
 	//If there is an outlink from the block with "Default" tag, then no user input is required to proceed. 

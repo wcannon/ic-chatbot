@@ -67,7 +67,9 @@ impl Intent for IntentImpl {
 	}
 
 	fn get_matching_score(&self, user_input : &str) -> usize {
-		*self.training_phrases.iter().map(|phrase| {phrase.get_matching_score(user_input)}).collect::<Vec<usize>>().iter().min().unwrap()
+		let score = *self.training_phrases.iter().map(|phrase| {phrase.get_matching_score(user_input)}).collect::<Vec<usize>>().iter().min().unwrap();
+		println!("Intent matching score: {}, {}: {}", self.get_intent_name(), user_input, score);
+		score
 	}
 
 	fn get_intent_name(&self) -> &str {
