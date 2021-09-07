@@ -219,7 +219,6 @@ pub struct QuickRepliesBlock {
 	node_name : String,
 	next_block_info : NextBlockInfo,
 	delay : u16,
-	end_conversation : bool,
 
 	text : String,
 	quick_replies : Vec<QuickReplyImpl>
@@ -232,7 +231,6 @@ impl QuickRepliesBlock {
 			component_type : String::new(),
 			node_name : String::new(),
 			next_block_info : NextBlockInfo::new(),
-			end_conversation : false,
 			delay : 0,
 			
 			text : String::new(),
@@ -246,7 +244,6 @@ impl QuickRepliesBlock {
 		data["component_type"] = "quick_replies".into();
 		data["text"] = "Does this answer your question?".into();
 		data["delay"] = 500.into();
-		data["end_conversation"] = false.into();
 		let mut replies = json::JsonValue::new_array();
 		replies.push(QuickReplyImpl::static_block("yes".to_string()));
 		replies.push(QuickReplyImpl::static_block("no".to_string()));
@@ -267,7 +264,6 @@ impl Block for QuickRepliesBlock {
 		self.next_block_info.from_json(&parsed["metadata"].to_string());
 		self.text 			= parsed["text"].to_string();
 		self.delay 			= parsed["delay"].as_u16().unwrap();
-		self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
 		
 		for member in parsed["quick_replies"].members() {
 			let mut quick_reply = QuickReplyImpl::new();
@@ -287,7 +283,6 @@ impl Block for QuickRepliesBlock {
 		data["component_type"] = self.component_type.clone().into();
 		data["text"] = self.text.clone().into();
 		data["delay"] = self.delay.into();
-		data["end_conversation"] = self.end_conversation.into();
 		data["quick_replies"] = replies.into();
 		data
 	}
@@ -334,8 +329,7 @@ pub struct ButtonBlock {
 	node_name : String,
 	next_block_info : NextBlockInfo,
 	delay : u16,
-	end_conversation : bool,
-
+	
 	text : String,
 	buttons : Vec<ButtonImpl>
 }
@@ -348,7 +342,6 @@ impl ButtonBlock {
 			node_name : String::new(),
 			next_block_info : NextBlockInfo::new(),
 			delay : 0, 
-			end_conversation : false, 
 			text : String::new(),
 			buttons : Vec::<ButtonImpl>::new()
 		}
@@ -360,7 +353,6 @@ impl ButtonBlock {
 		data["component_type"] = "buttons".into();
 		data["text"] = "Here are some articles that you requested.".into();
 		data["delay"] = 500.into();
-		data["end_conversation"] = false.into();
 		let mut buttons = json::JsonValue::new_array();
 		buttons.push(ButtonImpl::static_block());
 		data["buttons"] = buttons.into(); 
@@ -380,8 +372,7 @@ impl Block for ButtonBlock {
 		self.next_block_info.from_json(&parsed["metadata"].to_string());
 		self.text 			= parsed["text"].to_string();
 		self.delay 			= parsed["delay"].as_u16().unwrap();
-		self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
-	
+		
 		for member in parsed["buttons"].members() {
 			let mut button = ButtonImpl::new();
 			button.from_json(&member.to_string()); 
@@ -400,7 +391,6 @@ impl Block for ButtonBlock {
 		data["component_type"] = self.component_type.clone().into();
 		data["text"] = self.text.clone().into();
 		data["delay"] = self.delay.into();
-		data["end_conversation"] = self.end_conversation.into();
 		data["buttons"] = buttons.into();
 		data
 	}

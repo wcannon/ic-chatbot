@@ -30,6 +30,106 @@ mod tests {
     }
 
     #[test]
+    fn test_button_block() {
+        pub use crate::block::Block;
+
+        let mut blk = crate::block::ButtonBlock::new(); 
+        blk.from_json(r#"{
+            "component_type": "button",
+            "nodeName": "Button",
+            "text": "Your text goes here",
+            "buttons": [
+              {
+                "type": "postback",
+                "title": "Hello",
+                "payload": ""
+              },
+              {
+                "type": "postback",
+                "title": "How",
+                "payload": ""
+              },
+              {
+                "type": "postback",
+                "title": "Bye",
+                "payload": ""
+              }
+            ],
+            "audio_file": "",
+            "ssml": "",
+            "delay": 500,
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Response-Hello",
+                "item_value": "Child 1"
+              },
+              {
+                "item_key": "Response-How",
+                "item_value": "Child 2"
+              },
+              {
+                "item_key": "Response-Bye",
+                "item_value": "Child 3"
+              }
+            ],
+            "nextMessagesIds": [],
+            "id": "953bfe6b-6bdd-4bf0-95e7-8b9631229d11"
+        }"#);
+        println!("Button block : {:#?}", blk);
+        let json_response = blk.convert_to_json();
+        println!("Converted to the following json: "); 
+        println!("{:#?}", json_response.to_string()); 
+    }
+
+    #[test]
+    fn test_quick_replies_block() {
+        pub use crate::block::Block;
+
+        let mut blk = crate::block::QuickRepliesBlock::new(); 
+        blk.from_json(r#"{
+            "component_type": "quick_replies",
+            "nodeName": "Grant Question",
+            "context": [],
+            "text": "Are you interested in our grant programs? ",
+            "quick_replies": [
+              {
+                "content_type": "text",
+                "title": "Yes",
+                "image_url": "",
+                "payload": "Some"
+              },
+              {
+                "content_type": "text",
+                "title": "No",
+                "image_url": "",
+                "payload": "Thing"
+              }
+            ],
+            "audio_file": "",
+            "ssml": "",
+            "delay": 500,
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Reponse-Yes",
+                "item_value": "Grant_Yes Answer"
+              },
+              {
+                "item_key": "Response-No",
+                "item_value": "Grant_No Answer"
+              }
+            ],
+            "id": "49ec5fee-89a0-4420-b92a-173a3c8a3552"
+         }"#);
+        println!("QuickReplies block : {:#?}", blk);
+        let json_response = blk.convert_to_json();
+        println!("Converted to the following json: "); 
+        println!("{:#?}", json_response.to_string()); 
+    }
+
+
+    #[test]
     fn test_load_from_json() {
         pub use crate::block::Block;
 

@@ -52,7 +52,6 @@ Returns a Json string corresponding to a vector of blocks.
 		"component_type" : "buttons",
 		"text"			 : "These articles might be of help",
 		"delay"			 : "500"
-		"end_conversation" : false,
 		"buttons"		 : [ { 
 								"type" : "postback",
 								"title" : "What is DFINITY?",
@@ -69,7 +68,6 @@ Returns a Json string corresponding to a vector of blocks.
 		"component_type" : "quick_replies",
 		"text"			 : "Does this answer your question?",
 		"delay"			 : "500"
-		"end_conversation" : false,
 		"quick_replies"	 : [
 								{
 					                "content_type": "text",
