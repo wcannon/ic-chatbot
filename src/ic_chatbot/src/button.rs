@@ -38,6 +38,8 @@ impl Button for ButtonImpl {
 		self.button_type 	= parsed["type"].to_string();
 		self.title 			= parsed["title"].to_string();
 		self.payload 		= parsed["payload"].to_string();
+		
+		
 	}
 
 	fn convert_to_json(&self) -> json::JsonValue {

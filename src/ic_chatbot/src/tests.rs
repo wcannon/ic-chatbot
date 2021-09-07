@@ -5,6 +5,29 @@ mod tests {
     use natural::distance::jaro_winkler_distance;
     use natural::distance::levenshtein_distance;
 
+    #[test]
+    fn test_jump_block() {
+        pub use crate::block::Block;
+
+        let mut blk = crate::block::JumpBlock::new(); 
+        blk.from_json(r#"{
+            "component_type": "jump",
+            "nodeName": "Jump Block 1",
+            "selectedResult": {
+              "value": "254c74b0-006d-11ec-b5a7-737ac2dca7c8",
+              "label": "Help Question",
+              "jumpType": "node"
+            },
+            "reprompt": [],
+            "metadata": [],
+            "selectedProject": "",
+            "id": "a99404a2-70ac-48c4-beba-339cc702ae0d"
+        }"#);
+
+        let json_response = blk.convert_to_json();
+        println!("Converted to the following json: "); 
+        println!("{:#?}", json_response.to_string()); 
+    }
 
     #[test]
     fn test_load_from_json() {

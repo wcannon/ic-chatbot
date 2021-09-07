@@ -315,6 +315,18 @@ impl Block for QuickRepliesBlock {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 #[derive(PartialEq, Eq, Debug, Clone, Default)]
 pub struct ButtonBlock {
 	id : String,
@@ -360,7 +372,7 @@ impl Block for ButtonBlock {
 	
 	fn from_json(&mut self, json_text : &str) {
 		let parsed = json::parse(json_text).unwrap();		
-		assert_eq!(parsed["component_type"], "quick_replies"); 
+		assert_eq!(parsed["component_type"], "button"); 
 		
 		self.id 			= parsed["id"].to_string();
 		self.component_type = parsed["component_type"].to_string();
@@ -411,4 +423,103 @@ impl Block for ButtonBlock {
 	}
 }
 
+
+
+
+
+
+
+
+
+
+
+// "component_type": "jump",
+//             "nodeName": "Jump Block 1",
+//             "selectedResult": {
+//               "value": "254c74b0-006d-11ec-b5a7-737ac2dca7c8",
+//               "label": "Help Question",
+//               "jumpType": "node"
+//             },
+//             "reprompt": [],
+//             "metadata": [],
+//             "selectedProject": "",
+//             "id": "a99404a2-70ac-48c4-beba-339cc702ae0d"
+ 
+//   "component_type": "jump",
+//             "nodeName": "Jump to project..",
+//             "selectedResult": {
+//               "value": "49ec5fee-89a0-4420-b92a-173a3c8a3552",
+//               "label": "Grant Question",
+//               "jumpType": "node"
+//             },
+//             "reprompt": [],
+//             "metadata": [],
+//             "selectedProject": "",
+//             "id": "a82db8de-1361-41df-985c-ed852e9de778"
+
+#[derive(PartialEq, Eq, Debug, Clone, Default)]
+pub struct JumpBlock {
+	id : String,
+	component_type : String,
+	node_name : String,
+	jump_to_nodename : String,
+	jump_to_id	  : String
+}
+
+impl JumpBlock {
+	pub fn new() -> Self {
+		JumpBlock { 
+			id : String::new(), 
+			component_type : String::new(),
+			node_name : String::new(),
+			jump_to_nodename : String::new(),
+			jump_to_id	  : String::new()
+		}
+	}
+}
+
+impl Block for JumpBlock {
+	
+	fn from_json(&mut self, json_text : &str) {
+		let parsed = json::parse(json_text).unwrap();		
+		assert_eq!(parsed["component_type"], "jump"); 
+		
+		// println!("Jump block: {:#?}", parsed["selectedResult"]);
+
+		self.id 			= parsed["id"].to_string();
+		self.component_type = parsed["component_type"].to_string();
+		self.node_name 		= parsed["nodeName"].to_string();
+		
+		let mut iter = parsed["selectedResult"].entries(); 
+		let jump_to_id = iter.next().unwrap().1.to_string(); 
+		let jump_to_nodename = iter.next().unwrap().1.to_string(); 
+		// println!("{}", jump_to_id);
+		// println!("{}", jump_to_nodename);
+		// println!("Jump block: {:#?}", self);
+	}
+
+	fn convert_to_json(&self) -> json::JsonValue {
+		let mut data = json::JsonValue::new_object();
+
+		data["component_type"] = self.component_type.clone().into();
+		data
+	}
+	
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+		(String::new(), String::new())
+	}
+
+	//Getter methods
+	fn get_id(&self) -> &str {
+		&self.id
+	}
+
+	fn get_component_type(&self) -> &str {
+		&self.component_type
+	}
+
+	fn get_node_name(&self) -> &str {
+		&self.node_name
+	}
+}
 
