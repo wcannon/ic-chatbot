@@ -6,11 +6,12 @@ use crate::types::{*};
 pub trait MetaData {
 	fn from_json(&mut self, json_text : &str);
 	fn get_next_block(&self, user_input : &String, intents : &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName); 
+	// fn convert_to_json(&self) -> json::JsonValue; 
 }
 
 #[derive(PartialEq, Eq, Clone, Debug, Default)]
 pub struct NextBlockInfo {
-	next_block : HashMap<String, String>
+	next_block : HashMap<IntentName, BlockName>
 }
 
 impl NextBlockInfo {
@@ -52,4 +53,14 @@ impl MetaData for NextBlockInfo {
 		let intent = intent_scores.iter().find_map(|(key, &val)| if val == min_score { Some(key) } else { None }).unwrap();
 		(intent.to_string(), self.next_block.get(intent).unwrap().clone())
 	}
+
+	// fn convert_to_json(&self) -> json::JsonValue {
+	// 	json::JsonValue::new_object()
+	// }
 }
+
+
+
+
+
+

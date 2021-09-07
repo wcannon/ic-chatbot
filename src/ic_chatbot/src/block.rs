@@ -110,27 +110,6 @@ impl Block for TextBlock {
 		self.alternate_replies = alternate_replies;
 	}
 
-	// fn from_json(json_text : &str) -> Self {
-	// 	let parsed = json::parse(json_text).unwrap();		
-	// 	assert_eq!(parsed["component_type"], "text"); 
-
-	// 	let mut alternate_replies : Vec<String> = Vec::<String>::new();
-	// 	for alternate_reply in parsed["alternate_replies"].members() {
-	// 		alternate_replies.push(alternate_reply.to_string());
-	// 	}
-
-	// 	TextBlock {
-	// 		id : parsed["id"].to_string(),
-	// 		component_type : parsed["component_type"].to_string(),
-	// 		node_name : parsed["nodeName"].to_string(),
-	// 		next_block_info : crate::metadata::NextBlockInfo::from_json(&parsed["metadata"].to_string()),
-	// 		text : parsed["text"].to_string(),
-	// 		delay : parsed["delay"].as_u16().unwrap(),
-	// 		end_conversation : parsed["end_conversation"].as_bool().unwrap(),
-	// 		alternate_replies : alternate_replies
-	// 	}
-	// }
-
 	fn convert_to_json(&self) -> json::JsonValue {
 		let mut data = json::JsonValue::new_object();
 
@@ -274,8 +253,67 @@ impl QuickRepliesBlock {
 		data["quick_replies"] = replies.into(); 
 		data
 	}
+}
+
+impl Block for QuickRepliesBlock {
+	
+	fn from_json(&mut self, json_text : &str) {
+		let parsed = json::parse(json_text).unwrap();		
+		assert_eq!(parsed["component_type"], "quick_replies"); 
+		
+		self.id 			= parsed["id"].to_string();
+		self.component_type = parsed["component_type"].to_string();
+		self.node_name 		= parsed["nodeName"].to_string();
+		self.next_block_info.from_json(&parsed["metadata"].to_string());
+		self.text 			= parsed["text"].to_string();
+		self.delay 			= parsed["delay"].as_u16().unwrap();
+		self.end_conversation = parsed["end_conversation"].as_bool().unwrap();
+	}
+
+	fn convert_to_json(&self) -> json::JsonValue {
+		let mut data = json::JsonValue::new_object();
+
+		let mut replies = json::JsonValue::new_array();
+		for quick_reply in self.quick_replies.iter() {
+			replies.push(quick_reply.convert_to_json());
+		}
+
+		data["component_type"] = self.component_type.clone().into();
+		data["text"] = self.text.clone().into();
+		data["delay"] = self.delay.into();
+		data["end_conversation"] = self.end_conversation.into();
+		data["quick_replies"] = replies.into();
+		data
+	}
+	
+	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (IntentName, BlockName) {
+		self.next_block_info.get_next_block(user_input, intents)
+	}
+
+	//Getter methods
+	fn get_id(&self) -> &str {
+		&self.id
+	}
+
+	fn get_component_type(&self) -> &str {
+		&self.component_type
+	}
+
+	fn get_node_name(&self) -> &str {
+		&self.node_name
+	}
+
+	// fn get_delay(&self) -> &u16 {
+	// 	&self.delay
+	// }
+
+	// fn get_end_conversation(&self) ->  &bool {
+	// 	&self.end_conversation
+	// }
 
 }
+
+
 
 
 
