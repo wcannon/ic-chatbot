@@ -23,16 +23,30 @@ use crate::block::{*};
 use crate::store::{*}; 
 use crate::factory::{*}; 
 
-/*Returns a Json string of the form 
+/*Returns a Json string corresponding to session id along with intial set of blocks.   
 	{
 		"component_type" : "session_id"
 		"session_id" : "32134287198341"
+	},
+	{
+		"component_type" : "text",
+		"text"			 : "Welcome to Dfinity.",
+		"delay"			 : "500"
+		"end_conversation" : false,
+		"alternate_replies" : ["Hello, there!", 
+								"How can we help you?"]
 	}
 */
 #[update]
 fn init_session () -> JsonText {
-	let session = Session::new(); 
-	session.convert_to_json()
+	let mut session = Session::new();
+	let mut result = json::JsonValue::new_array();
+	result.push(session.convert_to_json());
+	// for block in session.process_user_input(String::new()).members() {
+	// 	result.push(block);
+	// }
+	result.push(session.process_user_input(String::new()));
+	result.dump()
 }
 
 

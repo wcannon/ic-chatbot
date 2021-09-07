@@ -11,5 +11,6 @@ pub enum LinkType {
 	default,
 	intent,
 	response,
-	jump
+	jump,
+	nolink
 }

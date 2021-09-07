@@ -43,8 +43,11 @@ impl MetaData for NextBlockInfo {
 	}
 
 	fn get_next_block(&self, user_input : &String, intents : &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) { 
-		if (self.next_block.contains_key("Default")) {
-			return (LinkType::default, "Default".to_string(), self.next_block.get("Default").unwrap().clone()); 
+		if self.next_block.len() == 0 {
+			return (LinkType::nolink, String::new(), String::new()); 
+		}
+		if self.next_block.contains_key("Default") {
+			return (LinkType::default, String::new(), self.next_block.get("Default").unwrap().clone()); 
 		}
 		let mut intent_scores = HashMap::<String, usize>::new();
 		for (key, val) in self.next_block.iter() {
@@ -57,7 +60,7 @@ impl MetaData for NextBlockInfo {
 			else if key.starts_with("Response-") {
 				let response = key.trim_start_matches("Response-");
 				if (user_input == response) {
-					return (LinkType::response, user_input.to_string(), self.next_block.get(response).unwrap().clone()); 
+					return (LinkType::response, String::new(), self.next_block.get(response).unwrap().clone()); 
 				}
 			}
 			else {
