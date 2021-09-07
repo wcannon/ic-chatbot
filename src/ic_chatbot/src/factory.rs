@@ -6,6 +6,7 @@ use crate::block::{*};
 pub trait Factory {
 	fn load_json_files(intent_directory : &str, blocks_file : &str) -> (Vec::<Box<dyn Block>>, Vec::<Box<dyn Intent>>); 
 	fn load_blocks_json (blocks_json_text : String) -> Vec::<Box<dyn Block>>; 
+	fn load_intents_json (intents_json_text : String) -> Vec::<Box<dyn Intent>>; 
 }
 
 pub struct FactoryImpl {
@@ -84,5 +85,44 @@ impl Factory for FactoryImpl {
 			}
 		}
 		blocks
+	}
+
+ 	fn load_intents_json (intents_json_text : String) -> Vec::<Box<dyn Intent>> {
+		let mut intents = Vec::<Box<dyn Intent>>::new();
+		let parsed = json::parse(intents_json_text.as_str()).unwrap();
+		// println!("Parsed: {:#?}", parsed);
+		// println!("Query: {:#?}", parsed["../../flow_chart/intents/38148838-f2c2-44a1-a0ce-d6f65932ba50.json"].to_string());
+		for (path, intent_json) in parsed.entries() {
+			if !path.contains("usersays_en.json") && !path.contains("Default_Fallback_Intent") {
+				let mut training_phrase_path = path.trim_end_matches(".json").to_string();
+				training_phrase_path.push_str("_usersays_en.json");
+
+				let training_phrase_json = &parsed[training_phrase_path];
+				let mut current_intent : IntentImpl = IntentImpl::new();
+				current_intent.from_json(&intent_json.to_string(), &training_phrase_json.to_string());
+				intents.push( Box::new(current_intent) );
+			}
+		}
+		intents
+		// let paths = fs::read_dir(intent_directory).unwrap();
+		// for path in paths {
+		// 	let path = path.unwrap().path(); 
+		// 	let path = path.to_str().unwrap();
+
+		// 	if !path.contains("usersays_en.json") && !path.contains("Default_Fallback_Intent") {
+		// 		let intent_path = path.clone();
+		// 		let mut training_phrase_path = path.trim_end_matches(".json").to_string(); 
+		// 		training_phrase_path.push_str("_usersays_en.json");
+				
+		// 		let intent_json_text = fs::read_to_string(intent_path).expect("Something went wrong reading the intent file");
+		// 		let training_phrase_json_text = fs::read_to_string(training_phrase_path).expect("Something went wrong reading the training phrase file");
+
+		// 		
+		// 		current_intent.from_json(intent_json_text.as_str(), training_phrase_json_text.as_str());  
+		// 		intents.push( Box::new(current_intent) ); 
+			
+		// 	}
+		// }
+
 	}
 }

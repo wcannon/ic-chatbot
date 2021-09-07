@@ -22,8 +22,8 @@ use ic_cdk::api::call::call;
 use ic_cdk::export::candid::{CandidType, Deserialize, Func, Principal};
 use ic_cdk::api::{caller, data_certificate, id, set_certified_data, time, trap};
 
-const INTENT_DIR: &str = "../../flow_chart/intents";
-const BLOCK_FILE: &str = "../../flow_chart/blocks.json"; 
+const INTENT_DIR: &str = "../flow_chart/intents";
+const BLOCK_FILE: &str = "../flow_chart/blocks.json"; 
 
 // trait Btemp : (Block + Clone);
 thread_local! {
@@ -95,7 +95,7 @@ impl Session {
 	// ctr : static i32 = 0;
 	pub fn new() -> Self {	//Initializes latest_block with StartBlock
 		let mut visited_sequence : Vec<SequenceElement> = Vec::new();
-		let start_block = STATE.with (|s| (s.blocks.borrow().get(&"StartBlock".to_string()).unwrap().clone()) );
+		let start_block = STATE.with (|s| (s.blocks.borrow().get(&"Help Question".to_string()).expect("Unable to find start block in the state").clone()) );
 		visited_sequence.push( SequenceElement::VisitedBlock(start_block) );
 
 		let session = Session {

@@ -208,7 +208,26 @@ mod tests {
         println!("InitSession response: {:#?}", init_session());
         println!("Processing input: {:#?}", get_next_block ("new_session".to_string(), "username".to_string()));
         println!("Processing input2: {:#?}", get_next_block ("new_session".to_string(), "fellowships".to_string()));      
-        println!("Processing input3: {:#?}", get_next_block ("new_session".to_string(), "Maybe".to_string()));      
+        println!("Processing input3: {:#?}", get_next_block ("new_session".to_string(), "Yes".to_string()));      
+    }
+
+    #[test]
+    fn test_load_intent_json() {
+        use std::fs;
+        use crate::factory::{*};
+
+        let paths = fs::read_dir("../../flow_chart/intents").unwrap();
+        let mut result = json::JsonValue::new_object();
+        for path in paths {
+            let path = path.unwrap().path();
+            let path = path.to_str().unwrap();
+
+            let json_text = fs::read_to_string(path.clone()).expect("Something went wrong reading the intent file");
+            let parsed = json::parse(&json_text).unwrap();
+            result.insert(path, parsed);
+        }
+        let json_text = result.dump();
+        FactoryImpl::load_intents_json(json_text);
     }
 
     #[test]
