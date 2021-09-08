@@ -224,6 +224,8 @@ impl Session {
 			}
 			else if (link == LinkType::wronginput) {
 				self.visited_sequence.push( SequenceElement::TriggeredWrongInput );
+				let wrong_input_block = STATE.with (|s| s.blocks.borrow().get(&"WrongInputBlock".to_string()).expect("Unable to find wrong input block in the state").clone());
+				result_path.push(wrong_input_block.convert_to_json());
 				break;
 			}
 			else {
