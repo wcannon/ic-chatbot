@@ -1,0 +1,28 @@
+[
+  {
+    "id": "08c39c7c-f954-4623-8f47-e99378a92303",
+    "data": [
+      {
+        "text": "What is an ICP utility token? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "9e48756d-5f1a-47a6-b7cb-06e39bdae587",
+    "data": [
+      {
+        "text": "What does token custody mean? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "id": "7e6c0d7e-fd83-4706-ac7e-2c111744b8a7",
+    "data": [
+      {
+        "text": "node ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "c44d478f-19cb-4873-b286-81e9149ae05b",
+    "data": [
+      {
+        "text": "what is a node? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "915c5c13-42a2-49ad-8aa5-874f6e7b4dec",
+    "data": [
+      {
+        "text": "How do I host nodes for the internet computer? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "4fbfd2af-e187-4219-b4e3-92b99a0eb20e",
+    "data": [
+      {
+        "text": "How is a node deployed to the internet computer? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "1d2e073c-4164-4217-a8a9-d3b32a700e61",
+    "data": [
+      {
+        "text": "What kind of proposals can I vote on? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

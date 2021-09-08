@@ -255,7 +255,7 @@
         "blocks": [
           {
             "component_type": "button",
-            "nodeName": "nodes",
+            "nodeName": "node",
             "context": [],
             "text": "Here are some articles that may help:",
             "buttons": [
@@ -342,7 +342,7 @@
         "blocks": [
           {
             "component_type": "button",
-            "nodeName": "software",
+            "nodeName": "softwaredevelopmentkit",
             "context": [],
             "text": "Here are some articles that may help:",
             "buttons": [
