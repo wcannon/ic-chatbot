@@ -11,7 +11,6 @@ import { ic_chatbot } from '../../../../declarations/ic_chatbot';
 import FaqCard from '../FaqCard/FaqCard';
 
 // TODO: Add favicon!!!
-// TODO: Clean up unused files from default project!!!
 
 // The User instance of the bot.
 const bot = {
