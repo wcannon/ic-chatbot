@@ -1,0 +1,132 @@
+[
+  {
+    "id": "a2cae843-9635-44c3-a8e1-88384460cb2d",
+    "data": [
+      {
+        "text": "What is a physical security key? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "ccbdb323-1ce8-4d76-b609-706b65066c4f",
+    "data": [
+      {
+        "text": "How does a physical security key work? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "8432ec2a-dfed-4c7e-8a37-7ddb276da4c5",
+    "data": [
+      {
+        "text": "I’ve lost my security key and did not add additional devices to my Internet Identity, what can I do? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "5d596270-d43a-48c7-88c9-6cd4dd660d03",
+    "data": [
+      {
+        "text": "I’ve lost my security key but added an additional security key to my Internet Identity, how can I log in? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "99dba371-dc85-4bbe-bd6b-077520cd4728",
+    "data": [
+      {
+        "text": "Security key for internet computer ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "a3b31a1f-d631-4d7f-bc2b-e0fa2df8530e",
+    "data": [
+      {
+        "text": "I've lost my security key. What can I do? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "8710eada-38c3-48d2-af0c-8b7405a330dd",
+    "data": [
+      {
+        "text": "I've lost my security key. What should I do? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "dc29660c-fd99-444b-9350-85e881898242",
+    "data": [
+      {
+        "text": "How does a physical security key work? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "ff6c7d40-112d-49d7-8bdf-795165039084",
+    "data": [
+      {
+        "text": "I've lost my security key for internet identity. How can I log in?  ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "16f5138d-7f55-48a9-992b-0b3d79fb13da",
+    "data": [
+      {
+        "text": "Where can I store internet identity ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

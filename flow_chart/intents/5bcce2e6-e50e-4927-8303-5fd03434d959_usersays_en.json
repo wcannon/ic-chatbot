@@ -1,0 +1,106 @@
+[
+  {
+    "id": "c065337e-eb30-405c-88ed-cfd37d911da1",
+    "data": [
+      {
+        "text": "What do I deploy software on IC? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "081eeaa4-33da-4757-b66f-50e978666bd1",
+    "data": [
+      {
+        "text": "Where can I find the software development kit? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "b6380389-b5a2-4ce0-bc99-4c2290fcc873",
+    "data": [
+      {
+        "text": "Can users deploy private software on the internet computer? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "7dd04ce2-0cf8-46b7-8db9-c005847dcbdf",
+    "data": [
+      {
+        "text": "Can users deploy private software on the IC? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "a6609311-4ce9-4012-8427-7ffd99836782",
+    "data": [
+      {
+        "text": "How do I use software development kit? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "22172ba7-7b1e-480e-92f4-8e6c494efb6f",
+    "data": [
+      {
+        "text": "Where can I find SDK? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "859f89e4-bcad-4107-ac27-21814007317b",
+    "data": [
+      {
+        "text": "What's the link to SDK? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "47252853-a462-4dd7-9c87-fb2f04e17471",
+    "data": [
+      {
+        "text": "What is the link for canister development kit ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

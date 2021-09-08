@@ -1,0 +1,132 @@
+[
+  {
+    "id": "c15c2949-3319-4658-a2b1-1b10a7f8277b",
+    "data": [
+      {
+        "text": "What hardware is acceptable to use for users who opt for self-custody? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "b9d076df-f4f1-4563-9e39-26fcfb7ee633",
+    "data": [
+      {
+        "text": "What hardware is acceptable for self-custody ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "d1292830-694b-47c4-ba59-0d54e8ea5477",
+    "data": [
+      {
+        "text": "What is self-custody? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "9228fbd3-8fe4-4957-8861-42819c40cd2d",
+    "data": [
+      {
+        "text": "Should I do self-custody ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "7c3b8774-8422-408f-ab79-426ac5766282",
+    "data": [
+      {
+        "text": "Why should I self-custody ICP tokens? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "9046e9b9-9d99-428e-a78d-1206724b75ca",
+    "data": [
+      {
+        "text": "What are the pros and cons of self-custody ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "a503393b-a606-4fd1-8dc5-47552e534c56",
+    "data": [
+      {
+        "text": "How do I benefit from self-custody ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "4bf7062b-f706-4eb3-90c2-7911bc347db9",
+    "data": [
+      {
+        "text": "How do I benefit from self-custody of ICP tokens ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "416d8a48-37d5-4a2f-9043-b7c4b3cc88ca",
+    "data": [
+      {
+        "text": "What device should I use for self-custody ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "ef872e96-88eb-4e09-aeb8-c4a4066c4b7e",
+    "data": [
+      {
+        "text": "What are the acceptable devices for self-custody ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]
