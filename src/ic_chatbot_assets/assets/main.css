@@ -106,6 +106,10 @@
     white-space: pre-line;
 }
 
+.faq-card__body pre {
+    white-space: pre-wrap;
+}
+
 .chat-overlay {
     position: absolute;
     z-index: 1;
@@ -136,5 +140,6 @@
     background: #f8f9f9;
     border: 1px solid #e9ebed;
     border-radius: 4px;
-    padding: 12px 16px;    
+    padding: 12px 16px;
+    white-space: pre-wrap;
 }
