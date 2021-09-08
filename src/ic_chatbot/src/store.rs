@@ -34,7 +34,8 @@ thread_local! {
       // intents : RefCell::new(Vec::new()),
       intents : RefCell::new(HashMap::new()),
       // start_block : Box::new(StartBlock::new()),
-      session_info : RefCell::new(HashMap::new())
+      session_info : RefCell::new(HashMap::new()),
+      ctr : RefCell::new(1231234631)
   }
 }
 
@@ -45,7 +46,8 @@ struct State {
 	blocks : RefCell<HashMap<NodeName, Box<dyn Block>>>,
 	intents : RefCell<HashMap<NodeName, Box<dyn Intent>>>,
 	// start_block : Box<dyn Block>,
-	session_info : RefCell<HashMap<SessionId, RefCell<Session>>>
+	session_info : RefCell<HashMap<SessionId, RefCell<Session>>>,
+	ctr : RefCell<usize>
 }
 
 impl State {
@@ -120,7 +122,6 @@ impl Session {
 			result["text"] = "Invalid session id ".into();
 			result
 		}
-
 	}
 
 
@@ -154,7 +155,23 @@ impl Session {
  	fn gen_new_session_id () -> SessionId {
 		// let rand_vec : [u8;32] = Session::gen_rand_vector();
 		// std::str::from_utf8(&rand_vec).unwrap().to_string()
-		String::from("sample_session_id")
+		// if STATE.with(|s| s.session_info.borrow().len() > 0) {
+		// 	STATE.with(|s| s.session_info.borrow().last().)
+		// }
+		// STATE.with(|s| s.ctr.borrow_mut().set(s.ctr.borrow().clone()+1));
+		// STATE.with(|s| {
+		// 			let mut sha256 = Sha256::new();
+		// 			sha256.input_str(s.ctr.borrow().to_string());
+		// 			println!("")
+		// 		}
+		// 	);
+		STATE.with(|s| { 
+						let ctr = *s.ctr.borrow() + 1;
+						s.ctr.replace(ctr); 
+						}
+					);
+		String::from(STATE.with(|s| s.ctr.borrow().to_string()))
+		// String::from("sample_session_id")
 	}
 
 	pub fn convert_to_json (&self) -> json::JsonValue {

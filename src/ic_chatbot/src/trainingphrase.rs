@@ -54,7 +54,7 @@ impl TrainingPhrase for TrainingPhraseImpl {
 	}
 
 	fn get_matching_score (&self, user_input : &str) -> usize {
-		println!("Matching score: {}, {} : {}", self.text, user_input, levenshtein_distance(&self.text.to_lowercase(), &user_input.to_lowercase()));
+		println!("Matching score: {}, {} : {}", self.text, user_input, levenshtein_distance(&self.text.to_lowercase().trim(), &user_input.to_lowercase().trim()));
 		levenshtein_distance(&self.text.to_lowercase(), &user_input.to_lowercase())
 	}
 }
