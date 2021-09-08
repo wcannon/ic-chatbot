@@ -36,6 +36,10 @@ const ICChatBot = () => {
   // Initialize session.
   useEffect(async () => {
     try {
+      // Add a bot is typing message.
+      addBotIsTypingMessage();
+
+      // Initialize the session.
       const responseString = await ic_chatbot.init_session();
       const response = JSON.parse(responseString);
 
@@ -78,8 +82,10 @@ const ICChatBot = () => {
       setMessages(prevMessages => [...prevMessages, event.message]);
 
       // TODO: Wait for init_session to set sessionId before we allow a question!!!
-      // TODO: Add a typing animation for the bot message (use Message.typing)!!!
       try {
+        // Add a bot is typing message.
+        addBotIsTypingMessage();
+
         // Send the user message to the ic_chatbot canister and get the response.
         const responseString = await ic_chatbot.get_next_block(sessionId, event.message.text);
         const messageBlocks = JSON.parse(responseString);
@@ -101,6 +107,16 @@ const ICChatBot = () => {
         author: bot,
         text: text,
         timestamp: new Date()
+      };
+      setMessages(prevMessages => [...prevMessages, botMessage]);
+  };
+
+  // Add a typing animation message created by the bot.
+  const addBotIsTypingMessage = () => {
+    const botMessage = {
+        author: bot,
+        timestamp: new Date(),
+        typing: true
       };
       setMessages(prevMessages => [...prevMessages, botMessage]);
   };
