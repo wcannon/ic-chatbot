@@ -8,6 +8,7 @@ use ic_cdk_macros::init;
 pub use crate::types::{*};
 // use std::convert::TryInto;
 use ic_cdk_macros::post_upgrade;
+use futures::executor::block_on;
 // use ic_test_utilities::universal_canister::{call_args, wasm};
 // use ic_types::{
 //     ic00,
@@ -19,8 +20,8 @@ use ic_cdk_macros::post_upgrade;
 //     CanisterId, NumBytes, RegistryVersion,
 // };
 
-// use ic_cdk::api::call::call;
-// use ic_cdk::export::candid::{CandidType, Deserialize, Func, Principal};
+use ic_cdk::api::call::call;
+use ic_cdk::export::candid::{CandidType, Deserialize, Func, Principal};
 // use ic_cdk::api::{caller, data_certificate, id, set_certified_data, time, trap};
 
 const INTENT_DIR: &str = "../../flow_chart/intents";
@@ -139,22 +140,24 @@ impl Session {
  //    	salt
 	// }
 
-	// async fn gen_rand_vector() -> [u8; 32] {
-	// 	let (res,) = call(Principal::management_canister(), "raw_rand", ()).await.unwrap();
- //    	res.into()
+	// async fn gen_rand_vector() -> String {
+	// 	let (res,) = call::<(),([u8; 32],)>(Principal::management_canister(), "raw_rand", ()).await.unwrap();
+ //    	let res = std::str::from_utf8(&res).unwrap().to_string();
+
+ //    	res
  //    	// let salt: [u8; 32] = res[..].try_into().unwrap_or_else(|_| {
  //     //    trap(&format!(
  //     //        "expected raw randomness to be of length 32, got {}",
  //     //        res.len()
  //     //    	));
 	//     // });
- //    	// salt
+ //    	// salt.to_string()
 	// }
 
 
  	fn gen_new_session_id () -> SessionId {
-		// let rand_vec : [u8;32] = Session::gen_rand_vector();
-		// std::str::from_utf8(&rand_vec).unwrap().to_string()
+		// let rand_vec  = block_on(Session::gen_rand_vector());
+		// std::str::from_utf8(&rand_vec).unwrap().to_string();
 		// if STATE.with(|s| s.session_info.borrow().len() > 0) {
 		// 	STATE.with(|s| s.session_info.borrow().last().)
 		// }
@@ -165,6 +168,7 @@ impl Session {
 		// 			println!("")
 		// 		}
 		// 	);
+		// rand_vec
 		STATE.with(|s| { 
 						let ctr = *s.ctr.borrow() + 1;
 						s.ctr.replace(ctr); 
@@ -191,14 +195,14 @@ impl Session {
 
 	fn get_last_visited_block(&self) -> Box<dyn Block> {
 		assert!(self.visited_sequence.len() > 0); 
-		let mut index = self.visited_sequence.len()-1; 
-		while index >= 0 {
-			match &self.visited_sequence[index] {
+		let mut ind = self.visited_sequence.len()-1; 
+		while ind >= 0 {
+			match &self.visited_sequence[ind] {
 				SequenceElement::VisitedBlock(block) => {return block.clone();},
 				SequenceElement::TriggeredIntent(_) => panic!("Last visited element is an intent"),
-				SequenceElement::TriggeredWrongInput => {index = index - 1;},
-				SequenceElement::TriggeredEndOfChart => {index = index - 1;}
-				SequenceElement::UserInput(_) => panic!("Last visited element is a user input")
+				SequenceElement::TriggeredWrongInput => {ind = ind - 1;},
+				SequenceElement::TriggeredEndOfChart => {ind = ind - 1;}
+				SequenceElement::UserInput(_) => {ind = ind-1;}//panic!("Last visited element is a user input")
 			};
 		};
 		panic!("No blocks left in visited sequence");

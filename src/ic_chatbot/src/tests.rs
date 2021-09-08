@@ -206,7 +206,8 @@ mod tests {
         pub use crate::{*};
         initialize_state();
         println!("InitSession response: {:#?}", init_session());
-        println!("Processing input: {:#?}", get_next_block ("sample_session_id".to_string(), "What is Dfinity?".to_string()));
+        // println!("Processing input: {:#?}", get_next_block ("1231234632".to_string(), "What is Dfinity?".to_string()));
+        println!("Processing input: {:#?}", get_next_block ("1231234632".to_string(), "What is Internet Computer?".to_string()));
         // println!("Processing input2: {:#?}", get_next_block ("new_session".to_string(), "fellowships".to_string()));      
         // println!("Processing input3: {:#?}", get_next_block ("new_session".to_string(), "Yes".to_string()));      
     }

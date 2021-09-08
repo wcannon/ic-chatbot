@@ -1,0 +1,41 @@
+[
+  {
+    "id": "eddefeb9-5fc9-44b4-8640-b71e05749040",
+    "data": [
+      {
+        "text": "How can I restart a stopped Canister smart contract? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "d44bfacd-f2ee-4d49-a7b1-023cb2f81c03",
+    "data": [
+      {
+        "text": "How can I check the status of a Canister smart contract? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "8b8675ef-5358-4eea-81e9-fc1f1850c9e1",
+    "data": [
+      {
+        "text": "How can I stop a running Canister smart contract? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

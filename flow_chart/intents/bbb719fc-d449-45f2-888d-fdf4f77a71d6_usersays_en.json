@@ -1,0 +1,41 @@
+[
+  {
+    "id": "95661675-1dea-49fb-b216-01abfcdf9049",
+    "data": [
+      {
+        "text": "What hardware is acceptable to use for users who opt for self-custody? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "324f944b-d771-45b4-85d3-a20f05a79636",
+    "data": [
+      {
+        "text": "Why do I need a special / late-model hardware to use Internet Identity? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "19b06952-2676-4e4a-9e1f-9cb52038fbe0",
+    "data": [
+      {
+        "text": "What is self-custody? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

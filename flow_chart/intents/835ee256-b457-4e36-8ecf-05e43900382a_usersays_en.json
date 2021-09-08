@@ -1,0 +1,41 @@
+[
+  {
+    "id": "6e29ccf3-8a98-4a0e-b829-66cf56f4675b",
+    "data": [
+      {
+        "text": "Motoko ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "07945b56-09c7-4f40-ab15-7c45a0e9fe3b",
+    "data": [
+      {
+        "text": "Why does Motoko compile to WebAssembly? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "0055782b-c2b5-4dd6-8fea-f20f80b1f8d3",
+    "data": [
+      {
+        "text": "What tools does DFINITY provide for developers? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

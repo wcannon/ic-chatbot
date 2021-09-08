@@ -116,10 +116,6 @@
                 "item_value": "smart_contract"
               },
               {
-                "item_key": "Intent-software",
-                "item_value": "software"
-              },
-              {
                 "item_key": "Intent-software_development_kit",
                 "item_value": "softwaredevelopmentkit"
               },
@@ -923,6 +919,41 @@
             "end_conversation": false,
             "buttons": [],
             "id": "28657d10-10ca-11ec-b9fa-d7a60f78f48d"
+          }
+        ]
+      }
+    }
+  },
+  "7be8492e-f975-4e4b-a03b-d3f3ef994d76": {
+    "en": {
+      "generic": {
+        "blocks": [
+          {
+            "component_type": "text",
+            "nodeName": "WrongInputBlock",
+            "context": [],
+            "text": "I didn't get that. Can you say it again?",
+            "audio_file": "",
+            "ssml": "",
+            "delay": 500,
+            "reprompt": [],
+            "metadata": [],
+            "end_conversation": false,
+            "buttons": [],
+            "alternate_replies": [
+              "I missed what you said. What was that?",
+              "Sorry, could you say that again?",
+              "Sorry, can you say that again?",
+              "Can you say that again?",
+              "Sorry, I didn't get that. Can you rephrase?",
+              "Sorry, what was that?",
+              "One more time?",
+              "What was that?",
+              "I didn't get that. Can you say it again?",
+              "I didn't get that. Can you repeat?",
+              "I missed that, say that again?"
+            ],
+            "id": "7be8492e-f975-4e4b-a03b-d3f3ef994d76"
           }
         ]
       }
