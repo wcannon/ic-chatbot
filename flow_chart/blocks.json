@@ -1,10 +1,10 @@
 {
-  "254c7340-006d-11ec-98a3-a556a22a0764": {
+  "f98217e0-0fe9-11ec-8b02-a7a41948768f": {
     "en": {
       "generic": {
         "blocks": [
           {
-            "id": "254c7340-006d-11ec-98a3-a556a22a0764",
+            "id": "f98217e0-0fe9-11ec-8b02-a7a41948768f",
             "component_type": "start_block",
             "nodeName": "StartBlock",
             "metadata": [
@@ -18,236 +18,7 @@
       }
     }
   },
-  "254c74b0-006d-11ec-b5a7-737ac2dca7c8": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "text",
-            "nodeName": "Help Question",
-            "context": [
-              {
-                "id": "9e75b110-01c7-11ec-9825-31b611849613",
-                "name": "%%username%",
-                "type": "text",
-                "entity": "botmock.name",
-                "default_value": "buddy",
-                "start_index": 4
-              }
-            ],
-            "text": "Hey %%username%, how can we help you? ",
-            "alternate_replies": [],
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [
-              {
-                "item_key": "Intent-Grants",
-                "item_value": "Grant Question"
-              },
-              {
-                "item_key": "Intent-IC",
-                "item_value": "Common Question"
-              }
-            ],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "254c74b0-006d-11ec-b5a7-737ac2dca7c8"
-          }
-        ]
-      }
-    }
-  },
-  "49ec5fee-89a0-4420-b92a-173a3c8a3552": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "quick_replies",
-            "nodeName": "Grant Question",
-            "context": [],
-            "text": "Are you interested in our grant programs? ",
-            "quick_replies": [
-              {
-                "content_type": "text",
-                "title": "Yes",
-                "image_url": "",
-                "payload": "Some"
-              },
-              {
-                "content_type": "text",
-                "title": "No",
-                "image_url": "",
-                "payload": "Thing"
-              }
-            ],
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [
-              {
-                "item_key": "Response-Yes",
-                "item_value": "Grant_Yes Answer"
-              },
-              {
-                "item_key": "Response-No",
-                "item_value": "Grant_No Answer"
-              }
-            ],
-            "id": "49ec5fee-89a0-4420-b92a-173a3c8a3552"
-          }
-        ]
-      }
-    }
-  },
-  "6090f2d4-c84b-48f6-96a4-96a5e2343cdc": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "text",
-            "nodeName": "Grant_Yes Answer",
-            "context": [],
-            "text": "Oh, boy! We have a lot of info you need. ",
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "6090f2d4-c84b-48f6-96a4-96a5e2343cdc"
-          }
-        ]
-      }
-    }
-  },
-  "20ac5b24-2d87-4914-b77f-1ec73d824b18": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "text",
-            "nodeName": "Grant_No Answer",
-            "context": [
-              {
-                "id": "9e75b110-01c7-11ec-9825-31b611849613",
-                "name": "%%username%",
-                "type": "text",
-                "entity": "botmock.name",
-                "default_value": "buddy",
-                "start_index": 4
-              }
-            ],
-            "text": "Hmm %%username% , I don't know what to tell you now :(",
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [
-              {
-                "item_key": "Default",
-                "item_value": "Jump Block 1"
-              }
-            ],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "20ac5b24-2d87-4914-b77f-1ec73d824b18"
-          }
-        ]
-      }
-    }
-  },
-  "c23eb4e8-d084-4ff7-ab91-3796e1b36a89": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "quick_replies",
-            "nodeName": "Develop Question",
-            "context": [],
-            "text": "Are you looking out for developer tutorials? ",
-            "quick_replies": [
-              {
-                "content_type": "text",
-                "title": "Yes",
-                "image_url": "",
-                "payload": "Some"
-              },
-              {
-                "content_type": "text",
-                "title": "No",
-                "image_url": "",
-                "payload": "Thing"
-              }
-            ],
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [
-              {
-                "item_key": "Response-YES",
-                "item_value": "Develop_Yes_Response"
-              },
-              {
-                "item_key": "Response-NO",
-                "item_value": "Develop_No_Response"
-              }
-            ],
-            "id": "c23eb4e8-d084-4ff7-ab91-3796e1b36a89"
-          }
-        ]
-      }
-    }
-  },
-  "02008a6a-28fc-4f6a-9287-87d5789b4825": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "text",
-            "nodeName": "Develop_Yes Response",
-            "context": [],
-            "text": "Hmm. You should probably look into SDK",
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "02008a6a-28fc-4f6a-9287-87d5789b4825"
-          }
-        ]
-      }
-    }
-  },
-  "951245fb-b180-4017-a389-78fdda236199": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "text",
-            "nodeName": "Develop_No response",
-            "context": [],
-            "text": "I think you are missing a once in a lifetime opportunity. ",
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "951245fb-b180-4017-a389-78fdda236199"
-          }
-        ]
-      }
-    }
-  },
-  "61cecdb1-5af8-4747-8cb4-0a94950cd24f": {
+  "f9821900-0fe9-11ec-8ea3-53e0cda086eb": {
     "en": {
       "generic": {
         "blocks": [
@@ -255,74 +26,92 @@
             "component_type": "text",
             "nodeName": "Welcome",
             "context": [],
-            "text": "Welcome to Dfinity! We have a surprise for you. \nWhat's your sweet name by the way? ",
-            "alternate_replies": [
-              "Hello buddy, we have something exciting waiting for you. Let's first get to know each other. My name's blockchain. What's your name? ",
-              "What's your name by the way? "
-            ],
+            "text": "Hi! Welcome to DFINITY.",
             "audio_file": "",
             "ssml": "",
             "delay": 500,
             "reprompt": [],
             "metadata": [
               {
-                "item_key": "Intent-NameIntent",
-                "item_value": "Help Question"
+                "item_key": "Default",
+                "item_value": "AskQuestion"
               }
             ],
             "end_conversation": false,
             "buttons": [],
-            "id": "61cecdb1-5af8-4747-8cb4-0a94950cd24f"
+            "id": "f9821900-0fe9-11ec-8ea3-53e0cda086eb"
           }
         ]
       }
     }
   },
-  "eb5f7131-09c3-42bf-b701-9d04ce892688": {
+  "e34c05bb-744c-4133-9343-5293b4da81e4": {
     "en": {
       "generic": {
         "blocks": [
           {
             "component_type": "text",
-            "nodeName": "Common Question",
+            "nodeName": "AskQuestion",
             "context": [],
-            "text": "You wanna know about the internet computer? We call it cloud breaker. ",
+            "text": "Ask me a question and I'll find the answer for you.  Example: What is the Internet Computer?\n",
             "audio_file": "",
             "ssml": "",
             "delay": 500,
             "reprompt": [],
-            "metadata": [],
+            "metadata": [
+              {
+                "item_key": "Intent-dfinity",
+                "item_value": "What is DFINITY?"
+              },
+              {
+                "item_key": "Intent-Internet_Computer",
+                "item_value": "Internet Computer"
+              },
+              {
+                "item_key": "Intent-node",
+                "item_value": "Nodes"
+              },
+              {
+                "item_key": "Intent-deploy",
+                "item_value": "Deploy"
+              },
+              {
+                "item_key": "Intent-software",
+                "item_value": "Software"
+              }
+            ],
             "end_conversation": false,
             "buttons": [],
-            "id": "eb5f7131-09c3-42bf-b701-9d04ce892688"
+            "id": "e34c05bb-744c-4133-9343-5293b4da81e4"
           }
         ]
       }
     }
   },
-  "953bfe6b-6bdd-4bf0-95e7-8b9631229d11": {
+  "32fc69c9-9e73-4024-abd9-3a924955fec3": {
     "en": {
       "generic": {
         "blocks": [
           {
             "component_type": "button",
-            "nodeName": "Button",
-            "text": "Your text goes here",
+            "nodeName": "What is DFINITY?",
+            "context": [],
+            "text": "Here are some articles that might help.",
             "buttons": [
               {
                 "type": "postback",
-                "title": "Hello",
-                "payload": ""
+                "title": "What is the DFINITY Foundation?",
+                "payload": "https://support.dfinity.org/hc/en-us/articles/360057403152-What-is-DFINITY-"
               },
               {
                 "type": "postback",
-                "title": "How",
-                "payload": ""
+                "title": "Who is the founder of the DFINITY Foundation and Internet Computer project?",
+                "payload": "<div class=\"article-body\"><p>Dominic Williams is the Founder, President, and Chief Scientist of the DFINITY Foundation and Internet Computer project. He hails from the UK but moved to Palo Alto, California, in 2012, and continues to travel among the various operations DFINITY maintains around the globe. He has a background as a technology entrepreneur, distributed systems engineer, and theoretician. His last major venture was an MMO game that grew to millions of users, which ran on a novel horizontally scalable game server technology he created.</p> <p>More recently, he has distinguished himself through contributions to distributed computing and crypto theory, with works including Threshold Relay, Probabilistic Slot Consensus, Validation Towers and Trees, Puzzle Towers, The 3 E's of Sybil Resistance, and the core architecture of the Internet Computer and the framework it provides for hosted software.</p></div>"
               },
               {
                 "type": "postback",
-                "title": "Bye",
-                "payload": ""
+                "title": "DFINITY developer grant program terms and conditions",
+                "payload": "<article id=\"main-content\" class=\"article\">       <header class=\"article-header\">         <h1 title=\"DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS\" class=\"article-title\">           DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS                    </h1>          <div class=\"article-author\">                      <div class=\"article-meta\">                           <ul class=\"meta-group\">                                <li class=\"meta-data\"><time datetime=\"2021-08-25T16:38:55Z\" title=\"2021-08-25 11:38\" data-datetime=\"relative\">13 days ago</time></li>                 <li class=\"meta-data\">Updated</li>                            </ul>           </div>         </div>                 </header>        <section class=\"article-info\">         <div class=\"article-content\">           <div class=\"article-body\"><h3 class=\"bold text-center mb20\">Terms of Use</h3> <p>DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS DFINITY Foundation and its affiliates (collectively, the “Foundation”) offers the DFINITY Developer Grant Program (the “Grant Program”) inviting Participants to build services, infrastructure, and tooling to grow the Internet Computer network and ecosystem. These Terms and Conditions (the “Terms”) apply to your participation in the Grant Program, and in addition to any other Grant Program terms, describes the Grant Program’s requirements as well as the benefits that you may receive as a participant in the Grant Program. While all Project Proposals (defined below) submitted by you (as an applicant or after acceptance into the Grant Program by the Foundation) will be reviewed by the Foundation, your creation or release of a Project (defined below) or your engagement in any other Grant Program related activities, do not obligate the Foundation to provide you with Rewards (defined below) or any other Grant Program benefits. YOUR PARTICIPATION IN THE GRANT PROGRAM IS ENTIRELY VOLUNTARY, BUT IF YOU ARE PARTICIPATING IN THE PROGRAM, YOU MUST STRICTLY ADHERE TO THESE TERMS. IF, AS PART OF YOUR VOLUNTARY PARTICIPATION, YOU MEET THE CRITERIA LISTED BELOW, YOU MAY RECEIVE CERTAIN AMOUNTS OF TOKEN OR CASH (“INCENTIVES”). YOU AGREE THAT ANY INCENTIVES RECEIVED BY YOU WILL BE FOR YOUR SERVICES IN TESTING THE FOUNDATION’S TECHNOLOGIES AS DEFINED BELOW AND AS PART OF THIS GRANT PROGRAM.</p> <p>&nbsp;</p> <p>1. Certain Definitions. “Intellectual Property Rights” means patent rights (including patent applications and disclosures), copyrights, trademarks, trade secret rights, and any other intangible property rights recognized in any country or jurisdiction in the world.</p> <p>&nbsp;</p> <p>“Participant Marks” means the trademarks, service marks, trade names and logos for your entity’s products and services.</p> <p>&nbsp;</p> <p>“Participant Materials” means the Project Proposal(s), Project(s) and any other materials or information provided by you (including your team members if applicable) to the Foundation in connection with the Grant Program.</p> <p>&nbsp;</p> <p>“Project” means the software, code, or other materials and content that you submit (or desire to submit) to the Foundation for review and/or consideration by the Foundation for the Grant Program under these Terms.</p> <p>&nbsp;</p> <p>“Project Proposal” means a general description of each proposed Project, which among other details, specifies the features of the applicable Project, details on your team, and information on the budget.</p> <p>&nbsp;</p> <p>“Program Milestone” has the meaning given in Section 3.1.</p> <p>&nbsp;</p> <p>“Foundation Materials” means all information and materials that may be provided to Participant by the Foundation in the course of the Grant Program and all Intellectual Property Rights thereto.</p> <p>&nbsp;</p> <p>“Token” means the Internet Computer Protocol (“ICP”) token, the native unit of value on the Foundation’s blockchain.</p> <p>&nbsp;</p> <p>“Token Reward” means the eligible amount and type of Token which may be granted to Participants for participation in the Grant Program and/or completion of a Program Milestone in accordance with Section 3.</p> <p>&nbsp;</p> <p>2. Eligibility; Program Requirements. 2.1. Eligibility. You may only participate in the DFINITY Developer Grant Program if:</p> <ul> <li>You are over 18 years old; or a business, and in each case have registered with the Foundation and satisfied the “Participation Requirements” set forth below;</li> <li>You are not a resident of, citizen, or located in a geographic area that is subject to UN-, US-, EU-, Swiss or any other sovereign country sanctions or embargoes;</li> <li>You, nor, if applicable, any third party entities that you represent (i) is listed or associated with any person or entity being listed on any of the US Department of Commerce’s Denied Persons or Entity List, the US Department of Treasury’s Specially Designated Nationals List, the EU Consolidated List of Persons, Groups and Entities Subject to EU Financial Sanctions or the Swiss SECO’s Overall List of Sanctioned Individuals, Entities and Organizations, (ii) is a person identified as a terrorist organization or any other relevant lists maintained by any governmental authority;</li> <li>Your participation in the DFINITY Developer Grant Program is not in violation of any national, state, or local law or regulation applicable to you;</li> <li>You are not employed in any way by the Foundation or any of its affiliates or an immediate family member of anyone thereof.</li> </ul> <p>2.2. Application. The Grant Program is open to individuals and entities that have submitted a completed Grant Program application describing the Project Proposal via the grant program website located at dfinity.org/grants (the “Grant Program Site”) (or other method designated by the Foundation), and have received a written notice from the Foundation indicating its acceptance of the application. The Foundation will aim to, but is not obligated to, process each application within thirty (30) days after submission.</p> <p>&nbsp;</p> <p>2.3. Request for Comment. If your application is accepted as set forth in Section 2.1 above, the Foundation will invite you to participate in an interview with several members of the grant selection committee and will communicate additional details of the Grant Program to you. You agree to follow all requirements as set forth in the Grant Program Site and in further instructions that may be provided to you by the Foundation.</p> <p>&nbsp;</p> <p>2.4. Final Review. After the interview is complete, you will be informed either way of your grant acceptance or rejection. If accepted, you must confirm your agreed upon milestones, as set forth in the Grant Program Site and in further instructions that may be provided to you by the Foundation.</p> <p>&nbsp;</p> <p>2.5. Program Requirements. To participate in the Grant Program, you must do the following in accordance with any timelines communicated to you in writing by the Foundation:</p> <p>&nbsp;</p> <p>(a) execute any additional terms or forms (e.g., W9 or W8-BEN) as may required by the Foundation; and</p> <p>(b) comply with all Grant Program requirements as set forth in Sections 2.1, 2.2 and 2.3 above and all instructions and requirements as set forth in the Grant Program Site.</p> <p>&nbsp;</p> <p>3. Program Milestones.</p> <p>&nbsp;</p> <p>3.1. General. You may apply for and submit one or more Project Proposals to the Foundation in connection with your participation in the Grant Program. However, to be eligible to receive any Token Rewards or rewards paid in U.S. Dollars or U.S. Dollar stablecoins (collectively with the Token Rewards, the “Rewards”), you must satisfy and complete the corresponding program milestone requirements (each a “Program Milestone”), which will be set following your acceptance to the program. Any completion of a Program Milestone requires review and approval by the Foundation, such approval to be determined by the Foundation in its sole discretion. No Program Milestone will be deemed completed and eligible for the applicable Rewards until you have received a written approval notice of your Program Milestone from the Foundation. THE GRANTING OF REWARDS AS PART OF THE GRANT PROGRAM IS WITHIN THE FOUNDATION’S SOLE DISCRETION AND ALL DECISIONS RELATED TO THE PROGRAM ARE FINAL AND NON-APPEALABLE.</p> <p>&nbsp;</p> <p>3.2. Additional Requirements. The Foundation may request additional information from you as may be necessary to review and/or consider your Project Proposal or Project, and you must respond to any requests for additional information within three (3) business days from the time the request is made. You may forfeit any benefits, Rewards, and/or opportunities to proceed in the Grant Program if (i) the Foundation is unable to contact you or your designated representative within three (3) business days of first attempted notification, or (ii) you fail to respond within three (3) business days of notification. Rewards are granted without warranty of any kind from the Foundation, express or implied, without limitation. All applicable federal, state and local laws and regulations apply. You agree to be bound by the decisions of the Foundation, which are final and binding on all matters pertaining to the Grant Program.</p> <p>&nbsp;</p> <p>4. Payments.</p> <p>&nbsp;</p> <p>4.1. Compensation. Subject to these Terms, as Participant’s sole compensation for Participant’s participation and completion of the Project Milestones, the Foundation shall pay Participant the Rewards specified for the completion of Project Milestones. Participant will otherwise perform the work in connection with the Grant Program at his or her own expense, and using his or her own resources and equipment. Participant acknowledges that the compensation set forth in the Program Milestones and Payments exhibit (hereinafter referred to as “Program Milestones and Payments Exhibit”) approved by the Foundation, represents Participant’s entire compensation with respect to these Terms and the Foundation will have no other obligation for any other compensation to or expenses or costs incurred by Participant in connection with the performance of his/her obligations under these Terms unless otherwise agreed-upon in writing by the parties.</p> <p>&nbsp;</p> <p>THE GRANT OF ANY TOKENS TO PARTICIPANTS IS SUBJECT TO COMPLIANCE WITH APPLICABLE LAWS, AS DETERMINED BY THE FOUNDATION IN ITS SOLE DISCRETION.</p> <p>&nbsp;</p> <p>4.2. Milestones. The completion of a Project Milestone requires review and approval by DFINITY, such approval to be determined by DFINITY in its sole discretion. DFINITY, at its option, may provide Participant with its written quality standards for the Project and/or applicable Milestones. Participant agrees to use these standards, as well as additional guidance and suggestions which may be provided from time to time by DFINITY. Any or all Milestones must be satisfactory in the reasonable opinion of DFINITY, who retains the right to approve all such Milestones prior to completion and delivery. Without limiting the foregoing, Participant acknowledges and agrees that DFINITY’s payment obligation will be expressly subject to Participant’s delivery of each applicable Project Milestone as set forth in the applicable Program Milestones and Payment Exhibit. The approved Program Milestones and Payment Exhibit shall be made a part of and incorporated into these Terms. THE GRANTING OF REWARDS AS PART OF THE PROGRAM IS WITHIN DFINITY’S SOLE DISCRETION AND ALL DECISIONS RELATED TO THE PROGRAM ARE FINAL AND NON-APPEALABLE.</p> <p>&nbsp;</p> <p>5. Marketing and Promotion.</p> <p>&nbsp;</p> <p>5.1. Publicity. You will not issue any press releases or similar public announcements in connection with these Terms (including statements regarding the terms and conditions of these Terms and the details of the Grant Program), without the prior written approval of DFINITY.</p> <p>&nbsp;</p> <p>5.2. Publication in List. You agree that DFINITY may, but is not required, to include the Projects in published lists and similar compilations and on its online properties during the term of the Terms, including on webpages and other promotional materials regarding third party products. You agree to provide DFINITY with product descriptions, images, logos, website links and other content regarding a Project as may be reasonably requested by DFINITY for inclusion in such lists and compilations, and for use in its related marketing activities.</p> <p>&nbsp;</p> <p>5.3. Public Relations. You will: (a) conduct your business and activities in connection with these Terms in such a manner so as to promote a good image and public relations for DFINITY and the DFINITY Products; (b) not engage in any unfair or deceptive trade practice involving DFINITY or the DFINITY Products; and (c) not make any false, misleading or disparaging representations or statements with regard to DFINITY or DFINITY's products and services.</p> <p>&nbsp;</p> <p>6. Representations and Warranties.</p> <p>&nbsp;</p> <p>6.1. Participant Representations and Warranties. You represent and warrant that: (a) you have the authority to enter into these Terms; (b) the information submitted to the Foundation in connection with your application, including in any Project Proposal, is accurate and complete; and (c) none of your Participant Materials or Participant Marks infringe upon, violate or misappropriate a third party’s Intellectual Property Rights or contain any illegal or defamatory materials, or violate any law or regulation.</p> <p>&nbsp;</p> <p>6.2. Disclaimer. THE FOUNDATION WEBSITES, INCLUDING THE GRANT PROGRAM WEBSITE, AND ANY FOUNDATION MATERIALS YOU MAY HAVE ACCESS TO IN CONNECTION WITH THE GRANT PROGRAM ARE PROVIDED “AS-IS” AND “AS AVAILABLE,” WITH ALL FAULTS, DEFECTS AND ERRORS, AND WITHOUT WARRANTY OF ANY KIND. THE FOUNDATION DISCLAIMS ALL REPRESENTATIONS AND WARRANTIES (EXPRESS, IMPLIED, ARISING BY LAW OR OTHERWISE) IN CONNECTION WITH THESE TERMS, INCLUDING ANY REPRESENTATIONS OR WARRANTIES REGARDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT. THE FOUNDATION MAKES NO REPRESENTATION OR WARRANTY THAT: (I) THE GRANT PROGRAM, FOUNDATION WEBSITES OR FOUNDATION MATERIALS WILL MEET YOUR REQUIREMENTS, THEIR OPERATION WILL BE UNINTERRUPTED OR ERROR-FREE OR THAT ANY ERRORS WILL BE CORRECTED; (II) YOUR PROJECTS WILL BE COMPATIBLE WITH CURRENT OR FUTURE VERSIONS OF THE FOUNDATION’S PRODUCTS OR SERVICES; OR (III) YOU WILL PROFIT OR DERIVE ANY ECONOMIC BENEFIT FROM YOUR PARTICIPATION IN THE GRANT PROGRAM.</p> <p>&nbsp;</p> <p>7. Intellectual Property.</p> <p>&nbsp;</p> <p>7.1. Participant Materials. You hereby grant to the Foundation a non-exclusive, irrevocable, perpetual, worldwide, royalty-free, sublicensable right and license to use, reproduce, modify, distribute, display, publish, perform, transmit and access your Participant Materials in connection with the Grant Program and for promotion of the Internet Computer, in any media formats, through any media channels or otherwise. For example, you grant the Foundation the right to demonstrate your Project in connection with promotion of the Internet Computer. You agree not to instigate, support, maintain or authorize any action, claim or lawsuit against the Foundation on the grounds that any use of the Participant Materials as provided herein, infringes any of your rights as creator of the Participant Materials, including, without limitation, trademark rights, copyrights and moral rights. You acknowledge that the Foundation may currently or in the future be developing information internally, or receiving information from other parties, that is similar to your Participant Materials. Nothing in these Terms will be construed as a representation or agreement that the Foundation will not develop or have developed products, concepts, systems or techniques that are similar to or compete with the products, concepts, systems or techniques contemplated by or embodied in any Participant Materials.</p> <p>&nbsp;</p> <p>7.2. Participant Marks. You grant to the Foundation a non-exclusive, irrevocable, worldwide, royalty-free, non-sublicensable, royalty-free license to use your Participant Marks solely in connection with the Grant Program and the activities contemplated in Section 2, in any media formats, including, but not limited to advertising, marketing and promoting the Foundation and the Foundation’s products and services and identification of and discussion about your participation in the Grant Program. All goodwill arising from use of the Participant Marks will inure solely to the benefit of Participant.</p> <p>&nbsp;</p> <p>7.3. Foundation Materials. In connection with your creation of the Participant Materials, the Foundation hereby grants Participant, during the Term, a limited license to use the Foundation Materials solely in connection with Participant’s participation in the Grant Program.</p> <p>&nbsp;</p> <p>7.4. Ownership. As between you and the Foundation, (a) the Foundation owns all right, title and interest in and to the Foundation Materials and the Foundation’s products and services (including, the the Foundation website and its trademarks, including all associated Intellectual Property Rights thereto), and (b) you own all right, title and interest in and to your Participant Marks, including all associated Intellectual Property Rights. There are no implied licenses granted by either party, whether by implication, estoppel or otherwise. You must comply with either of the following:</p> <ul> <li>Notwithstanding Section 8.1, you hereby agree to irrevocably and perpetually license the Participant Materials under the Apache License Version 2.0 (or future versions thereof) and/or the MIT License. Such Participant Materials may be made available on the Foundation’s Github page(s).</li> <li>Subject to Section 8.1, you have and retain ownership of all right, title and interest in and to your Participant Materials, including all associated Intellectual Property Rights, and any modifications, improvements or derivatives of the foregoing made by you thereto.</li> </ul> <p>8. Confidentiality. At all times, during the term of these Terms and thereafter, and to the fullest extent permitted by law, you agree to hold all Confidential Information (as defined below) in strict confidence, not to use it in any way, commercially or otherwise, except for purposes contemplated under the Grant Program, and not to disclose it to others. You also agree to take all actions reasonably necessary to protect the confidentiality of all Confidential Information.</p> <p>&nbsp;</p> <p>As used herein, “Confidential Information” means: (i) any information, materials or knowledge regarding the Foundation and its business, financial condition, products, programming techniques, customers, suppliers, technology or research and development that is disclosed to you or to which you have access in connection with participating in the Grant Program and (ii) these Terms. Confidential Information will not include any information that: (a) is or becomes part of the public domain through no fault of you; (b) was rightfully in your possession at the time of disclosure, without restriction as to use or disclosure; or (c) you rightfully receive from a third party who has the right to disclose it and who provides it without restriction as to use or disclosure. Notwithstanding the foregoing, Confidential Information includes any information that, due to its nature or the circumstances of its disclosure, a reasonable person would know, or would have reason to know, should be treated as confidential.</p> <p>&nbsp;</p> <p>9. Indemnification. You agree to release, indemnify, defend and hold the Foundation and its parent, affiliates, subsidiaries, directors, officers, employees and agents, including advertising and promotion agencies, and assigns, and any other organizations related to the Grant Program, harmless from any and all claims, injuries, damages, expenses or losses to person or property and/or liabilities of any nature that in any way arise from participation in the Grant Program, your Projects or acceptance or use of a Reward, including without limitation (i) any condition caused by events beyond the Foundation’s control that may cause the Grant Program to be disrupted; (ii) any injuries, losses, or damages (compensatory, direct, incidental, consequential or otherwise) of any kind arising in connection with or as a result of any benefit you may receive in connection with the Grant Program, or acceptance, possession, or use of a Reward, or from participation in the Grant Program; and (iii) any printing or typographical errors in any materials associated with the Grant Program.</p> <p>&nbsp;</p> <p>10. Limitation of Liability. NEITHER THE FOUNDATION NOR ANY OTHER PARTY INVOLVED IN THE ADMINISTRATION OF THE GRANT PROGRAM WILL BE LIABLE FOR ANY INCIDENTAL, SPECIAL, EXEMPLARY OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, LOSS OF DATA OR GOODWILL, SERVICE INTERRUPTION, COMPUTER DAMAGE OR SYSTEM FAILURE ARISING OUT OF OR IN CONNECTION WITH THESE TERMS, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT THE FOUNDATION HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, EVEN IF A LIMITED REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR CONSEQUENTIAL OR INCIDENTAL DAMAGES, SO THE ABOVE LIMITATION MAY NOT APPLY TO YOU. IN NO EVENT WILL THE FOUNDATION’S TOTAL LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS EXCEED ONE THOUSAND U.S. DOLLARS ($1,000).</p> <p>&nbsp;</p> <p>THE EXCLUSIONS AND LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE FUNDAMENTAL ELEMENTS OF THE BASIS OF THE BARGAIN BETWEEN YOU AND THE FOUNDATION.</p> <p>&nbsp;</p> <p>11. Termination. The term of these Terms commences from the Effective Date and continues until (i) the completion of Participant’s participation in the Grant Program or (ii) these Terms or Grant Program is terminated by the Foundation, whichever is earlier (the “Term”). For example, if for any reason the Grant Program is not capable of running as planned due to unforeseen changes in business conditions, the Foundation’s inability to create websites and applications for management of or participation in the Grant Program, infection by computer virus, bugs, tampering, unauthorized intervention, fraud, technical failures, or any other causes which corrupt or affect the administration, security, fairness, integrity, or proper conduct of the Foundation’s products and services or this Grant Program, the Foundation reserves the right at its sole discretion to amend these Terms or cancel, terminate, modify or suspend the Grant Program and terminate these Terms. The Foundation may also terminate these Terms for convenience upon ten (10) days’ written notice. Upon any termination, discontinuation or cancellation of the Grant Program or these Terms, all provisions of these Terms which by their nature should survive will survive, including, without limitation, ownership provisions, warranty disclaimers, limitations of liability, and dispute resolution provisions.</p> <p>&nbsp;</p> <p>12. Personal Information. The personal information submitted by you in connection with your application to join the Grant Program and what you provide to us in connection with your participation in the Grant Program will be used for the purposes described in these Terms and will otherwise be handled in accordance with the Foundation’s Privacy Policy, located at <a href=\"https://DFINITY.org/privacy-policy/\" target=\"_self\">https://DFINITY.org/privacy-policy/</a>, and you acknowledge and agree to such use.</p> <p>&nbsp;</p> <p>13. Assignment. You may not assign or transfer these Terms by operation of law or otherwise) without the prior written consent of the Foundation and any prohibited assignment will be null and void. The Foundation may assign these Terms or any rights hereunder without your consent. Subject to the foregoing, these Terms will bind and inure to the benefit of the parties’ permitted successors and assigns.</p> <p>&nbsp;</p> <p>14. Non-Solicitation of Personnel. During the Term of these Terms and for a period of one (1) year thereafter, you agree that you will not, directly or indirectly, solicit the services of any employee or consultant of the Foundation for your own benefit or for the benefit of any other person or entity.</p> <p>&nbsp;</p> <p>15. Relationship of the Parties. Participant’s relationship with the Foundation is that of an independent contractor, and nothing in these Terms is intended to, or should be construed to, create a partnership, joint venture, or employment relationship. Participant will not be entitled to any of the benefits that the Foundation may make available to its employees. Participant is not authorized to make any representation, contract, or commitment on behalf of the Foundation, unless specifically requested or authorized in writing to do so by an authorized officer of the Foundation. Participant is solely responsible for, and will file, on a timely basis, all tax returns and payments required to be filed with, or made to, any federal, state or local tax authority with respect to the performance of the Services and receipt of fees under these Terms.</p> <p>&nbsp;</p> <p>16. Miscellaneous. The Foundation is not responsible for transmission errors resulting in omission, interruption, deletion, defect, delay in operations or transmission, theft or destruction or unauthorized access to or alterations of Participant Materials, or for technical, network, telephone equipment, electronic, computer, hardware or software malfunctions or limitations of any kind, or inaccurate transmissions of or failure to receive entry information by the Foundation on account of technical problems or traffic congestion on the Internet or at any website or any combination thereof. The Foundation is also not responsible for injury or damage to your computer or any other damage resulting from downloading any materials in connection with the Grant Program. In the event that any provision in these Terms is held to be invalid or unenforceable, the unenforceable part will be given effect to the greatest extent permitted by law and the remaining provisions will remain in full force and effect to the maximum extent permitted by law. The failure of a party to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision. You agree that these Terms and the rules, restrictions and policies contained herein, and the Foundation’s enforcement thereof, are not intended to confer and do not confer any rights or remedies upon any person other than you and the Foundation. These Terms, any exhibits, and any other policies of the Foundation incorporated herein by reference constitute the entire agreement between the Foundation and you with respect to the subject matter of these Terms.</p> <p>&nbsp;</p> <p>17. Governing Law; Dispute Resolution. These Terms will be governed by and interpreted in accordance with the laws of the Switzerland excluding that body of law pertaining to conflict of laws. Any dispute, controversy, difference or claim arising out of or relating to these Terms, including the existence, validity, interpretation, performance, breach or termination thereof or any dispute regarding non-contractual obligations arising out of or relating to it shall be referred to and finally resolved by arbitration administered by the Swiss Rules of International Arbitration of the Swiss Chambers' Arbitration Institution] in force when the Notice of Arbitration is submitted. The law of this arbitration clause shall be Swiss law. The seat of arbitration shall be Zurich, Switzerland. The number of arbitrators shall be one. The arbitration proceedings shall be conducted in English.</p> <p>&nbsp;</p> <p><strong> IF YOU DO NOT AGREE TO THESE TERMS, PLEASE DO NOT REGISTER OR OTHERWISE PARTICIPATE IN THE DFINITY DEVELOPER GRANT PROGRAM</strong>.</p></div>                    </div>       </section>        <footer>         <div class=\"article-footer\">                        <div class=\"article-share\">   <ul class=\"share\">     <li>       <a href=\"https://www.facebook.com/share.php?title=DFINITY+DEVELOPER+GRANT+PROGRAM+TERMS+AND+CONDITIONS&amp;u=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\" class=\"share-facebook\" aria-label=\"Facebook\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://twitter.com/share?lang=en&amp;text=DFINITY+DEVELOPER+GRANT+PROGRAM+TERMS+AND+CONDITIONS&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\" class=\"share-twitter\" aria-label=\"Twitter\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M12 2.184a4.83 4.83 0 01-1.415.397 2.52 2.52 0 001.083-1.396 4.87 4.87 0 01-1.564.612A2.428 2.428 0 008.308 1c-1.36 0-2.463 1.13-2.463 2.524 0 .198.023.39.065.576C3.863 3.994 2.05 2.99.835 1.46a2.564 2.564 0 00-.332 1.27 2.54 2.54 0 001.094 2.102 2.413 2.413 0 01-1.115-.316v.032c0 1.224.849 2.243 1.974 2.476-.363.1-.743.115-1.112.042.314 1.002 1.223 1.734 2.3 1.754A4.857 4.857 0 010 9.866 6.83 6.83 0 003.774 11c4.528 0 7.005-3.847 7.005-7.182 0-.11-.003-.22-.007-.327.482-.358.898-.8 1.228-1.308z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://www.linkedin.com/shareArticle?mini=true&amp;source=DFINITY&amp;title=DFINITY+DEVELOPER+GRANT+PROGRAM+TERMS+AND+CONDITIONS&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\" class=\"share-linkedin\" aria-label=\"LinkedIn\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z\"></path>         </svg>       </a>     </li>   </ul>  </div>                                                       </div>                    <div class=\"article-votes\">             <span class=\"article-votes-question\" id=\"article-votes-label\">Was this article helpful?</span>             <div class=\"article-votes-controls\" role=\"group\" aria-labelledby=\"article-votes-label\">               <button type=\"button\" class=\"button article-vote article-vote-up\" aria-label=\"This article was helpful\" aria-pressed=\"false\">Yes</button>               <button type=\"button\" class=\"button article-vote article-vote-down\" aria-label=\"This article was not helpful\" aria-pressed=\"false\">No</button>             </div>             <small class=\"article-votes-count\">               <span class=\"article-vote-label\">1 out of 1 found this helpful</span>             </small>           </div>                   <div class=\"article-more-questions\">           Have more questions? <a href=\"/hc/en-us/requests/new\">Submit a request</a>         </div>         <div class=\"article-return-to-top\">           <a href=\"#article-container\">             Return to top             <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"article-return-to-top-icon\" width=\"20\" height=\"20\" focusable=\"false\" viewBox=\"0 0 12 12\" aria-hidden=\"true\">               <path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" d=\"M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5\"></path>             </svg>           </a>         </div>       </footer>        <div class=\"article-relatives\">                    <section class=\"recent-articles\"><h2 class=\"recent-articles-title\">Recently viewed articles</h2><ul><li><a href=\"/hc/en-us/articles/360057879791-How-do-I-join-the-DFINITY-team-\">How do I join the DFINITY team?</a></li><li><a href=\"/hc/en-us/articles/360057132652-Motoko\">Motoko</a></li><li><a href=\"/hc/en-us/articles/360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\">How is a node deployed to the Internet Computer?</a></li><li><a href=\"/hc/en-us/articles/360058277551-How-can-I-restart-a-stopped-Canister-smart-contract-\">How can I restart a stopped Canister smart contract?</a></li><li><a href=\"/hc/en-us/articles/360057132272-Who-will-use-the-Internet-Computer-\">Who will use the Internet Computer?</a></li></ul></section>                                <section class=\"related-articles\">            <h2 class=\"related-articles-title\">Related articles</h2>          <ul>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBQKpecABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJTUpecABDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJHL2hjL2VuLXVzL2FydGljbGVzLzQ0MDE5MzI4NjQwMjAtSG93LXRvLVN1Ym1pdC1hLUdyYW50LUFwcGxpY2F0aW9uBjsIVDoJcmFua2kG--4abe91d50dc01742fe2756e7a4ace9dc5c896181\" rel=\"nofollow\">How to Submit a Grant Application</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCMesXtVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJTUpecABDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJUL2hjL2VuLXVzL2FydGljbGVzLzM2MDA2MjAzNzE5MS1DYW4tSS11c2UtYS1kZXZlbG9wZXItZ3JhbnQtdG8tZnVuZC1teS1zdGFydHVwLQY7CFQ6CXJhbmtpBw%3D%3D--33b440ea7a88ed62b436b0d2d38e2186d9b4b82f\" rel=\"nofollow\">Can I use a developer grant to fund my startup?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCG%2BvXtVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJTUpecABDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJvL2hjL2VuLXVzL2FydGljbGVzLzM2MDA2MjAzNzg3MS1JLW0taGF2aW5nLXRlY2huaWNhbC1pc3N1ZXMtd2l0aC1teS1hcHBsaWNhdGlvbi1XaGVyZS1kby1JLWdvLWZvci1zdXBwb3J0LQY7CFQ6CXJhbmtpCA%3D%3D--3a8beff6c9cde25f4ebf6caedc2f34b77e97419c\" rel=\"nofollow\">I’m having technical issues with my application. Where do I go for support?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCMwiWNVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJTUpecABDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJoL2hjL2VuLXVzL2FydGljbGVzLzM2MDA2MTYwODY1Mi1XaGF0LXR5cGVzLW9mLXByb2plY3RzLWRvZXMtREZJTklUWS1mdW5kLXRocm91Z2gtdGhlLWdyYW50LXByb2dyYW0tBjsIVDoJcmFua2kJ--36121d4d358b4bf79c208dfce5930239f8062804\" rel=\"nofollow\">What types of projects does DFINITY fund through the grant program?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJQjWNVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJTUpecABDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI9L2hjL2VuLXVzL2FydGljbGVzLzM2MDA2MTYwODg1Mi1Ib3ctYXJlLWdyYW50cy1wYWlkLW91dC0GOwhUOglyYW5raQo%3D--f3e896fca520e693c690213582a87d8fc1f57753\" rel=\"nofollow\">How are grants paid out?</a>         </li>            </ul>   </section>                  </div>                <div class=\"article-comments\" id=\"article-comments\">           <section class=\"comments\">             <header class=\"comment-overview\">               <h2 class=\"comment-heading\">                 Comments               </h2>               <p class=\"comment-callout\">0 comments</p>                            </header>              <ul id=\"comments\" class=\"comment-list\">                            </ul>                                          <p class=\"comment-callout\">Please <a data-auth-action=\"signin\" rel=\"nofollow\" href=\"/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS%3Fauth_token%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjo5NDg0NjgwLCJ1c2VyX2lkIjpudWxsLCJ0aWNrZXRfaWQiOm51bGwsImRlZmxlY3Rpb25faWQiOjM2MDg3MTUyNDk1MiwiYXJ0aWNsZXMiOlszNjAwNTcxMzIxMzIsMzYwMDU3NjA1MjExLDQ0MDE5MzI5MTU4NjBdLCJ0b2tlbiI6bnVsbCwiZXhwIjoxNjMzNjQzMTQyfQ.NEGneO629KpBA48JtPrCLzOcLp7Q3XUaorUqwCl2JiE\">sign in</a> to leave a comment.</p>           </section>         </div>            </article>"
               }
             ],
             "audio_file": "",
@@ -331,169 +120,289 @@
             "reprompt": [],
             "metadata": [
               {
-                "item_key": "Response-Hello",
-                "item_value": "Child 1"
-              },
-              {
-                "item_key": "Response-How",
-                "item_value": "Child 2"
-              },
-              {
-                "item_key": "Response-Bye",
-                "item_value": "Child 3"
+                "item_key": "Default",
+                "item_value": "JumpBlock1"
               }
             ],
             "nextMessagesIds": [],
-            "id": "953bfe6b-6bdd-4bf0-95e7-8b9631229d11"
+            "id": "32fc69c9-9e73-4024-abd9-3a924955fec3"
           }
         ]
       }
     }
   },
-  "a99404a2-70ac-48c4-beba-339cc702ae0d": {
+  "8f610a8e-91af-491c-8174-20541effc807": {
     "en": {
       "generic": {
         "blocks": [
           {
             "component_type": "jump",
-            "nodeName": "Jump Block 1",
+            "nodeName": "JumpBlock1",
             "selectedResult": {
-              "value": "254c74b0-006d-11ec-b5a7-737ac2dca7c8",
-              "label": "Help Question",
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
               "jumpType": "node"
             },
             "reprompt": [],
-            "metadata": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
             "selectedProject": "",
-            "id": "a99404a2-70ac-48c4-beba-339cc702ae0d"
+            "id": "8f610a8e-91af-491c-8174-20541effc807"
           }
         ]
       }
     }
   },
-  "51762679-d7ce-40df-a20f-2c86d0751348": {
+  "235c3b65-e91f-4746-a598-b212b0c044ff": {
     "en": {
       "generic": {
         "blocks": [
           {
-            "component_type": "text",
-            "nodeName": "Bot Says",
+            "component_type": "button",
+            "nodeName": "Internet Computer",
             "context": [],
-            "text": "Are you looking for canister implementation? ",
+            "text": "Here are some articles that might help.",
+            "buttons": [
+              {
+                "type": "postback",
+                "title": "What is the Internet Computer?",
+                "payload": "<div class=\"article-body\"><p>The Internet Computer extends the functionality of the public internet so that it can host back-end software, transforming it into a global compute platform.</p> <p>Using the Internet Computer, developers can create websites, enterprise IT systems, and internet systems by installing their code directly on the public internet and dispense with server computers and commercial cloud systems.</p> <p>Enabling systems to be directly built onto the Internet is undoubtedly innovative, but the Internet Computer is about more than this alone. It seeks to address serious longstanding problems that bedevil IT, including system security, and to provide a means to reverse and undo the ever increasing monopolization of internet systems, user relationships, and data, and restore the Internet to its permissionless, innovative, and creative roots.</p> <p>For example, the Internet Computer hosts its native software within an unstoppable tamperproof environment, making it possible to create systems that don’t depend on firewalls, backup systems, and failover for their security. This framework also makes interoperability between different systems as simple as a function call, and automatically persists memory, removing the need for traditional files, enabling organizations to dispense with standalone infrastructure such as database servers. These features enable internet software systems to be completely self contained and address today’s security challenges while dramatically reducing the exorbitant complexity and cost of IT.</p> <p>The increasing monopolization of internet systems is addressed through support for “autonomous software”, which runs without an owner. This allows “open” versions of mainstream internet systems to be created, such as social media websites or SaaS business systems, that run as part of the fabric of the Internet itself. These new open systems can provide users with far superior guarantees about how their data is processed, and moreover can share their user data and functionality with other internet systems using permanent APIs that can never be revoked, eliminating “platform risk” and allowing for dynamic and collaborative extension of the ecosystem in a way that generates mutualized network effects that enable them to compete with Big Tech monopolies, providing tremendous new opportunities to entrepreneurs and investors.</p> <p>The Internet Computer is formed by an advanced blockchain protocol called ICP (Internet Computer Protocol) that independent data centers around the world run to combine the power of individual computers into an unstoppable seamless universe where internet native software is hosted and run with the same security guarantees as smart contracts. It is integrated with Internet standards such as DNS, and can server user experiences directly to web browsers and smartphones.</p></div>"
+              },
+              {
+                "type": "postback",
+                "title": "How is the Internet Computer created?",
+                "payload": "<div class=\"article-body\"><p>The Internet Computer is formed by an advanced blockchain protocol called ICP (Internet Computer Protocol) that independent data centers around the world run to combine the power of individual computers into an unstoppable, seamless universe where internet native software is hosted and run with the same security guarantees as <a href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canister smart contracts</a>. It is integrated with Internet standards such as DNS, and can server user experiences directly to web browsers and smartphones.</p> <p>To participate in the open network that creates the Internet Computer, a data center must first get a DCID (Data Center Identity). This is obtained through an algorithmic governance system that is part of the Internet Computer itself, called the Network Nervous System, which plays a roughly analogous role to ICANN (a not-for-profit organization that helps govern the Internet) but has broader functionality and drives many aspects of network management. Once a data center has obtained a DCID, it can make node machines, which are essentially server computers with a standardized specification, available to the network. When the Internet Computer needs more capacity, the Network Nervous System inducts these machines, forming them into “subnetworks” that can host software canisters. Special software running on node machines interacts with other nodes using ICP and applies advanced computer science to allow their compute capacity to be securely added to the Internet Computer.</p> <p>Data centers receive remuneration in the form of tokens, which are also used by <a href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canisters smart contracts</a> to create <a title=\"Cycles\" href=\"https://dfinity.org/faq/cycles\" target=\"_blank\" rel=\"noopener\">cycles</a>&nbsp;that powers computation and storage, in moderated amounts such that approximately constant returns are received per node over time. Participation in the&nbsp;<a title=\"Network Nervous System\" href=\"https://dfinity.org/faq/network-nervous-system-(nns)\" target=\"_blank\" rel=\"noopener\">Network Nervous System</a>&nbsp;algorithmic governance system is possible by locking tokens to create “<a title=\"Neuron\" href=\"https://dfinity.org/faq/neuron\" target=\"_blank\" rel=\"noopener\">neurons</a>,” which provides those voting with voting rewards and enable automatic voting in the form of liquid democracy style scheme. ICP has been designed so that the Internet Computer is managed in an open way and can grow without bound so that it may eventually incorporate millions of node machines.</p></div>"
+              },
+              {
+                "type": "postback",
+                "title": "How does the Internet Computer make the public internet better?",
+                "payload": "<div class=\"article-body\"><p>The Internet Computer is formed by an advanced blockchain protocol called ICP (Internet Computer Protocol) that independent data centers around the world run to combine the power of individual computers into an unstoppable, seamless universe where internet native software is hosted and run with the same security guarantees as <a href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canister smart contracts</a>. It is integrated with Internet standards such as DNS, and can server user experiences directly to web browsers and smartphones.</p> <p>To participate in the open network that creates the Internet Computer, a data center must first get a DCID (Data Center Identity). This is obtained through an algorithmic governance system that is part of the Internet Computer itself, called the Network Nervous System, which plays a roughly analogous role to ICANN (a not-for-profit organization that helps govern the Internet) but has broader functionality and drives many aspects of network management. Once a data center has obtained a DCID, it can make node machines, which are essentially server computers with a standardized specification, available to the network. When the Internet Computer needs more capacity, the Network Nervous System inducts these machines, forming them into “subnetworks” that can host software canisters. Special software running on node machines interacts with other nodes using ICP and applies advanced computer science to allow their compute capacity to be securely added to the Internet Computer.</p> <p>Data centers receive remuneration in the form of tokens, which are also used by <a href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canisters smart contracts</a> to create <a title=\"Cycles\" href=\"https://dfinity.org/faq/cycles\" target=\"_blank\" rel=\"noopener\">cycles</a>&nbsp;that powers computation and storage, in moderated amounts such that approximately constant returns are received per node over time. Participation in the&nbsp;<a title=\"Network Nervous System\" href=\"https://dfinity.org/faq/network-nervous-system-(nns)\" target=\"_blank\" rel=\"noopener\">Network Nervous System</a>&nbsp;algorithmic governance system is possible by locking tokens to create “<a title=\"Neuron\" href=\"https://dfinity.org/faq/neuron\" target=\"_blank\" rel=\"noopener\">neurons</a>,” which provides those voting with voting rewards and enable automatic voting in the form of liquid democracy style scheme. ICP has been designed so that the Internet Computer is managed in an open way and can grow without bound so that it may eventually incorporate millions of node machines.</p></div>"
+              },
+              {
+                "type": "postback",
+                "title": "Who will use the Internet Computer?",
+                "payload": "<div class=\"article-body\"><p>If you are an entrepreneur, developer, or enterprise looking for better ways to build software, the Internet Computer presents an unprecedented, unfolding opportunity. All of this will accelerate because the Internet Computer is expanding the functionality of the public internet — from a global network to also becoming a public compute platform.</p> <p>Many will use the Internet Computer to reduce complexity when building websites and enterprise systems without the need for legacy technologies such as cloud systems, databases, and firewalls. Entrepreneurs and developers will take advantage of the emerging “open internet boom” to create pan-industry platforms, DeFi apps, and dapps by building reimaged software directly on the public internet.</p> <p>Through the use of <a title=\"Canisters\" href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canister smart contracts</a>, users can simply deploy code, store data, and process computation through the Internet Computer Protocol (ICP). The Internet Computer is infinitely scalable as well as decentralized, allowing for applications to exist on the Internet in perpetuity. This enables users to build and deploy dapps that can “<em>run on the network itself rather than on servers owned by Facebook, Google or Amazon.</em>” -<a title=\"The Most Read Article of 2020 on the MIT Technology Review\" href=\"https://www.technologyreview.com/2020/07/01/1004725/redesign-internet-apps-no-one-controls-data-privacy-innovation-cloud\" target=\"_blank\" rel=\"noopener\">MIT Technology Review</a></p> <div class=\"css-iek4o6\">&nbsp;</div></div>"
+              }
+            ],
             "audio_file": "",
             "ssml": "",
             "delay": 500,
             "reprompt": [],
-            "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "51762679-d7ce-40df-a20f-2c86d0751348"
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "JumpBlock2"
+              }
+            ],
+            "nextMessagesIds": [],
+            "id": "235c3b65-e91f-4746-a598-b212b0c044ff"
           }
         ]
       }
     }
   },
-  "83286ee4-80c8-4c16-8af6-7219d38d372c": {
-    "en": {
-      "generic": {
-        "blocks": [
-          {
-            "component_type": "text",
-            "nodeName": "Bot Says",
-            "context": [],
-            "text": "Do you want tutorials on canisters? ",
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
-            "reprompt": [],
-            "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "83286ee4-80c8-4c16-8af6-7219d38d372c"
-          }
-        ]
-      }
-    }
-  },
-  "a82db8de-1361-41df-985c-ed852e9de778": {
+  "ac00c5f4-b367-40fa-8908-3060b4035d8f": {
     "en": {
       "generic": {
         "blocks": [
           {
             "component_type": "jump",
-            "nodeName": "Jump to project..",
+            "nodeName": "JumpBlock2",
             "selectedResult": {
-              "value": "49ec5fee-89a0-4420-b92a-173a3c8a3552",
-              "label": "Grant Question",
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
               "jumpType": "node"
             },
             "reprompt": [],
-            "metadata": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
             "selectedProject": "",
-            "id": "a82db8de-1361-41df-985c-ed852e9de778"
+            "id": "ac00c5f4-b367-40fa-8908-3060b4035d8f"
           }
         ]
       }
     }
   },
-  "fdacac49-f48f-41d2-a15c-ec873afa8837": {
+  "819d8736-dc05-42ba-b2a5-6bf7f012c695": {
     "en": {
       "generic": {
         "blocks": [
           {
-            "component_type": "text",
-            "nodeName": "Child 1",
-            "text": "Your text here",
+            "component_type": "button",
+            "nodeName": "Nodes",
+            "context": [],
+            "text": "Here are some articles that may help:",
+            "buttons": [
+              {
+                "type": "postback",
+                "title": "How do I host nodes for the Internet Computer?",
+                "payload": "<article id=\"main-content\" class=\"article\">       <header class=\"article-header\">         <h1 title=\"How do I host nodes for the Internet Computer? \" class=\"article-title\">           How do I host nodes for the Internet Computer?                     </h1>          <div class=\"article-author\">                      <div class=\"article-meta\">                           <ul class=\"meta-group\">                                <li class=\"meta-data\"><time datetime=\"2021-08-25T16:38:27Z\" title=\"2021-08-25 11:38\" data-datetime=\"relative\">13 days ago</time></li>                 <li class=\"meta-data\">Updated</li>                            </ul>           </div>         </div>                 </header>        <section class=\"article-info\">         <div class=\"article-content\">           <div class=\"article-body\"><p><span>For inquiries regarding the Node Provider program, please <a href=\"https://support.internetcomputer.org/hc/en-us/requests/new\" target=\"_blank\" rel=\"noopener\">submit a ticket</a> on the Internet Computer Association’s website under “Prospective Node Providers.\"</span></p></div>                    </div>       </section>        <footer>         <div class=\"article-footer\">                        <div class=\"article-share\">   <ul class=\"share\">     <li>       <a href=\"https://www.facebook.com/share.php?title=How+do+I+host+nodes+for+the+Internet+Computer%3F+&amp;u=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\" class=\"share-facebook\" aria-label=\"Facebook\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://twitter.com/share?lang=en&amp;text=How+do+I+host+nodes+for+the+Internet+Computer%3F+&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\" class=\"share-twitter\" aria-label=\"Twitter\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M12 2.184a4.83 4.83 0 01-1.415.397 2.52 2.52 0 001.083-1.396 4.87 4.87 0 01-1.564.612A2.428 2.428 0 008.308 1c-1.36 0-2.463 1.13-2.463 2.524 0 .198.023.39.065.576C3.863 3.994 2.05 2.99.835 1.46a2.564 2.564 0 00-.332 1.27 2.54 2.54 0 001.094 2.102 2.413 2.413 0 01-1.115-.316v.032c0 1.224.849 2.243 1.974 2.476-.363.1-.743.115-1.112.042.314 1.002 1.223 1.734 2.3 1.754A4.857 4.857 0 010 9.866 6.83 6.83 0 003.774 11c4.528 0 7.005-3.847 7.005-7.182 0-.11-.003-.22-.007-.327.482-.358.898-.8 1.228-1.308z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://www.linkedin.com/shareArticle?mini=true&amp;source=DFINITY&amp;title=How+do+I+host+nodes+for+the+Internet+Computer%3F+&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\" class=\"share-linkedin\" aria-label=\"LinkedIn\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z\"></path>         </svg>       </a>     </li>   </ul>  </div>                                                       </div>                    <div class=\"article-votes\">             <span class=\"article-votes-question\" id=\"article-votes-label\">Was this article helpful?</span>             <div class=\"article-votes-controls\" role=\"group\" aria-labelledby=\"article-votes-label\">               <button type=\"button\" class=\"button article-vote article-vote-up\" aria-label=\"This article was helpful\" aria-pressed=\"false\">Yes</button>               <button type=\"button\" class=\"button article-vote article-vote-down\" aria-label=\"This article was not helpful\" aria-pressed=\"false\">No</button>             </div>             <small class=\"article-votes-count\">               <span class=\"article-vote-label\">2 out of 2 found this helpful</span>             </small>           </div>                   <div class=\"article-more-questions\">           Have more questions? <a href=\"/hc/en-us/requests/new\">Submit a request</a>         </div>         <div class=\"article-return-to-top\">           <a href=\"#article-container\">             Return to top             <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"article-return-to-top-icon\" width=\"20\" height=\"20\" focusable=\"false\" viewBox=\"0 0 12 12\" aria-hidden=\"true\">               <path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" d=\"M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5\"></path>             </svg>           </a>         </div>       </footer>        <div class=\"article-relatives\">                    <section class=\"recent-articles\"><h2 class=\"recent-articles-title\">Recently viewed articles</h2><ul><li><a href=\"/hc/en-us/articles/360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\">How is a node deployed to the Internet Computer?</a></li><li><a href=\"/hc/en-us/articles/4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\">DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS</a></li><li><a href=\"/hc/en-us/articles/360057879791-How-do-I-join-the-DFINITY-team-\">How do I join the DFINITY team?</a></li><li><a href=\"/hc/en-us/articles/360057132652-Motoko\">Motoko</a></li><li><a href=\"/hc/en-us/articles/360058277551-How-can-I-restart-a-stopped-Canister-smart-contract-\">How can I restart a stopped Canister smart contract?</a></li></ul></section>                                <section class=\"related-articles\">            <h2 class=\"related-articles-title\">Related articles</h2>          <ul>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCHzVE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJBNGdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJVL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMjQxMi1Ib3ctaXMtYS1ub2RlLWRlcGxveWVkLXRvLXRoZS1JbnRlcm5ldC1Db21wdXRlci0GOwhUOglyYW5raQY%3D--77a012e06cc8e4f2fa78e525fe3edd9f40525575\" rel=\"nofollow\">How is a node deployed to the Internet Computer?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBD3F9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJBNGdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI1L2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzQwMzE1Mi1XaGF0LWlzLURGSU5JVFktBjsIVDoJcmFua2kH--379be6d9e5ff89299f830a848e941207f766a342\" rel=\"nofollow\">What is DFINITY?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCODtS9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJBNGdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI9L2hjL2VuLXVzL2FydGljbGVzLzM2MDA2MDgwODY3Mi1JbnRlcm5ldC1Db21wdXRlci1TdGF0dXMGOwhUOglyYW5raQg%3D--75336743a1f4ee865e77e0596b3b3b9e8cdd6f6a\" rel=\"nofollow\">Internet Computer Status</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCL8MG9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJBNGdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJgL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzYwNTMxMS1DYW4tdXNlcnMtZGVwbG95LXByaXZhdGUtc29mdHdhcmUtb24tdGhlLUludGVybmV0LUNvbXB1dGVyLQY7CFQ6CXJhbmtpCQ%3D%3D--bef739145c72b6a33eb67d9efe9bd14b631f593a\" rel=\"nofollow\">Can users deploy private software on the Internet Computer?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCIjYE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJBNGdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJHL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMzE5Mi1Ib3ctZG8tSS1zZWxmLWN1c3RvZHktSUNQLXRva2VuLXMtBjsIVDoJcmFua2kK--60a418adcd1eca07cf6c8a20ec020f8cccb4f163\" rel=\"nofollow\">How do I self-custody ICP token(s)?</a>         </li>            </ul>   </section>                  </div>                <div class=\"article-comments\" id=\"article-comments\">           <section class=\"comments\">             <header class=\"comment-overview\">               <h2 class=\"comment-heading\">                 Comments               </h2>               <p class=\"comment-callout\">0 comments</p>                            </header>              <ul id=\"comments\" class=\"comment-list\">                            </ul>                                          <p class=\"comment-callout\">Please <a data-auth-action=\"signin\" rel=\"nofollow\" href=\"/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057490832-How-do-I-host-nodes-for-the-Internet-Computer-%3Fauth_token%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjo5NDg0NjgwLCJ1c2VyX2lkIjpudWxsLCJ0aWNrZXRfaWQiOm51bGwsImRlZmxlY3Rpb25faWQiOjM2MDg3MTUzNTYxMiwiYXJ0aWNsZXMiOlszNjAwNTc0OTA4MzIsMzYwMDU3MTMyNDEyLDQ0MDQyOTc5Mzc2ODRdLCJ0b2tlbiI6bnVsbCwiZXhwIjoxNjMzNjQ0MDQzfQ.M2_hsCnWE2UB53ghtDPAolSWiOmUJWATPQo6aZb_xeo\">sign in</a> to leave a comment.</p>           </section>         </div>            </article>"
+              },
+              {
+                "type": "postback",
+                "title": "How is a node deployed to the Internet Computer?",
+                "payload": "<article id=\"main-content\" class=\"article\">       <header class=\"article-header\">         <h1 title=\"How is a node deployed to the Internet Computer?\" class=\"article-title\">           How is a node deployed to the Internet Computer?                    </h1>          <div class=\"article-author\">                      <div class=\"article-meta\">                           <ul class=\"meta-group\">                                <li class=\"meta-data\"><time datetime=\"2021-08-25T16:39:05Z\" title=\"2021-08-25 11:39\" data-datetime=\"relative\">13 days ago</time></li>                 <li class=\"meta-data\">Updated</li>                            </ul>           </div>         </div>                 </header>        <section class=\"article-info\">         <div class=\"article-content\">           <div class=\"article-body\"><p>Nodes for the Internet Computer are currently deployed through independent data centers located across the world that combine their computing power by running the Internet Computer Protocol.</p> <p>Unlike projects like Bitcoin or Ethereum where a machine of any caliber can run a “node,” the Internet Computer has a minimum standard of technical specifications for each machine to ensure higher speeds, lower latency, and greater reliability. Additionally, unlike proprietary cloud and compute systems that are run by an individual organization, the Internet Computer is decentralized and governed by the&nbsp;<a title=\"Network Nervous System\" href=\"https://dfinity.org/faq/network-nervous-system-(nns)\" target=\"_blank\" rel=\"noopener\">Network Nervous System</a>&nbsp;(NNS).</p> <p>In order to deploy a node to the Internet Computer, the node machine must meet a minimum set of specifications to ensure a minimum level of computational efficiency across the Internet Computer. As the NNS scales the Internet Computer’s capacity, more and more decentralized nodes running the Internet Computer Protocol will continue to be added, allowing capacity to scale infinitely through&nbsp;<a title=\"Subnet\" href=\"https://dfinity.org/faq/subnet\" target=\"_blank\" rel=\"noopener\">subnets</a>.</p></div>                    </div>       </section>        <footer>         <div class=\"article-footer\">                        <div class=\"article-share\">   <ul class=\"share\">     <li>       <a href=\"https://www.facebook.com/share.php?title=How+is+a+node+deployed+to+the+Internet+Computer%3F&amp;u=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\" class=\"share-facebook\" aria-label=\"Facebook\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://twitter.com/share?lang=en&amp;text=How+is+a+node+deployed+to+the+Internet+Computer%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\" class=\"share-twitter\" aria-label=\"Twitter\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M12 2.184a4.83 4.83 0 01-1.415.397 2.52 2.52 0 001.083-1.396 4.87 4.87 0 01-1.564.612A2.428 2.428 0 008.308 1c-1.36 0-2.463 1.13-2.463 2.524 0 .198.023.39.065.576C3.863 3.994 2.05 2.99.835 1.46a2.564 2.564 0 00-.332 1.27 2.54 2.54 0 001.094 2.102 2.413 2.413 0 01-1.115-.316v.032c0 1.224.849 2.243 1.974 2.476-.363.1-.743.115-1.112.042.314 1.002 1.223 1.734 2.3 1.754A4.857 4.857 0 010 9.866 6.83 6.83 0 003.774 11c4.528 0 7.005-3.847 7.005-7.182 0-.11-.003-.22-.007-.327.482-.358.898-.8 1.228-1.308z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://www.linkedin.com/shareArticle?mini=true&amp;source=DFINITY&amp;title=How+is+a+node+deployed+to+the+Internet+Computer%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\" class=\"share-linkedin\" aria-label=\"LinkedIn\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z\"></path>         </svg>       </a>     </li>   </ul>  </div>                                                       </div>                    <div class=\"article-votes\">             <span class=\"article-votes-question\" id=\"article-votes-label\">Was this article helpful?</span>             <div class=\"article-votes-controls\" role=\"group\" aria-labelledby=\"article-votes-label\">               <button type=\"button\" class=\"button article-vote article-vote-up\" aria-label=\"This article was helpful\" aria-pressed=\"false\">Yes</button>               <button type=\"button\" class=\"button article-vote article-vote-down\" aria-label=\"This article was not helpful\" aria-pressed=\"false\">No</button>             </div>             <small class=\"article-votes-count\">               <span class=\"article-vote-label\">0 out of 0 found this helpful</span>             </small>           </div>                   <div class=\"article-more-questions\">           Have more questions? <a href=\"/hc/en-us/requests/new\">Submit a request</a>         </div>         <div class=\"article-return-to-top\">           <a href=\"#article-container\">             Return to top             <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"article-return-to-top-icon\" width=\"20\" height=\"20\" focusable=\"false\" viewBox=\"0 0 12 12\" aria-hidden=\"true\">               <path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" d=\"M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5\"></path>             </svg>           </a>         </div>       </footer>        <div class=\"article-relatives\">                    <section class=\"recent-articles\"><h2 class=\"recent-articles-title\">Recently viewed articles</h2><ul><li><a href=\"/hc/en-us/articles/360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\">How do I host nodes for the Internet Computer? </a></li><li><a href=\"/hc/en-us/articles/4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\">DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS</a></li><li><a href=\"/hc/en-us/articles/360057879791-How-do-I-join-the-DFINITY-team-\">How do I join the DFINITY team?</a></li><li><a href=\"/hc/en-us/articles/360057132652-Motoko\">Motoko</a></li><li><a href=\"/hc/en-us/articles/360058277551-How-can-I-restart-a-stopped-Canister-smart-contract-\">How can I restart a stopped Canister smart contract?</a></li></ul></section>                                <section class=\"related-articles\">            <h2 class=\"related-articles-title\">Related articles</h2>          <ul>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCFTVE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHzVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJZL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMjM3Mi1Ib3ctZG8teW91LWRlcGxveS1zb2Z0d2FyZS10by10aGUtSW50ZXJuZXQtQ29tcHV0ZXItBjsIVDoJcmFua2kG--8fa54899de8b9eb3f0a9b72a44905ea2de49b13e\" rel=\"nofollow\">How do you deploy software to the Internet Computer?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCL8MG9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHzVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJgL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzYwNTMxMS1DYW4tdXNlcnMtZGVwbG95LXByaXZhdGUtc29mdHdhcmUtb24tdGhlLUludGVybmV0LUNvbXB1dGVyLQY7CFQ6CXJhbmtpBw%3D%3D--cea23771016289a9003d0f4216b267652bc333d4\" rel=\"nofollow\">Can users deploy private software on the Internet Computer?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCODtS9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHzVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI9L2hjL2VuLXVzL2FydGljbGVzLzM2MDA2MDgwODY3Mi1JbnRlcm5ldC1Db21wdXRlci1TdGF0dXMGOwhUOglyYW5raQg%3D--429a2a63a4610de0f7cf5720db9471b85a608e7d\" rel=\"nofollow\">Internet Computer Status</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCCzVE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHzVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJUL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMjMzMi1XaGF0LXRvb2xzLWRvZXMtREZJTklUWS1wcm92aWRlLWZvci1kZXZlbG9wZXJzLQY7CFQ6CXJhbmtpCQ%3D%3D--83864430cc27fbf6429eeb4519dcbb3d4cfce69c\" rel=\"nofollow\">What tools does DFINITY provide for developers?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCOsNG9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHzVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI2L2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzYwNTYxMS1JQ1AtVXRpbGl0eS1Ub2tlbgY7CFQ6CXJhbmtpCg%3D%3D--f0acc77510b39a1027b7e506f9ce19d5bb484fd8\" rel=\"nofollow\">ICP Utility Token</a>         </li>            </ul>   </section>                  </div>                <div class=\"article-comments\" id=\"article-comments\">           <section class=\"comments\">             <header class=\"comment-overview\">               <h2 class=\"comment-heading\">                 Comments               </h2>               <p class=\"comment-callout\">0 comments</p>                            </header>              <ul id=\"comments\" class=\"comment-list\">                            </ul>                                          <p class=\"comment-callout\">Please <a data-auth-action=\"signin\" rel=\"nofollow\" href=\"/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\">sign in</a> to leave a comment.</p>           </section>         </div>            </article>"
+              },
+              {
+                "type": "postback",
+                "title": "What kind of proposals can I vote on?",
+                "payload": "<article id=\"main-content\" class=\"article\">       <header class=\"article-header\">         <h1 title=\"What kind of proposals can I vote on?\" class=\"article-title\">           What kind of proposals can I vote on?                    </h1>          <div class=\"article-author\">                      <div class=\"article-meta\">                           <ul class=\"meta-group\">                                <li class=\"meta-data\"><time datetime=\"2021-08-25T16:38:28Z\" title=\"2021-08-25 11:38\" data-datetime=\"relative\">13 days ago</time></li>                 <li class=\"meta-data\">Updated</li>                            </ul>           </div>         </div>                 </header>        <section class=\"article-info\">         <div class=\"article-content\">           <div class=\"article-body\"><p><span>Some of the initial topics available in the NNS to vote on include:</span></p> <ul> <li><strong>#ExchangeRate</strong>:<span> Proposals provide information in “real time” about the market value of ICP utility tokens, as measured by an International Monetary Fund (IMF) Special Drawing Right (SDR), which allows the NNS to convert ICP utility tokens to cycles (which power computation) at a rate that keeps their real-world cost constant. Because proposals on this topic are very frequent, they have a shorter voting period, and votes on this topic are not included in the voting history of the neuron.</span><span><br><br></span></li> <li><strong>#Governance</strong>:<span> Proposals that administer governance — for example, motions and the configuration of certain parameters.</span><span><br><br></span></li> <li><strong>#KYC</strong>: <span>Proposals that update KYC information for regulatory purposes.</span><span><br><br></span></li> <li><strong>#NetworkCanisterManagement</strong>:<span> Installing and upgrading “system” Canister smart contracts that belong to the network — for example, upgrading the NNS.</span><span><br><br></span></li> <li><strong>#NetworkEconomics</strong>:<span> Proposals that administer network economics — for example, the minimal neuron stake</span><span><br><br></span></li> <li><strong>#NeuronManagement</strong>:<span> A special topic by means of which a neuron can be managed by the followees for this topic (in this case, there is no fallback to default). Votes on this topic are not included in the voting history of the neuron. For proposals on this topic, only followees on this topic, of the neuron that the proposals pertains to, are allowed to vote. Because the set of eligible voters of proposals on this topic is restricted, proposals on this topic have a shorter than normal voting period.</span><span><br><br></span></li> <li><strong>#NodeAdmin</strong>:<span> Proposals that administer node machines, including but not limited to upgrading or configuring the OS, upgrading or configuring the virtual machine framework, and upgrading or configuring the node replica software.</span><span><br><br></span></li> <li><strong>#NodeProviderRewards</strong>:<span> Proposals relating to node provider rewards.</span><span><br><br></span></li> <li><strong>#ParticipantManagement</strong>:<span> Proposals that administer network participants — for example, granting and revoking DCIDs (data center identities) or NPIDs (node provider identities).</span></li> </ul> <p>&nbsp;</p> <ul> <li><strong>#SubnetManagement</strong>:<span> Proposals that administer network subnets — for example, creating new subnets, adding and removing subnet nodes, and splitting subnets.</span></li> </ul></div>                    </div>       </section>        <footer>         <div class=\"article-footer\">                        <div class=\"article-share\">   <ul class=\"share\">     <li>       <a href=\"https://www.facebook.com/share.php?title=What+kind+of+proposals+can+I+vote+on%3F&amp;u=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4404297937684-What-kind-of-proposals-can-I-vote-on-\" class=\"share-facebook\" aria-label=\"Facebook\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://twitter.com/share?lang=en&amp;text=What+kind+of+proposals+can+I+vote+on%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4404297937684-What-kind-of-proposals-can-I-vote-on-\" class=\"share-twitter\" aria-label=\"Twitter\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M12 2.184a4.83 4.83 0 01-1.415.397 2.52 2.52 0 001.083-1.396 4.87 4.87 0 01-1.564.612A2.428 2.428 0 008.308 1c-1.36 0-2.463 1.13-2.463 2.524 0 .198.023.39.065.576C3.863 3.994 2.05 2.99.835 1.46a2.564 2.564 0 00-.332 1.27 2.54 2.54 0 001.094 2.102 2.413 2.413 0 01-1.115-.316v.032c0 1.224.849 2.243 1.974 2.476-.363.1-.743.115-1.112.042.314 1.002 1.223 1.734 2.3 1.754A4.857 4.857 0 010 9.866 6.83 6.83 0 003.774 11c4.528 0 7.005-3.847 7.005-7.182 0-.11-.003-.22-.007-.327.482-.358.898-.8 1.228-1.308z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://www.linkedin.com/shareArticle?mini=true&amp;source=DFINITY&amp;title=What+kind+of+proposals+can+I+vote+on%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4404297937684-What-kind-of-proposals-can-I-vote-on-\" class=\"share-linkedin\" aria-label=\"LinkedIn\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z\"></path>         </svg>       </a>     </li>   </ul>  </div>                                                       </div>                    <div class=\"article-votes\">             <span class=\"article-votes-question\" id=\"article-votes-label\">Was this article helpful?</span>             <div class=\"article-votes-controls\" role=\"group\" aria-labelledby=\"article-votes-label\">               <button type=\"button\" class=\"button article-vote article-vote-up\" aria-label=\"This article was helpful\" aria-pressed=\"false\">Yes</button>               <button type=\"button\" class=\"button article-vote article-vote-down\" aria-label=\"This article was not helpful\" aria-pressed=\"false\">No</button>             </div>             <small class=\"article-votes-count\">               <span class=\"article-vote-label\">0 out of 0 found this helpful</span>             </small>           </div>                   <div class=\"article-more-questions\">           Have more questions? <a href=\"/hc/en-us/requests/new\">Submit a request</a>         </div>         <div class=\"article-return-to-top\">           <a href=\"#article-container\">             Return to top             <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"article-return-to-top-icon\" width=\"20\" height=\"20\" focusable=\"false\" viewBox=\"0 0 12 12\" aria-hidden=\"true\">               <path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" d=\"M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5\"></path>             </svg>           </a>         </div>       </footer>        <div class=\"article-relatives\">                    <section class=\"recent-articles\"><h2 class=\"recent-articles-title\">Recently viewed articles</h2><ul><li><a href=\"/hc/en-us/articles/360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\">How do I host nodes for the Internet Computer? </a></li><li><a href=\"/hc/en-us/articles/360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\">How is a node deployed to the Internet Computer?</a></li><li><a href=\"/hc/en-us/articles/4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\">DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS</a></li><li><a href=\"/hc/en-us/articles/360057879791-How-do-I-join-the-DFINITY-team-\">How do I join the DFINITY team?</a></li><li><a href=\"/hc/en-us/articles/360057132652-Motoko\">Motoko</a></li></ul></section>                                <section class=\"related-articles\">            <h2 class=\"related-articles-title\">Related articles</h2>          <ul>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJQ3v3MBBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBQznXQBBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJNL2hjL2VuLXVzL2FydGljbGVzLzQ0MDQyODMzODk4NDQtV2hhdC1pcy10aGUtbWluaW11bS1yZXdhcmQtSS1jYW4tY2xhaW0tBjsIVDoJcmFua2kG--5840578df00db8926adbada873d999211e46104d\" rel=\"nofollow\">What is the minimum reward I can claim?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJSu0HMBBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBQznXQBBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSIyL2hjL2VuLXVzL2FydGljbGVzLzQ0MDQyODQ1MzQ0MjAtVm90aW5nLVBvd2VyBjsIVDoJcmFua2kH--3e30fa5fc14ee8b2634620c12c68047395a28a3c\" rel=\"nofollow\">Voting Power</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJSVn3MBBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBQznXQBBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJIL2hjL2VuLXVzL2FydGljbGVzLzQ0MDQyODEzMTY3NTYtV2hhdC1kZXRlcm1pbmVzLW15LXZvdGluZy1yZXdhcmRzLQY7CFQ6CXJhbmtpCA%3D%3D--ea815024ee17bbb2f5d3ecb16d9f24f765f00641\" rel=\"nofollow\">What determines my voting rewards?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJShvzsBBDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBQznXQBBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJcL2hjL2VuLXVzL2FydGljbGVzLzQ0MDMzNDM4OTI4ODQtSG93LWRvLUkta25vdy1pZi1teS1kZXZpY2Utc3VwcG9ydHMtSW50ZXJuZXQtSWRlbnRpdHktBjsIVDoJcmFua2kJ--489e0b299f494096606be815d365a644af301682\" rel=\"nofollow\">How do I know if my device supports Internet Identity?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCNTXE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBQznXQBBDoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI6L2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMzAxMi1XaGF0LWlzLXNlbGYtY3VzdG9keS0GOwhUOglyYW5raQo%3D--c20db0006cc19bfdbcd5de3553fa2b9df557c829\" rel=\"nofollow\">What is self-custody?</a>         </li>            </ul>   </section>                  </div>                <div class=\"article-comments\" id=\"article-comments\">           <section class=\"comments\">             <header class=\"comment-overview\">               <h2 class=\"comment-heading\">                 Comments               </h2>               <p class=\"comment-callout\">0 comments</p>                            </header>              <ul id=\"comments\" class=\"comment-list\">                            </ul>                                          <p class=\"comment-callout\">Please <a data-auth-action=\"signin\" rel=\"nofollow\" href=\"/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F4404297937684-What-kind-of-proposals-can-I-vote-on-%3Fauth_token%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjo5NDg0NjgwLCJ1c2VyX2lkIjpudWxsLCJ0aWNrZXRfaWQiOm51bGwsImRlZmxlY3Rpb25faWQiOjM2MDg3MTUzNTYxMiwiYXJ0aWNsZXMiOlszNjAwNTc0OTA4MzIsMzYwMDU3MTMyNDEyLDQ0MDQyOTc5Mzc2ODRdLCJ0b2tlbiI6bnVsbCwiZXhwIjoxNjMzNjQ0MDQzfQ.M2_hsCnWE2UB53ghtDPAolSWiOmUJWATPQo6aZb_xeo\">sign in</a> to leave a comment.</p>           </section>         </div>            </article>"
+              }
+            ],
             "audio_file": "",
             "ssml": "",
             "delay": 500,
             "reprompt": [],
-            "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "fdacac49-f48f-41d2-a15c-ec873afa8837"
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "JumpBlock3"
+              }
+            ],
+            "workflow_index": 6,
+            "nextMessagesIds": [],
+            "id": "819d8736-dc05-42ba-b2a5-6bf7f012c695"
           }
         ]
       }
     }
   },
-  "048deb1c-c950-4479-98e6-5243b60b1634": {
+  "8431e049-4cf4-4d3e-9ed5-0178c3fa821f": {
     "en": {
       "generic": {
         "blocks": [
           {
-            "component_type": "text",
-            "nodeName": "Child 2",
-            "text": "Your text here",
-            "audio_file": "",
-            "ssml": "",
-            "delay": 500,
+            "component_type": "jump",
+            "nodeName": "JumpBlock3",
+            "selectedResult": {
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
+              "jumpType": "node"
+            },
             "reprompt": [],
-            "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "048deb1c-c950-4479-98e6-5243b60b1634"
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
+            "selectedProject": "",
+            "id": "8431e049-4cf4-4d3e-9ed5-0178c3fa821f"
           }
         ]
       }
     }
   },
-  "540af821-13ec-4732-a494-6f9073aa9da9": {
+  "d4a575ca-9553-4396-a2a2-89f3dc9036a7": {
     "en": {
       "generic": {
         "blocks": [
           {
-            "component_type": "text",
-            "nodeName": "Child 3",
-            "text": "Your text here",
+            "component_type": "button",
+            "nodeName": "Deploy",
+            "context": [],
+            "text": "Here are some articles that may help:",
+            "buttons": [
+              {
+                "type": "postback",
+                "title": "How do I upgrade an application previously deployed on the Internet Computer? How do I reinstall or re-deploy a Canister smart contract?",
+                "payload": "<article id=\"main-content\" class=\"article\">       <header class=\"article-header\">         <h1 title=\"How do I upgrade an application previously deployed on the Internet Computer? How do I reinstall or re-deploy a Canister smart contract?\" class=\"article-title\">           How do I upgrade an application previously deployed on the Internet Computer? How do I reinstall or re-deploy a Canister smart contract?                    </h1>          <div class=\"article-author\">                      <div class=\"article-meta\">                           <ul class=\"meta-group\">                                <li class=\"meta-data\"><time datetime=\"2021-08-25T16:38:42Z\" title=\"2021-08-25 11:38\" data-datetime=\"relative\">13 days ago</time></li>                 <li class=\"meta-data\">Updated</li>                            </ul>           </div>         </div>                 </header>        <section class=\"article-info\">         <div class=\"article-content\">           <div class=\"article-body\"><p><span>To upgrade a Canister smart contract on the Internet Computer network:<br></span></p> <ol> <li><span>Open a new terminal and navigate to your project directory.</span></li> <li><span>Start the Internet Computer network, if necessary.<br><br>In most cases, this step is only necessary if you are running the Internet Computer network locally.<br><br>If you were upgrading Canisters on a remote network, you would include the --network command-line option to perform tasks on that network.<br></span></li> <li><span>Verify you have Canister identifiers for all of the Canisters you want to upgrade.<br><br>Note that your program must identify the variables for which to maintain state by using the stable keyword in the variable declaration.<br><br>For more information about declaring stable variables, see the Motoko Programming Language Guide.</span></li> <li><span>Upgrade all of the Canisters by running the following command:<br><br>dfx Canister install --all --mode upgrade</span></li> </ol> <p><span><br><br>Similar steps are involved to reinstall on the Internet Computer network:<br></span></p> <ol> <li><span>Open a new terminal and navigate to your project directory.</span></li> <li><span>Start the Internet Computer network, if necessary.<br><br>In most cases, this step is only necessary if you are running the Internet Computer network locally.<br><br>If you were reinstalling Canisters on a remote network, you would include the --network command-line option to perform tasks on that network.</span></li> <li><span>Verify you have Canister identifiers for all of the Canisters you want to re-deploy.</span></li> <li><span>Re-deploy all of the Canisters by running the following command:<br><br>dfx canister install --all --mode reinstall<br></span></li> </ol> <p><span><br>To view in-depth information about upgrading and reinstalling Canisters, please check out the <a href=\"https://sdk.dfinity.org/docs/developers-guide/working-with-canisters.html#upgrade-canister\" target=\"_blank\" rel=\"noopener\">helpful articles from the Developer Center</a>.<br></span></p></div>                    </div>       </section>        <footer>         <div class=\"article-footer\">                        <div class=\"article-share\">   <ul class=\"share\">     <li>       <a href=\"https://www.facebook.com/share.php?title=How+do+I+upgrade+an+application+previously+deployed+on+the+Internet+Computer%3F+How+do+I+reinstall+or+re-deploy+a+Canister+smart+contract%3F&amp;u=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360058277671-How-do-I-upgrade-an-application-previously-deployed-on-the-Internet-Computer-How-do-I-reinstall-or-re-deploy-a-Canister-smart-contract-\" class=\"share-facebook\" aria-label=\"Facebook\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://twitter.com/share?lang=en&amp;text=How+do+I+upgrade+an+application+previously+deployed+on+the+Internet+Computer%3F+How+do+I+reinstall+or+re-deploy+a+Cani...&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360058277671-How-do-I-upgrade-an-application-previously-deployed-on-the-Internet-Computer-How-do-I-reinstall-or-re-deploy-a-Canister-smart-contract-\" class=\"share-twitter\" aria-label=\"Twitter\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M12 2.184a4.83 4.83 0 01-1.415.397 2.52 2.52 0 001.083-1.396 4.87 4.87 0 01-1.564.612A2.428 2.428 0 008.308 1c-1.36 0-2.463 1.13-2.463 2.524 0 .198.023.39.065.576C3.863 3.994 2.05 2.99.835 1.46a2.564 2.564 0 00-.332 1.27 2.54 2.54 0 001.094 2.102 2.413 2.413 0 01-1.115-.316v.032c0 1.224.849 2.243 1.974 2.476-.363.1-.743.115-1.112.042.314 1.002 1.223 1.734 2.3 1.754A4.857 4.857 0 010 9.866 6.83 6.83 0 003.774 11c4.528 0 7.005-3.847 7.005-7.182 0-.11-.003-.22-.007-.327.482-.358.898-.8 1.228-1.308z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://www.linkedin.com/shareArticle?mini=true&amp;source=DFINITY&amp;title=How+do+I+upgrade+an+application+previously+deployed+on+the+Internet+Computer%3F+How+do+I+reinstall+or+re-deploy+a+Canister+smart+contract%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360058277671-How-do-I-upgrade-an-application-previously-deployed-on-the-Internet-Computer-How-do-I-reinstall-or-re-deploy-a-Canister-smart-contract-\" class=\"share-linkedin\" aria-label=\"LinkedIn\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z\"></path>         </svg>       </a>     </li>   </ul>  </div>                                                       </div>                    <div class=\"article-votes\">             <span class=\"article-votes-question\" id=\"article-votes-label\">Was this article helpful?</span>             <div class=\"article-votes-controls\" role=\"group\" aria-labelledby=\"article-votes-label\">               <button type=\"button\" class=\"button article-vote article-vote-up\" aria-label=\"This article was helpful\" aria-pressed=\"false\">Yes</button>               <button type=\"button\" class=\"button article-vote article-vote-down\" aria-label=\"This article was not helpful\" aria-pressed=\"false\">No</button>             </div>             <small class=\"article-votes-count\">               <span class=\"article-vote-label\">0 out of 0 found this helpful</span>             </small>           </div>                   <div class=\"article-more-questions\">           Have more questions? <a href=\"/hc/en-us/requests/new\">Submit a request</a>         </div>         <div class=\"article-return-to-top\">           <a href=\"#article-container\">             Return to top             <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"article-return-to-top-icon\" width=\"20\" height=\"20\" focusable=\"false\" viewBox=\"0 0 12 12\" aria-hidden=\"true\">               <path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" d=\"M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5\"></path>             </svg>           </a>         </div>       </footer>        <div class=\"article-relatives\">                    <section class=\"recent-articles\"><h2 class=\"recent-articles-title\">Recently viewed articles</h2><ul><li><a href=\"/hc/en-us/articles/4404297937684-What-kind-of-proposals-can-I-vote-on-\">What kind of proposals can I vote on?</a></li><li><a href=\"/hc/en-us/articles/360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\">How do I host nodes for the Internet Computer? </a></li><li><a href=\"/hc/en-us/articles/360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\">How is a node deployed to the Internet Computer?</a></li><li><a href=\"/hc/en-us/articles/4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\">DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS</a></li><li><a href=\"/hc/en-us/articles/360057879791-How-do-I-join-the-DFINITY-team-\">How do I join the DFINITY team?</a></li></ul></section>                                <section class=\"related-articles\">            <h2 class=\"related-articles-title\">Related articles</h2>          <ul>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBNPJdVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCCdPJdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJ7L2hjL2VuLXVzL2FydGljbGVzLzM2MDA1ODI3NzY1MS1Ib3ctY2FuLUktbG9vay11cC1hLWNhbmlzdGVyLWlkZW50aWZpZXItYWZ0ZXItSS12ZS1kZXBsb3llZC1hLUNhbmlzdGVyLXNtYXJ0LWNvbnRyYWN0LQY7CFQ6CXJhbmtpBg%3D%3D--440c440a093d124b0029aa8c59e89e4ece5dba81\" rel=\"nofollow\">How can I look up a canister identifier after I’ve deployed a Canister smart contract?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCHQAHtVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCCdPJdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSIBjC9oYy9lbi11cy9hcnRpY2xlcy8zNjAwNTc3OTg3NzItSG93LWRvLUktaW5zdGFsbC1hcHBsaWNhdGlvbnMtb24tdGhlLUludGVybmV0LUNvbXB1dGVyLUhvdy1kby1JLWluc3RhbGwtb3ItZGVwbG95LWEtQ2FuaXN0ZXItc21hcnQtY29udHJhY3QtBjsIVDoJcmFua2kH--d258f9c1eff00bedd5eefbdf024e872d4e5f0be7\" rel=\"nofollow\">How do I install applications on the Internet Computer? How do I install or deploy a Canister smart contract?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCGMQGdVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCCdPJdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJhL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzQ3NTE3MS1Ib3ctZG8tSS1wYXJ0aWNpcGF0ZS1pbi13aGF0LXRoZS1JbnRlcm5ldC1Db21wdXRlci1pcy1kb2luZy0GOwhUOglyYW5raQg%3D--901fbe5447cbee62d7a6d26e3083ae62b7a680f9\" rel=\"nofollow\">How do I participate in what the Internet Computer is doing?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBQKpecABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCCdPJdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJHL2hjL2VuLXVzL2FydGljbGVzLzQ0MDE5MzI4NjQwMjAtSG93LXRvLVN1Ym1pdC1hLUdyYW50LUFwcGxpY2F0aW9uBjsIVDoJcmFua2kJ--f21169033287e619c4c42f07510e3487e322387f\" rel=\"nofollow\">How to Submit a Grant Application</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCCQAHtVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCCdPJdVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJWL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1Nzc5ODY5Mi1Ib3ctY2FuLUktc3RvcC1hLXJ1bm5pbmctQ2FuaXN0ZXItc21hcnQtY29udHJhY3QtBjsIVDoJcmFua2kK--25ab5ccd269b8ef0655fea9d4f8249fce7307ad7\" rel=\"nofollow\">How can I stop a running Canister smart contract?</a>         </li>            </ul>   </section>                  </div>                <div class=\"article-comments\" id=\"article-comments\">           <section class=\"comments\">             <header class=\"comment-overview\">               <h2 class=\"comment-heading\">                 Comments               </h2>               <p class=\"comment-callout\">0 comments</p>                            </header>              <ul id=\"comments\" class=\"comment-list\">                            </ul>                                          <p class=\"comment-callout\">Please <a data-auth-action=\"signin\" rel=\"nofollow\" href=\"/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360058277671-How-do-I-upgrade-an-application-previously-deployed-on-the-Internet-Computer-How-do-I-reinstall-or-re-deploy-a-Canister-smart-contract-\">sign in</a> to leave a comment.</p>           </section>         </div>            </article>"
+              },
+              {
+                "type": "postback",
+                "title": "How do I install applications on the Internet Computer? How do I install or deploy a Canister smart contract?",
+                "payload": "<article id=\"main-content\" class=\"article\">       <header class=\"article-header\">         <h1 title=\"How do I install applications on the Internet Computer? How do I install or deploy a Canister smart contract?\" class=\"article-title\">           How do I install applications on the Internet Computer? How do I install or deploy a Canister smart contract?                    </h1>          <div class=\"article-author\">                      <div class=\"article-meta\">                           <ul class=\"meta-group\">                                <li class=\"meta-data\"><time datetime=\"2021-08-25T16:38:42Z\" title=\"2021-08-25 11:38\" data-datetime=\"relative\">13 days ago</time></li>                 <li class=\"meta-data\">Updated</li>                            </ul>           </div>         </div>                 </header>        <section class=\"article-info\">         <div class=\"article-content\">           <div class=\"article-body\"><p><span>You can make applications accessible on the Internet Computer network by deploying the Canister smart contract that make up the application project.</span></p> <p>&nbsp;</p> <div class=\"paragraph\"> <p>To deploy on the Internet Computer network for the first time:</p> <p>&nbsp;</p> </div> <div class=\"olist arabic\"> <ol class=\"arabic\"> <li> <p>Open a new terminal and navigate to your project directory.</p> </li> <li> <p>Start the Internet Computer network, if necessary.</p> <div class=\"paragraph\"> <p>In most cases, this step is only necessary if you are running the Internet Computer network locally.</p> </div> <div class=\"paragraph\"> <p>If you were installing Canisters on a remote network, you would include the <code>--network</code>&nbsp;command-line option to perform tasks on that network.</p> <p>&nbsp;</p> </div> </li> <li> <p>Verify you have Canister identifiers for all of the Canisters you want to deploy.</p> </li> <li> <p>Deploy all of the Canisters by running the following command:</p> <div class=\"listingblock\"> <div class=\"content\"> <pre class=\"highlightjs highlight\"><code class=\"language-bash hljs\">dfx canister install --all</code></pre> </div> </div> </li> </ol> </div> <p>&nbsp;</p> <p><span>To view in-depth information about working with Canisters, please check out these helpful articles from the Developer Center:</span></p> <ul> <li><a href=\"https://sdk.dfinity.org/docs/developers-guide/working-with-canisters.html#deploy-canister\" target=\"_blank\" rel=\"noopener\">Deploy Canisters on the Internet Computer network</a></li> </ul> <p>&nbsp;</p> <p><span>Related topics (reinstalling canisters and upgrading Canisters):</span></p> <ul> <li><a href=\"https://sdk.dfinity.org/docs/developers-guide/working-with-canisters.html#reinstall-canister\" target=\"_blank\" rel=\"noopener\">Reinstall a Canister</a></li> <li><a href=\"https://sdk.dfinity.org/docs/developers-guide/working-with-canisters.html#upgrade-canister\" target=\"_blank\" rel=\"noopener\">Upgrade a Canister</a></li> </ul></div>                    </div>       </section>        <footer>         <div class=\"article-footer\">                        <div class=\"article-share\">   <ul class=\"share\">     <li>       <a href=\"https://www.facebook.com/share.php?title=How+do+I+install+applications+on+the+Internet+Computer%3F+How+do+I+install+or+deploy+a+Canister+smart+contract%3F&amp;u=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057798772-How-do-I-install-applications-on-the-Internet-Computer-How-do-I-install-or-deploy-a-Canister-smart-contract-\" class=\"share-facebook\" aria-label=\"Facebook\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://twitter.com/share?lang=en&amp;text=How+do+I+install+applications+on+the+Internet+Computer%3F+How+do+I+install+or+deploy+a+Canister+smart+contract%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057798772-How-do-I-install-applications-on-the-Internet-Computer-How-do-I-install-or-deploy-a-Canister-smart-contract-\" class=\"share-twitter\" aria-label=\"Twitter\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M12 2.184a4.83 4.83 0 01-1.415.397 2.52 2.52 0 001.083-1.396 4.87 4.87 0 01-1.564.612A2.428 2.428 0 008.308 1c-1.36 0-2.463 1.13-2.463 2.524 0 .198.023.39.065.576C3.863 3.994 2.05 2.99.835 1.46a2.564 2.564 0 00-.332 1.27 2.54 2.54 0 001.094 2.102 2.413 2.413 0 01-1.115-.316v.032c0 1.224.849 2.243 1.974 2.476-.363.1-.743.115-1.112.042.314 1.002 1.223 1.734 2.3 1.754A4.857 4.857 0 010 9.866 6.83 6.83 0 003.774 11c4.528 0 7.005-3.847 7.005-7.182 0-.11-.003-.22-.007-.327.482-.358.898-.8 1.228-1.308z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://www.linkedin.com/shareArticle?mini=true&amp;source=DFINITY&amp;title=How+do+I+install+applications+on+the+Internet+Computer%3F+How+do+I+install+or+deploy+a+Canister+smart+contract%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057798772-How-do-I-install-applications-on-the-Internet-Computer-How-do-I-install-or-deploy-a-Canister-smart-contract-\" class=\"share-linkedin\" aria-label=\"LinkedIn\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z\"></path>         </svg>       </a>     </li>   </ul>  </div>                                                       </div>                    <div class=\"article-votes\">             <span class=\"article-votes-question\" id=\"article-votes-label\">Was this article helpful?</span>             <div class=\"article-votes-controls\" role=\"group\" aria-labelledby=\"article-votes-label\">               <button type=\"button\" class=\"button article-vote article-vote-up\" aria-label=\"This article was helpful\" aria-pressed=\"false\">Yes</button>               <button type=\"button\" class=\"button article-vote article-vote-down\" aria-label=\"This article was not helpful\" aria-pressed=\"false\">No</button>             </div>             <small class=\"article-votes-count\">               <span class=\"article-vote-label\">0 out of 0 found this helpful</span>             </small>           </div>                   <div class=\"article-more-questions\">           Have more questions? <a href=\"/hc/en-us/requests/new\">Submit a request</a>         </div>         <div class=\"article-return-to-top\">           <a href=\"#article-container\">             Return to top             <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"article-return-to-top-icon\" width=\"20\" height=\"20\" focusable=\"false\" viewBox=\"0 0 12 12\" aria-hidden=\"true\">               <path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" d=\"M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5\"></path>             </svg>           </a>         </div>       </footer>        <div class=\"article-relatives\">                    <section class=\"recent-articles\"><h2 class=\"recent-articles-title\">Recently viewed articles</h2><ul><li><a href=\"/hc/en-us/articles/360058277671-How-do-I-upgrade-an-application-previously-deployed-on-the-Internet-Computer-How-do-I-reinstall-or-re-deploy-a-Canister-smart-contract-\">How do I upgrade an application previously deployed on the Internet Computer? How do I reinstall or re-deploy a Canister smart contract?</a></li><li><a href=\"/hc/en-us/articles/4404297937684-What-kind-of-proposals-can-I-vote-on-\">What kind of proposals can I vote on?</a></li><li><a href=\"/hc/en-us/articles/360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\">How do I host nodes for the Internet Computer? </a></li><li><a href=\"/hc/en-us/articles/360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\">How is a node deployed to the Internet Computer?</a></li><li><a href=\"/hc/en-us/articles/4401932915860-DFINITY-DEVELOPER-GRANT-PROGRAM-TERMS-AND-CONDITIONS\">DFINITY DEVELOPER GRANT PROGRAM TERMS AND CONDITIONS</a></li></ul></section>                                <section class=\"related-articles\">            <h2 class=\"related-articles-title\">Related articles</h2>          <ul>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCItPJdVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHQAHtVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJTL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1ODI3Nzc3MS1Ib3ctZG8tSS1jcmVhdGUtYS1uZXctQ2FuaXN0ZXItc21hcnQtY29udHJhY3QtBjsIVDoJcmFua2kG--eb2c8ab78a3e720b29b6ac2b5de41550d23cff30\" rel=\"nofollow\">How do I create a new Canister smart contract?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCCdPJdVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHQAHtVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSIBpy9oYy9lbi11cy9hcnRpY2xlcy8zNjAwNTgyNzc2NzEtSG93LWRvLUktdXBncmFkZS1hbi1hcHBsaWNhdGlvbi1wcmV2aW91c2x5LWRlcGxveWVkLW9uLXRoZS1JbnRlcm5ldC1Db21wdXRlci1Ib3ctZG8tSS1yZWluc3RhbGwtb3ItcmUtZGVwbG95LWEtQ2FuaXN0ZXItc21hcnQtY29udHJhY3QtBjsIVDoJcmFua2kH--73eeeec969134f0cd8b06b5d76b209b74b51f7ba\" rel=\"nofollow\">How do I upgrade an application previously deployed on the Internet Computer? How do I reinstall or re-deploy a Canister smart contract?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCHMPGdVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHQAHtVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJ%2BL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzQ3NDkzMS1Eb2VzLURGSU5JVFktaGF2ZS1wbGFucy10by1zdXBwb3J0LWNvbXB1dGF0aW9uLWludGVuc2l2ZS11c2UtY2FzZXMtbGlrZS1tYWNoaW5lLWxlYXJuaW5nLQY7CFQ6CXJhbmtpCA%3D%3D--1f17e0d55b4e3bbe9e5b29adef543678630a33f4\" rel=\"nofollow\">Does DFINITY have plans to support computation-intensive use cases like machine learning?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCIDWE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHQAHtVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSI6L2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMjY3Mi1PcGVuLUludGVybmV0LVNlcnZpY2UGOwhUOglyYW5raQk%3D--1f5fa3cda98e3f08b349d75b16291007df69fa60\" rel=\"nofollow\">Open Internet Service</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCDgAHtVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCHQAHtVTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJdL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1Nzc5ODcxMi1Ib3ctY2FuLUktY2hlY2stdGhlLXN0YXR1cy1vZi1hLUNhbmlzdGVyLXNtYXJ0LWNvbnRyYWN0LQY7CFQ6CXJhbmtpCg%3D%3D--90fe2e18e3ea957763f0af8fbb72ebd9e88d2ad5\" rel=\"nofollow\">How can I check the status of a Canister smart contract?</a>         </li>            </ul>   </section>                  </div>                <div class=\"article-comments\" id=\"article-comments\">           <section class=\"comments\">             <header class=\"comment-overview\">               <h2 class=\"comment-heading\">                 Comments               </h2>               <p class=\"comment-callout\">0 comments</p>                            </header>              <ul id=\"comments\" class=\"comment-list\">                            </ul>                                          <p class=\"comment-callout\">Please <a data-auth-action=\"signin\" rel=\"nofollow\" href=\"/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057798772-How-do-I-install-applications-on-the-Internet-Computer-How-do-I-install-or-deploy-a-Canister-smart-contract-\">sign in</a> to leave a comment.</p>           </section>         </div>            </article>"
+              },
+              {
+                "type": "postback",
+                "title": "How do you deploy software to the Internet Computer?",
+                "payload": "<article id=\"main-content\" class=\"article\">       <header class=\"article-header\">         <h1 title=\"How do you deploy software to the Internet Computer?\" class=\"article-title\">           How do you deploy software to the Internet Computer?                    </h1>          <div class=\"article-author\">                      <div class=\"article-meta\">                           <ul class=\"meta-group\">                                <li class=\"meta-data\"><time datetime=\"2021-08-25T16:38:27Z\" title=\"2021-08-25 11:38\" data-datetime=\"relative\">13 days ago</time></li>                 <li class=\"meta-data\">Updated</li>                            </ul>           </div>         </div>                 </header>        <section class=\"article-info\">         <div class=\"article-content\">           <div class=\"article-body\"><p>When you write source code for an application that runs on the Internet Computer, you compile the source code into a WebAssembly module. To deploy the WebAssembly module that contains your program on the Internet Computer, the program is executed inside of a conceptual computational unit called a Canister smart contract. Once deployed, end users can interact with the Canister by accessing the entry point functions you have defined for that <a title=\"Canisters\" href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canister</a>&nbsp;through a front-end client such as a browser.</p> <div class=\"css-iek4o6\">&nbsp;</div></div>                    </div>       </section>        <footer>         <div class=\"article-footer\">                        <div class=\"article-share\">   <ul class=\"share\">     <li>       <a href=\"https://www.facebook.com/share.php?title=How+do+you+deploy+software+to+the+Internet+Computer%3F&amp;u=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132372-How-do-you-deploy-software-to-the-Internet-Computer-\" class=\"share-facebook\" aria-label=\"Facebook\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M6 0a6 6 0 01.813 11.945V7.63h1.552l.244-1.585H6.812v-.867c0-.658.214-1.242.827-1.242h.985V2.55c-.173-.024-.538-.075-1.23-.075-1.444 0-2.29.767-2.29 2.513v1.055H3.618v1.585h1.484v4.304A6.001 6.001 0 016 0z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://twitter.com/share?lang=en&amp;text=How+do+you+deploy+software+to+the+Internet+Computer%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132372-How-do-you-deploy-software-to-the-Internet-Computer-\" class=\"share-twitter\" aria-label=\"Twitter\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M12 2.184a4.83 4.83 0 01-1.415.397 2.52 2.52 0 001.083-1.396 4.87 4.87 0 01-1.564.612A2.428 2.428 0 008.308 1c-1.36 0-2.463 1.13-2.463 2.524 0 .198.023.39.065.576C3.863 3.994 2.05 2.99.835 1.46a2.564 2.564 0 00-.332 1.27 2.54 2.54 0 001.094 2.102 2.413 2.413 0 01-1.115-.316v.032c0 1.224.849 2.243 1.974 2.476-.363.1-.743.115-1.112.042.314 1.002 1.223 1.734 2.3 1.754A4.857 4.857 0 010 9.866 6.83 6.83 0 003.774 11c4.528 0 7.005-3.847 7.005-7.182 0-.11-.003-.22-.007-.327.482-.358.898-.8 1.228-1.308z\"></path>         </svg>       </a>     </li>     <li>       <a href=\"https://www.linkedin.com/shareArticle?mini=true&amp;source=DFINITY&amp;title=How+do+you+deploy+software+to+the+Internet+Computer%3F&amp;url=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132372-How-do-you-deploy-software-to-the-Internet-Computer-\" class=\"share-linkedin\" aria-label=\"LinkedIn\">         <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"12\" focusable=\"false\" viewBox=\"0 0 12 12\">           <path fill=\"currentColor\" d=\"M10.8 0A1.2 1.2 0 0112 1.2v9.6a1.2 1.2 0 01-1.2 1.2H1.2A1.2 1.2 0 010 10.8V1.2A1.2 1.2 0 011.2 0h9.6zM8.09 4.356a1.87 1.87 0 00-1.598.792l-.085.133h-.024v-.783H4.676v5.727h1.778V7.392c0-.747.142-1.47 1.068-1.47.913 0 .925.854.925 1.518v2.785h1.778V7.084l-.005-.325c-.05-1.38-.456-2.403-2.13-2.403zm-4.531.142h-1.78v5.727h1.78V4.498zm-.89-2.846a1.032 1.032 0 100 2.064 1.032 1.032 0 000-2.064z\"></path>         </svg>       </a>     </li>   </ul>  </div>                                                       </div>                    <div class=\"article-votes\">             <span class=\"article-votes-question\" id=\"article-votes-label\">Was this article helpful?</span>             <div class=\"article-votes-controls\" role=\"group\" aria-labelledby=\"article-votes-label\">               <button type=\"button\" class=\"button article-vote article-vote-up\" aria-label=\"This article was helpful\" aria-pressed=\"false\">Yes</button>               <button type=\"button\" class=\"button article-vote article-vote-down\" aria-label=\"This article was not helpful\" aria-pressed=\"false\">No</button>             </div>             <small class=\"article-votes-count\">               <span class=\"article-vote-label\">0 out of 0 found this helpful</span>             </small>           </div>                   <div class=\"article-more-questions\">           Have more questions? <a href=\"/hc/en-us/requests/new\">Submit a request</a>         </div>         <div class=\"article-return-to-top\">           <a href=\"#article-container\">             Return to top             <svg xmlns=\"http://www.w3.org/2000/svg\" class=\"article-return-to-top-icon\" width=\"20\" height=\"20\" focusable=\"false\" viewBox=\"0 0 12 12\" aria-hidden=\"true\">               <path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" d=\"M3 4.5l2.6 2.6c.2.2.5.2.7 0L9 4.5\"></path>             </svg>           </a>         </div>       </footer>        <div class=\"article-relatives\">                    <section class=\"recent-articles\"><h2 class=\"recent-articles-title\">Recently viewed articles</h2><ul><li><a href=\"/hc/en-us/articles/360057798772-How-do-I-install-applications-on-the-Internet-Computer-How-do-I-install-or-deploy-a-Canister-smart-contract-\">How do I install applications on the Internet Computer? How do I install or deploy a Canister smart contract?</a></li><li><a href=\"/hc/en-us/articles/360058277671-How-do-I-upgrade-an-application-previously-deployed-on-the-Internet-Computer-How-do-I-reinstall-or-re-deploy-a-Canister-smart-contract-\">How do I upgrade an application previously deployed on the Internet Computer? How do I reinstall or re-deploy a Canister smart contract?</a></li><li><a href=\"/hc/en-us/articles/4404297937684-What-kind-of-proposals-can-I-vote-on-\">What kind of proposals can I vote on?</a></li><li><a href=\"/hc/en-us/articles/360057490832-How-do-I-host-nodes-for-the-Internet-Computer-\">How do I host nodes for the Internet Computer? </a></li><li><a href=\"/hc/en-us/articles/360057132412-How-is-a-node-deployed-to-the-Internet-Computer-\">How is a node deployed to the Internet Computer?</a></li></ul></section>                                <section class=\"related-articles\">            <h2 class=\"related-articles-title\">Related articles</h2>          <ul>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCCzVE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCFTVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJUL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMjMzMi1XaGF0LXRvb2xzLWRvZXMtREZJTklUWS1wcm92aWRlLWZvci1kZXZlbG9wZXJzLQY7CFQ6CXJhbmtpBg%3D%3D--4e3e0f7d118fff5d85c75bfa63da30188a5d96c4\" rel=\"nofollow\">What tools does DFINITY provide for developers?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCL8MG9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCFTVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJgL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzYwNTMxMS1DYW4tdXNlcnMtZGVwbG95LXByaXZhdGUtc29mdHdhcmUtb24tdGhlLUludGVybmV0LUNvbXB1dGVyLQY7CFQ6CXJhbmtpBw%3D%3D--4ba66ac27ab7a5d0d35ebf7055f4e78290a037e7\" rel=\"nofollow\">Can users deploy private software on the Internet Computer?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCPDUE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCFTVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJIL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMjI3Mi1XaG8td2lsbC11c2UtdGhlLUludGVybmV0LUNvbXB1dGVyLQY7CFQ6CXJhbmtpCA%3D%3D--db9d18a1f0e01874e8994f1675f089c0d5ad643d\" rel=\"nofollow\">Who will use the Internet Computer?</a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJBNGdVTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCFTVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJTL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzQ5MDgzMi1Ib3ctZG8tSS1ob3N0LW5vZGVzLWZvci10aGUtSW50ZXJuZXQtQ29tcHV0ZXItBjsIVDoJcmFua2kJ--e27fab3a91f1a121da4c8b939af5d1e45d33dda0\" rel=\"nofollow\">How do I host nodes for the Internet Computer? </a>         </li>                <li>           <a href=\"/hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCHzVE9VTADoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCFTVE9VTADoLbG9jYWxlSSIKZW4tdXMGOgZFVDoIdXJsSSJVL2hjL2VuLXVzL2FydGljbGVzLzM2MDA1NzEzMjQxMi1Ib3ctaXMtYS1ub2RlLWRlcGxveWVkLXRvLXRoZS1JbnRlcm5ldC1Db21wdXRlci0GOwhUOglyYW5raQo%3D--169ad62422ef1cc72bdf5199ca5c515042b5f2b0\" rel=\"nofollow\">How is a node deployed to the Internet Computer?</a>         </li>            </ul>   </section>                  </div>                <div class=\"article-comments\" id=\"article-comments\">           <section class=\"comments\">             <header class=\"comment-overview\">               <h2 class=\"comment-heading\">                 Comments               </h2>               <p class=\"comment-callout\">0 comments</p>                            </header>              <ul id=\"comments\" class=\"comment-list\">                            </ul>                                          <p class=\"comment-callout\">Please <a data-auth-action=\"signin\" rel=\"nofollow\" href=\"/hc/en-us/signin?return_to=https%3A%2F%2Fsupport.dfinity.org%2Fhc%2Fen-us%2Farticles%2F360057132372-How-do-you-deploy-software-to-the-Internet-Computer-%3Fauth_token%3DeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50X2lkIjo5NDg0NjgwLCJ1c2VyX2lkIjpudWxsLCJ0aWNrZXRfaWQiOm51bGwsImRlZmxlY3Rpb25faWQiOjM2MDg3MTU0MjMzMiwiYXJ0aWNsZXMiOlszNjAwNTgyNzc2NzEsMzYwMDU3Nzk4NzcyLDM2MDA1NzEzMjM3Ml0sInRva2VuIjpudWxsLCJleHAiOjE2MzM2NDQ1NDN9.fbRDlcW4JPosnckn1YZRO81haP0jTO2KBaboi8S9XnE\">sign in</a> to leave a comment.</p>           </section>         </div>            </article>"
+              }
+            ],
+            "audio_file": "",
+            "ssml": "",
+            "delay": 500,
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "JumpBlock4"
+              }
+            ],
+            "nextMessagesIds": [],
+            "id": "d4a575ca-9553-4396-a2a2-89f3dc9036a7"
+          }
+        ]
+      }
+    }
+  },
+  "582a23c0-b29a-4893-b842-ee7c00259557": {
+    "en": {
+      "generic": {
+        "blocks": [
+          {
+            "component_type": "jump",
+            "nodeName": "JumpBlock4",
+            "selectedResult": {
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
+              "jumpType": "node"
+            },
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
+            "selectedProject": "",
+            "id": "582a23c0-b29a-4893-b842-ee7c00259557"
+          }
+        ]
+      }
+    }
+  },
+  "c13a302c-ff55-417c-9d2d-228c592675e1": {
+    "en": {
+      "generic": {
+        "blocks": [
+          {
+            "component_type": "button",
+            "nodeName": "Software",
+            "context": [],
+            "text": "Here are some articles that may help:",
+            "buttons": [
+              {
+                "type": "postback",
+                "title": "How do you deploy software to the Internet Computer?",
+                "payload": "<div class=\"article-body\"><p>When you write source code for an application that runs on the Internet Computer, you compile the source code into a WebAssembly module. To deploy the WebAssembly module that contains your program on the Internet Computer, the program is executed inside of a conceptual computational unit called a Canister smart contract. Once deployed, end users can interact with the Canister by accessing the entry point functions you have defined for that <a title=\"Canisters\" href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canister</a>&nbsp;through a front-end client such as a browser.</p> <div class=\"css-iek4o6\">&nbsp;</div></div>"
+              },
+              {
+                "type": "postback",
+                "title": "Where can I find the Software Development Kit?",
+                "payload": "<span>If you’re interested in developing on the Internet Computer, check out our resources, tutorials, and troubleshooting guides within the Software Development Kit on our <a class=\"in-cell-link\" href=\"https://dfinity.org/developers/\" target=\"_blank\" rel=\"noopener\">Developers page</a>.</span>"
+              },
+              {
+                "type": "postback",
+                "title": "Can users deploy private software on the Internet Computer?",
+                "payload": "<p>The Internet Computer supports both open <a title=\"Canisters\" href=\"https://dfinity.org/faq/canisters\" target=\"_blank\" rel=\"noopener\">Canister smart contracts</a> and private Canisters, which enable the owners of the Canisters to make their technology open or private. Private Canisters will necessitate greater amounts of cycles to maintain than open Canisters.</p>"
+              }
+            ],
             "audio_file": "",
             "ssml": "",
             "delay": 500,
             "reprompt": [],
             "metadata": [],
-            "end_conversation": false,
-            "buttons": [],
-            "id": "540af821-13ec-4732-a494-6f9073aa9da9"
+            "nextMessagesIds": [],
+            "id": "c13a302c-ff55-417c-9d2d-228c592675e1"
           }
         ]
       }

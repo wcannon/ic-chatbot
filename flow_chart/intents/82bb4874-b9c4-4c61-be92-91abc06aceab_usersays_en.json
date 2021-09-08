@@ -1,9 +1,9 @@
 [
   {
-    "id": "0c912f43-6c12-4881-b92f-f9aed41d09cc",
+    "id": "02c6143e-b525-4946-aa3f-b79a5d4e3e90",
     "data": [
       {
-        "text": "Fellowships ",
+        "text": "deploy ",
         "userDefined": false
       }
     ],
@@ -13,10 +13,10 @@
     "isAuto": false
   },
   {
-    "id": "519c6b47-0440-49bd-8771-8174d932d472",
+    "id": "67720fa6-4d6a-4ad4-a96d-3a80b56f317c",
     "data": [
       {
-        "text": "Scholarships ",
+        "text": "deployed ",
         "userDefined": false
       }
     ],
@@ -26,10 +26,10 @@
     "isAuto": false
   },
   {
-    "id": "1bc688cd-f2a8-4fd9-a96b-cd41df77da6b",
+    "id": "a79c3fcd-9672-412b-9d14-80e0b21897fc",
     "data": [
       {
-        "text": "Developer Grants ",
+        "text": "How do I deploy an application to a node? ",
         "userDefined": false
       }
     ],
@@ -39,10 +39,10 @@
     "isAuto": false
   },
   {
-    "id": "95aae850-9e81-4fd5-b026-e8fcb897c452",
+    "id": "08d9c65c-bc05-4182-a4d4-7348a4dc9162",
     "data": [
       {
-        "text": "Discounts ",
+        "text": "How do I deploy an application to the internet computer? ",
         "userDefined": false
       }
     ],

@@ -7,6 +7,7 @@ use crate::factory::{*};
 use ic_cdk_macros::init;
 pub use crate::types::{*};
 use std::convert::TryInto;
+use ic_cdk_macros::post_upgrade;
 // use ic_test_utilities::universal_canister::{call_args, wasm};
 // use ic_types::{
 //     ic00,
@@ -22,8 +23,8 @@ use ic_cdk::api::call::call;
 use ic_cdk::export::candid::{CandidType, Deserialize, Func, Principal};
 use ic_cdk::api::{caller, data_certificate, id, set_certified_data, time, trap};
 
-const INTENT_DIR: &str = "../flow_chart/intents";
-const BLOCK_FILE: &str = "../flow_chart/blocks.json"; 
+const INTENT_DIR: &str = "../../flow_chart/intents";
+const BLOCK_FILE: &str = "../../flow_chart/blocks.json"; 
 
 // trait Btemp : (Block + Clone);
 thread_local! {
@@ -76,7 +77,8 @@ impl State {
 enum SequenceElement {
 	VisitedBlock(Box<dyn Block>),
 	TriggeredIntent(Box<dyn Intent>),
-	TriggeredDefault, 
+	TriggeredWrongInput,
+	TriggeredEndOfChart,
 	UserInput(String)
 }
 
@@ -95,7 +97,7 @@ impl Session {
 	// ctr : static i32 = 0;
 	pub fn new() -> Self {	//Initializes latest_block with StartBlock
 		let mut visited_sequence : Vec<SequenceElement> = Vec::new();
-		let start_block = STATE.with (|s| (s.blocks.borrow().get(&"Help Question".to_string()).expect("Unable to find start block in the state").clone()) );
+		let start_block = STATE.with (|s| (s.blocks.borrow().get(&"StartBlock".to_string()).expect("Unable to find start block in the state").clone()) );
 		visited_sequence.push( SequenceElement::VisitedBlock(start_block) );
 
 		let session = Session {
@@ -123,23 +125,36 @@ impl Session {
 
 
 	// fn gen_rand_vector() -> [u8; 32] {
-		// let res = match call(Principal::management_canister(), "raw_rand", ()) {
-	 //        					Ok((res,)) => res,
-	 //        					Err((_, err)) => trap(&format!("failed to get salt: {}", err)),
-  //   						};
-  //   	let salt: [u8; 32] = res[..].try_into().unwrap_or_else(|_| {
-  //       trap(&format!(
-  //           "expected raw randomness to be of length 32, got {}",
-  //           res.len()
-  //       	));
-	 //    });
-    	// salt
+	// 	let res = match call(Principal::management_canister(), "raw_rand", ()) {
+	//         					Ok((res,)) => res,
+	//         					Err((_, err)) => trap(&format!("failed to get salt: {}", err)),
+ //    						};
+ //    	let salt: [u8; 32] = res[..].try_into().unwrap_or_else(|_| {
+ //        trap(&format!(
+ //            "expected raw randomness to be of length 32, got {}",
+ //            res.len()
+ //        	));
+	//     });
+ //    	salt
 	// }
+
+	// async fn gen_rand_vector() -> [u8; 32] {
+	// 	let (res,) = call(Principal::management_canister(), "raw_rand", ()).await.unwrap();
+ //    	res.into()
+ //    	// let salt: [u8; 32] = res[..].try_into().unwrap_or_else(|_| {
+ //     //    trap(&format!(
+ //     //        "expected raw randomness to be of length 32, got {}",
+ //     //        res.len()
+ //     //    	));
+	//     // });
+ //    	// salt
+	// }
+
 
  	fn gen_new_session_id () -> SessionId {
 		// let rand_vec : [u8;32] = Session::gen_rand_vector();
 		// std::str::from_utf8(&rand_vec).unwrap().to_string()
-		String::from("new_session")
+		String::from("sample_session_id")
 	}
 
 	pub fn convert_to_json (&self) -> json::JsonValue {
@@ -164,7 +179,8 @@ impl Session {
 			match &self.visited_sequence[index] {
 				SequenceElement::VisitedBlock(block) => {return block.clone();},
 				SequenceElement::TriggeredIntent(_) => panic!("Last visited element is an intent"),
-				SequenceElement::TriggeredDefault => {index = index - 1;},
+				SequenceElement::TriggeredWrongInput => {index = index - 1;},
+				SequenceElement::TriggeredEndOfChart => {index = index - 1;}
 				SequenceElement::UserInput(_) => panic!("Last visited element is a user input")
 			};
 		};
@@ -174,19 +190,36 @@ impl Session {
 	pub fn process_user_input_for_session(&mut self, user_input : String) -> json::JsonValue {
 		let mut last_block = self.get_last_visited_block();
 		let mut result_path = json::JsonValue::new_array();
-		self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) );
-			
+		
+		if !user_input.is_empty() {
+			self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) );
+		}
+		
 		while ((!user_input.is_empty()) || (last_block.can_perform_action_on_empty_input())) {
 			let (link, intent, nodename) = last_block.perform_action(&user_input, &STATE.with(|s| s.intents.clone()));
 			if (link == LinkType::intent) {
 				self.visited_sequence.push( SequenceElement::TriggeredIntent(STATE.with(|s| s.intents.borrow().get(&intent).unwrap().clone())) );
 			}
-			if (link == LinkType::nolink) {
-				self.visited_sequence.push( SequenceElement::TriggeredDefault );
+			if (link == LinkType::endofchart) {
+				self.visited_sequence.push( SequenceElement::TriggeredEndOfChart );
+				break;
 				//TODO: set last_block = default_block 
 			}
+			else if (link == LinkType::wronginput) {
+				self.visited_sequence.push( SequenceElement::TriggeredWrongInput );
+				break;
+			}
 			else {
-				last_block = STATE.with(|s| s.blocks.borrow().get(&nodename).unwrap().clone());
+				let mut error_msg = "Unable to find the next node ".to_string();
+				error_msg.push_str(&last_block.get_node_name());
+				error_msg.push_str(",");
+				error_msg.push_str(&nodename);
+				error_msg.push_str(",");
+				error_msg.push_str(&intent);
+				error_msg.push_str(",");
+				error_msg.push_str(&link.to_str());
+				last_block = STATE.with(|s| s.blocks.borrow().get(&nodename).expect(&error_msg).clone());
+				println!("Pushing block : {}", last_block.get_node_name());
 				self.visited_sequence.push( SequenceElement::VisitedBlock(last_block.clone()) );
 				result_path.push(last_block.convert_to_json()); 
 
@@ -219,6 +252,16 @@ pub fn store_intents_in_state (intents: Vec::<Box<dyn Intent>>) {
 	});
 }
 
+pub fn summarize_all_blocks () -> json::JsonValue {
+	let mut result = json::JsonValue::new_array(); 
+	STATE.with(|s| {
+		for (nodename, block) in s.blocks.borrow().iter() {
+			result.push(block.convert_to_json());
+		}
+	});
+	result
+}
+
 
 #[init]
 pub fn initialize_state() {
@@ -245,7 +288,14 @@ pub fn initialize_state() {
 			);
 }
 
-
+#[post_upgrade]
+fn reset_state() {
+	STATE.with(|s| {
+					s.blocks.borrow_mut().clear();
+					s.intents.borrow_mut().clear();
+					s.session_info.borrow_mut().clear();
+					});
+}
 
 // #[post_upgrade]
 // fn initialize_state() {

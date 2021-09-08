@@ -498,11 +498,12 @@ impl Block for JumpBlock {
 		self.component_type = parsed["component_type"].to_string();
 		self.node_name 		= parsed["nodeName"].to_string();
 		
-		let mut iter = parsed["selectedResult"].entries(); 
-		let jump_to_id = iter.next().unwrap().1.to_string(); 
-		let jump_to_nodename = iter.next().unwrap().1.to_string(); 
-		// println!("{}", jump_to_id);
-		// println!("{}", jump_to_nodename);
+		let mut iter = parsed["selectedResult"].entries();
+		self.jump_to_id = iter.next().unwrap().1.to_string(); 
+		self.jump_to_nodename = iter.next().unwrap().1.to_string(); 
+		// println!("current nodename : {}", self.node);
+		// println!("Jump to id : {}", jump_to_id);
+		// println!("Jump to nodename : {}", jump_to_nodename);
 		// println!("Jump block: {:#?}", self);
 	}
 
@@ -518,6 +519,7 @@ impl Block for JumpBlock {
 	}
 
 	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
+		println!("Jumpblock performing action {}, {}", self.node_name, self.jump_to_nodename);
 		(LinkType::jump, String::new(), self.jump_to_nodename.clone())
 	}
 

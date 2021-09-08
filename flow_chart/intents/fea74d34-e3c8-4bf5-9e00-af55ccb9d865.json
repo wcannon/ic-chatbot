@@ -1,0 +1,93 @@
+{
+  "id": "fea74d34-e3c8-4bf5-9e00-af55ccb9d865",
+  "name": "node__path_3__1",
+  "auto": true,
+  "contexts": [
+    "Welcome"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "node",
+      "affectedContexts": [
+        {
+          "name": "node-Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "JumpBlock3"
+            }
+          ],
+          "title": "Here are some articles that may help:",
+          "replies": [
+            "How do I host nodes",
+            "How is a node deplo",
+            "What kind of propos"
+          ],
+          "id": "819d8736-dc05-42ba-b2a5-6bf7f012c695"
+        },
+        {
+          "type": 4,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "AskQuestion"
+            }
+          ],
+          "payload": {
+            "component_type": "jump",
+            "nodeName": "JumpBlock3",
+            "selectedResult": {
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
+              "jumpType": "node"
+            },
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
+            "selectedProject": "",
+            "id": "8431e049-4cf4-4d3e-9ed5-0178c3fa821f"
+          },
+          "id": "8431e049-4cf4-4d3e-9ed5-0178c3fa821f"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_node__path_3__1"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false,
+  "parentId": "e34d8914-c28b-45d4-a078-bdd50ce122d7"
+}

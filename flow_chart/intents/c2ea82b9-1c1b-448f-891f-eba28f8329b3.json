@@ -1,0 +1,93 @@
+{
+  "id": "c2ea82b9-1c1b-448f-891f-eba28f8329b3",
+  "name": "dfinity__path_1__1",
+  "auto": true,
+  "contexts": [
+    "Welcome"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "dfinity",
+      "affectedContexts": [
+        {
+          "name": "dfinity-Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "JumpBlock1"
+            }
+          ],
+          "title": "Here are some articles that might help.",
+          "replies": [
+            "What is the DFINITY",
+            "Who is the founder ",
+            "DFINITY developer g"
+          ],
+          "id": "32fc69c9-9e73-4024-abd9-3a924955fec3"
+        },
+        {
+          "type": 4,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "AskQuestion"
+            }
+          ],
+          "payload": {
+            "component_type": "jump",
+            "nodeName": "JumpBlock1",
+            "selectedResult": {
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
+              "jumpType": "node"
+            },
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
+            "selectedProject": "",
+            "id": "8f610a8e-91af-491c-8174-20541effc807"
+          },
+          "id": "8f610a8e-91af-491c-8174-20541effc807"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_dfinity__path_1__1"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false,
+  "parentId": "e34d8914-c28b-45d4-a078-bdd50ce122d7"
+}

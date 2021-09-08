@@ -4,8 +4,9 @@ type SessionId = text;
 type UserInput = text;
 
 service : () -> {
-	init_session : () -> (JsonText);
-	get_next_block : (SessionId, UserInput) -> (JsonText);
-	load_blocks_from_json : (JsonText) -> ();
-	load_intents_from_json : (JsonText) -> ();
+	init_session : () -> (text);
+	get_next_block : (text, text) -> (text);
+	load_blocks_from_json : (text) -> ();
+	load_intents_from_json : (text) -> ();
+	get_all_blocks : () -> (text);
 }

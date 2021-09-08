@@ -12,5 +12,19 @@ pub enum LinkType {
 	intent,
 	response,
 	jump,
-	nolink
+	endofchart,
+	wronginput
+}
+
+impl LinkType {
+	pub fn to_str(&self) -> &str {
+		match self {
+			default => "default",
+			intent => "intent",
+			response => "response",
+			jump => "jump",
+			endofchart => "endofchart",
+			wronginput => "wronginput"
+		}
+	}
 }

@@ -1,0 +1,93 @@
+{
+  "id": "82bb4874-b9c4-4c61-be92-91abc06aceab",
+  "name": "deploy__path_4__1",
+  "auto": true,
+  "contexts": [
+    "Welcome"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "deploy",
+      "affectedContexts": [
+        {
+          "name": "deploy-Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "JumpBlock4"
+            }
+          ],
+          "title": "Here are some articles that may help:",
+          "replies": [
+            "How do I upgrade an",
+            "How do I install ap",
+            "How do you deploy s"
+          ],
+          "id": "d4a575ca-9553-4396-a2a2-89f3dc9036a7"
+        },
+        {
+          "type": 4,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "AskQuestion"
+            }
+          ],
+          "payload": {
+            "component_type": "jump",
+            "nodeName": "JumpBlock4",
+            "selectedResult": {
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
+              "jumpType": "node"
+            },
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
+            "selectedProject": "",
+            "id": "582a23c0-b29a-4893-b842-ee7c00259557"
+          },
+          "id": "582a23c0-b29a-4893-b842-ee7c00259557"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_deploy__path_4__1"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false,
+  "parentId": "e34d8914-c28b-45d4-a078-bdd50ce122d7"
+}

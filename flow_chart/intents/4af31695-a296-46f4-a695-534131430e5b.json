@@ -1,17 +1,17 @@
 {
-  "id": "e27285c4-584c-45f4-9e5d-fed6e22d4709",
-  "name": "IC__path_1__2",
+  "id": "4af31695-a296-46f4-a695-534131430e5b",
+  "name": "software__path_5__1",
   "auto": true,
   "contexts": [
-    "NameIntent-Welcome"
+    "Welcome"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "IC",
+      "action": "software",
       "affectedContexts": [
         {
-          "name": "IC-NameIntent-Welcome",
+          "name": "software-Welcome",
           "lifespan": 2
         },
         {
@@ -22,16 +22,18 @@
       "parameters": [],
       "messages": [
         {
-          "type": 0,
+          "type": 2,
           "lang": "en",
           "platform": "generic",
           "condition": "",
           "metadata": [],
-          "speech": [
-            "You wanna know about the internet computer? We call it cloud breaker. "
+          "title": "Here are some articles that may help:",
+          "replies": [
+            "How do you deploy s",
+            "Where can I find th",
+            "Can users deploy pr"
           ],
-          "suggestions": [],
-          "id": "eb5f7131-09c3-42bf-b701-9d04ce892688"
+          "id": "c13a302c-ff55-417c-9d2d-228c592675e1"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -44,12 +46,12 @@
   "fallbackIntent": false,
   "events": [
     {
-      "name": "event_IC__path_1__2"
+      "name": "event_software__path_5__1"
     }
   ],
   "conditionalResponses": [],
   "condition": "",
   "conditionalFollowupEvents": [],
   "endInteraction": false,
-  "parentId": "0b18585e-6ce5-4732-9019-a815ceafff98"
+  "parentId": "e34d8914-c28b-45d4-a078-bdd50ce122d7"
 }

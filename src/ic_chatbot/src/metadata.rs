@@ -44,7 +44,7 @@ impl MetaData for NextBlockInfo {
 
 	fn get_next_block(&self, user_input : &String, intents : &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) { 
 		if self.next_block.len() == 0 {
-			return (LinkType::nolink, String::new(), String::new()); 
+			return (LinkType::endofchart, String::new(), String::new()); 
 		}
 		if self.next_block.contains_key("Default") {
 			return (LinkType::default, String::new(), self.next_block.get("Default").unwrap().clone()); 
@@ -53,7 +53,9 @@ impl MetaData for NextBlockInfo {
 		for (key, val) in self.next_block.iter() {
 			if key.starts_with("Intent-") {
 				let intent_name = key.trim_start_matches("Intent-");
-				let intent = intents.borrow().get(&intent_name.to_string()).expect("Intent in metadata doesn't exist").clone(); 
+				let mut error_msg = "Intent in metadata doesn't exist ".to_string();
+				error_msg.push_str(intent_name);
+				let intent = intents.borrow().get(&intent_name.to_string()).expect(&error_msg).clone(); 
 				let score = intent.get_matching_score(&user_input);
 				intent_scores.insert(intent_name.to_string(), score);
 			}
@@ -77,7 +79,7 @@ impl MetaData for NextBlockInfo {
 			(LinkType::intent, intent.to_string(), self.next_block.get(&prefixedIntent).unwrap().clone())
 		} 
 		else {	//If there is no link with an intent, and if the user input doesn't match with any response, send nolink. 
-			return (LinkType::nolink, String::new(), String::new()); 
+			return (LinkType::wronginput, String::new(), String::new()); 
 		}
 	}
 

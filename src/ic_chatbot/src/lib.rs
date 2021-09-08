@@ -131,3 +131,10 @@ fn load_intents_from_json (intents_json_text : JsonText) {
 	let intents = FactoryImpl::load_intents_json(intents_json_text);
 	store_intents_in_state(intents);
 }
+
+#[update]
+fn get_all_blocks () -> JsonText {
+	summarize_all_blocks().dump() 
+}
+
+

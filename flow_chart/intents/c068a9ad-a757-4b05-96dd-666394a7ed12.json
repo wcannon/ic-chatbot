@@ -1,0 +1,94 @@
+{
+  "id": "c068a9ad-a757-4b05-96dd-666394a7ed12",
+  "name": "Internet_Computer__path_2__1",
+  "auto": true,
+  "contexts": [
+    "Welcome"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "Internet_Computer",
+      "affectedContexts": [
+        {
+          "name": "Internet_Computer-Welcome",
+          "lifespan": 2
+        },
+        {
+          "name": "__variable",
+          "lifespan": 2
+        }
+      ],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 2,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "JumpBlock2"
+            }
+          ],
+          "title": "Here are some articles that might help.",
+          "replies": [
+            "What is the Interne",
+            "How is the Internet",
+            "How does the Intern",
+            "Who will use the In"
+          ],
+          "id": "235c3b65-e91f-4746-a598-b212b0c044ff"
+        },
+        {
+          "type": 4,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "AskQuestion"
+            }
+          ],
+          "payload": {
+            "component_type": "jump",
+            "nodeName": "JumpBlock2",
+            "selectedResult": {
+              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "label": "AskQuestion",
+              "jumpType": "node"
+            },
+            "reprompt": [],
+            "metadata": [
+              {
+                "item_key": "Default",
+                "item_value": "AskQuestion"
+              }
+            ],
+            "selectedProject": "",
+            "id": "ac00c5f4-b367-40fa-8908-3060b4035d8f"
+          },
+          "id": "ac00c5f4-b367-40fa-8908-3060b4035d8f"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 5000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [
+    {
+      "name": "event_Internet_Computer__path_2__1"
+    }
+  ],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": [],
+  "endInteraction": false,
+  "parentId": "e34d8914-c28b-45d4-a078-bdd50ce122d7"
+}
