@@ -8,23 +8,23 @@ pub type InputName = String;
 
 #[derive(PartialEq)]
 pub enum LinkType {
-	default,
-	intent,
-	response,
-	jump,
-	endofchart,
-	wronginput
+	Defaultlink,
+	Intent,
+	Response,
+	Jump,
+	Endofchart,
+	Wronginput
 }
 
 impl LinkType {
 	pub fn to_str(&self) -> &str {
 		match self {
-			default => "default",
-			intent => "intent",
-			response => "response",
-			jump => "jump",
-			endofchart => "endofchart",
-			wronginput => "wronginput"
+			LinkType::Defaultlink => "default",
+			LinkType::Intent => "intent",
+			LinkType::Response => "response",
+			LinkType::Jump => "jump",
+			LinkType::Endofchart => "endofchart",
+			LinkType::Wronginput => "wronginput"
 		}
 	}
 }

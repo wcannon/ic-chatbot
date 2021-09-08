@@ -4,7 +4,7 @@ pub use crate::button::{*};
 pub use crate::types::{*};
 pub use crate::intent::{*};
 use std::collections::HashMap;
-use std::cell::{Cell, RefCell};  
+use std::cell::{RefCell};  
 
 
 pub trait Block : BlockClone {
@@ -518,9 +518,9 @@ impl Block for JumpBlock {
 		true
 	}
 
-	fn perform_action(&self, user_input : &String, intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
+	fn perform_action(&self, _user_input : &String, _intents: &RefCell<HashMap<String, Box<dyn Intent>>>) -> (LinkType, IntentName, BlockName) {
 		println!("Jumpblock performing action {}, {}", self.node_name, self.jump_to_nodename);
-		(LinkType::jump, String::new(), self.jump_to_nodename.clone())
+		(LinkType::Jump, String::new(), self.jump_to_nodename.clone())
 	}
 
 	//Getter methods

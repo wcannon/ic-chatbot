@@ -1,12 +1,12 @@
 use std::collections::HashMap;
-use std::cell::{Cell, RefCell};  
+use std::cell::{RefCell};  
 use crate::intent::{*};
 use crate::block::{*};
 use crate::factory::{*};
 // use dfn_core::{api::trap_with, over, over_async, stable};
 use ic_cdk_macros::init;
 pub use crate::types::{*};
-use std::convert::TryInto;
+// use std::convert::TryInto;
 use ic_cdk_macros::post_upgrade;
 // use ic_test_utilities::universal_canister::{call_args, wasm};
 // use ic_types::{
@@ -19,9 +19,9 @@ use ic_cdk_macros::post_upgrade;
 //     CanisterId, NumBytes, RegistryVersion,
 // };
 
-use ic_cdk::api::call::call;
-use ic_cdk::export::candid::{CandidType, Deserialize, Func, Principal};
-use ic_cdk::api::{caller, data_certificate, id, set_certified_data, time, trap};
+// use ic_cdk::api::call::call;
+// use ic_cdk::export::candid::{CandidType, Deserialize, Func, Principal};
+// use ic_cdk::api::{caller, data_certificate, id, set_certified_data, time, trap};
 
 const INTENT_DIR: &str = "../../flow_chart/intents";
 const BLOCK_FILE: &str = "../../flow_chart/blocks.json"; 
@@ -192,7 +192,7 @@ impl Session {
 	fn get_last_visited_block(&self) -> Box<dyn Block> {
 		assert!(self.visited_sequence.len() > 0); 
 		let mut index = self.visited_sequence.len()-1; 
-		while (index >= 0) {
+		while index >= 0 {
 			match &self.visited_sequence[index] {
 				SequenceElement::VisitedBlock(block) => {return block.clone();},
 				SequenceElement::TriggeredIntent(_) => panic!("Last visited element is an intent"),
@@ -212,17 +212,17 @@ impl Session {
 			self.visited_sequence.push( SequenceElement::UserInput(user_input.clone()) );
 		}
 		
-		while ((!user_input.is_empty()) || (last_block.can_perform_action_on_empty_input())) {
+		while (!user_input.is_empty()) || (last_block.can_perform_action_on_empty_input()) {
 			let (link, intent, nodename) = last_block.perform_action(&user_input, &STATE.with(|s| s.intents.clone()));
-			if (link == LinkType::intent) {
+			if link == LinkType::Intent {
 				self.visited_sequence.push( SequenceElement::TriggeredIntent(STATE.with(|s| s.intents.borrow().get(&intent).unwrap().clone())) );
 			}
-			if (link == LinkType::endofchart) {
+			if link == LinkType::Endofchart {
 				self.visited_sequence.push( SequenceElement::TriggeredEndOfChart );
 				break;
 				//TODO: set last_block = default_block 
 			}
-			else if (link == LinkType::wronginput) {
+			else if link == LinkType::Wronginput {
 				self.visited_sequence.push( SequenceElement::TriggeredWrongInput );
 				let wrong_input_block = STATE.with (|s| s.blocks.borrow().get(&"WrongInputBlock".to_string()).expect("Unable to find wrong input block in the state").clone());
 				result_path.push(wrong_input_block.convert_to_json());
@@ -274,7 +274,7 @@ pub fn store_intents_in_state (intents: Vec::<Box<dyn Intent>>) {
 pub fn summarize_all_blocks () -> json::JsonValue {
 	let mut result = json::JsonValue::new_array(); 
 	STATE.with(|s| {
-		for (nodename, block) in s.blocks.borrow().iter() {
+		for (_nodename, block) in s.blocks.borrow().iter() {
 			result.push(block.convert_to_json());
 		}
 	});

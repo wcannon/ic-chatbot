@@ -1,5 +1,5 @@
 extern crate natural;
-use natural::distance::jaro_winkler_distance;
+// use natural::distance::jaro_winkler_distance;
 use natural::distance::levenshtein_distance;
 
 pub trait TrainingPhrase : TrainingPhraseClone {

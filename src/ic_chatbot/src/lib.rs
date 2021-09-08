@@ -19,7 +19,7 @@ pub mod types;
 mod tests;
 
 use crate::types::{*};
-use crate::block::{*};
+// use crate::block::{*};
 use crate::store::{*}; 
 use crate::factory::{*}; 
 
@@ -39,7 +39,7 @@ use crate::factory::{*};
 */
 #[update]
 fn init_session () -> JsonText {
-	let mut session = Session::new();
+	let session = Session::new();
 	let mut result = json::JsonValue::new_array();
 	result.push(session.convert_to_json());
 	// for block in session.process_user_input(String::new()).members() {
