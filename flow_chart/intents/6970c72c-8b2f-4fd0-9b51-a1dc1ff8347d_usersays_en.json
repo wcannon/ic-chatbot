@@ -1,0 +1,41 @@
+[
+  {
+    "id": "e6a0e940-64d3-4d3e-9311-aaadbfb1301c",
+    "data": [
+      {
+        "text": "What is a neuron? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "6ac05d31-a2a1-439f-bcaf-20d5d22ef166",
+    "data": [
+      {
+        "text": "How can I create a voting neuron? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "7b2a9e85-6623-45d3-9670-b7bd455862f0",
+    "data": [
+      {
+        "text": "Can I add more ICP utility tokens to an existing neuron? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

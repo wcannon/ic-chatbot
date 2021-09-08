@@ -1,0 +1,93 @@
+[
+  {
+    "id": "b80105d6-3d6e-4619-b84a-e835657839c3",
+    "data": [
+      {
+        "text": "deploy ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "df3e7152-8674-4a73-9b86-ef74e9928e73",
+    "data": [
+      {
+        "text": "How do I upgrade an application previously deployed on the Internet Computer? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "93a78c53-fb27-4110-b9b0-08edcccec3d7",
+    "data": [
+      {
+        "text": "How do I deploy an application to the internet computer? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "6b0eb021-339c-40b4-bf9f-77091a164155",
+    "data": [
+      {
+        "text": "How do I reinstall or re-deploy a canister smart contract? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "c5c2aee7-aa16-4607-b24b-5734a2bfe469",
+    "data": [
+      {
+        "text": "How do I install applications on the Internet computer? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "ae352f17-e9be-4574-a60f-f31ea9601f92",
+    "data": [
+      {
+        "text": "How do I install or deploy a canister smart contract? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "da448896-7367-4d91-af53-e69cff33977f",
+    "data": [
+      {
+        "text": "How do you deploy software to the internet computer? ",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  }
+]

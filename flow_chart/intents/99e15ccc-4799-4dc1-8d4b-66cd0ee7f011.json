@@ -1,6 +1,6 @@
 {
-  "id": "fea74d34-e3c8-4bf5-9e00-af55ccb9d865",
-  "name": "node__path_3__1",
+  "id": "99e15ccc-4799-4dc1-8d4b-66cd0ee7f011",
+  "name": "node__path_5__1",
   "auto": true,
   "contexts": [
     "Welcome"
@@ -29,7 +29,7 @@
           "metadata": [
             {
               "item_key": "Default",
-              "item_value": "JumpBlock3"
+              "item_value": "quickreplies"
             }
           ],
           "title": "Here are some articles that may help:",
@@ -38,7 +38,46 @@
             "How is a node deplo",
             "What kind of propos"
           ],
-          "id": "819d8736-dc05-42ba-b2a5-6bf7f012c695"
+          "id": "28657730-10ca-11ec-9ce4-43f469423365"
+        },
+        {
+          "type": 2,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Response-Yes",
+              "item_value": "GladToHelp"
+            },
+            {
+              "item_key": "Response-No",
+              "item_value": "SorryToHear"
+            }
+          ],
+          "title": "Did the article you viewed help to answer your question?",
+          "replies": [
+            "Yes",
+            "No"
+          ],
+          "id": "28657850-10ca-11ec-8b08-6d6f74e12358"
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "JumpBlock1"
+            }
+          ],
+          "speech": [
+            "That's great!  Glad we could help."
+          ],
+          "suggestions": [],
+          "id": "28657cb0-10ca-11ec-9167-81c40ff42cd1"
         },
         {
           "type": 4,
@@ -53,9 +92,9 @@
           ],
           "payload": {
             "component_type": "jump",
-            "nodeName": "JumpBlock3",
+            "nodeName": "JumpBlock1",
             "selectedResult": {
-              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "value": "28657580-10ca-11ec-a7a0-e79d60a99dd7",
               "label": "AskQuestion",
               "jumpType": "node"
             },
@@ -67,9 +106,9 @@
               }
             ],
             "selectedProject": "",
-            "id": "8431e049-4cf4-4d3e-9ed5-0178c3fa821f"
+            "id": "28657670-10ca-11ec-ad4d-2bee2d6d0241"
           },
-          "id": "8431e049-4cf4-4d3e-9ed5-0178c3fa821f"
+          "id": "28657670-10ca-11ec-ad4d-2bee2d6d0241"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -82,12 +121,12 @@
   "fallbackIntent": false,
   "events": [
     {
-      "name": "event_node__path_3__1"
+      "name": "event_node__path_5__1"
     }
   ],
   "conditionalResponses": [],
   "condition": "",
   "conditionalFollowupEvents": [],
   "endInteraction": false,
-  "parentId": "e34d8914-c28b-45d4-a078-bdd50ce122d7"
+  "parentId": "faaafee4-d787-4bf5-8d70-07fbc2fbaf04"
 }

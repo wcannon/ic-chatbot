@@ -1,9 +1,9 @@
 [
   {
-    "id": "153006c1-5f4a-4529-b268-7757ac295123",
+    "id": "727aa56c-b67a-45c8-a001-9779783d47ba",
     "data": [
       {
-        "text": "software ",
+        "text": "Motoko ",
         "userDefined": false
       }
     ],
@@ -13,10 +13,10 @@
     "isAuto": false
   },
   {
-    "id": "022c9ca7-f95b-4a51-8a8b-bfe2dcd1c891",
+    "id": "7deef57d-1363-443d-8147-847720c47fde",
     "data": [
       {
-        "text": "How do I create software? ",
+        "text": "Why does Motoko compile to WebAssembly? ",
         "userDefined": false
       }
     ],
@@ -26,10 +26,10 @@
     "isAuto": false
   },
   {
-    "id": "cef710d6-f9e3-4365-b7ea-e0bcfcd36970",
+    "id": "d7d4aae5-b6d7-44a1-99ce-1de4806ffbd5",
     "data": [
       {
-        "text": "What software should I use for the internet computer? ",
+        "text": "What tools does DFINITY provide for developers? ",
         "userDefined": false
       }
     ],

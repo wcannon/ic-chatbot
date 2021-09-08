@@ -1,6 +1,6 @@
 {
-  "id": "c068a9ad-a757-4b05-96dd-666394a7ed12",
-  "name": "Internet_Computer__path_2__1",
+  "id": "d90f1f62-8ac5-44ff-a522-46cda5a140ff",
+  "name": "internet_computer__path_3__1",
   "auto": true,
   "contexts": [
     "Welcome"
@@ -8,10 +8,10 @@
   "responses": [
     {
       "resetContexts": false,
-      "action": "Internet_Computer",
+      "action": "internet_computer",
       "affectedContexts": [
         {
-          "name": "Internet_Computer-Welcome",
+          "name": "internet_computer-Welcome",
           "lifespan": 2
         },
         {
@@ -29,7 +29,7 @@
           "metadata": [
             {
               "item_key": "Default",
-              "item_value": "JumpBlock2"
+              "item_value": "quickreplies"
             }
           ],
           "title": "Here are some articles that might help.",
@@ -39,7 +39,46 @@
             "How does the Intern",
             "Who will use the In"
           ],
-          "id": "235c3b65-e91f-4746-a598-b212b0c044ff"
+          "id": "286576d0-10ca-11ec-aa60-c9cebe1797c6"
+        },
+        {
+          "type": 2,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Response-Yes",
+              "item_value": "GladToHelp"
+            },
+            {
+              "item_key": "Response-No",
+              "item_value": "SorryToHear"
+            }
+          ],
+          "title": "Did the article you viewed help to answer your question?",
+          "replies": [
+            "Yes",
+            "No"
+          ],
+          "id": "28657850-10ca-11ec-8b08-6d6f74e12358"
+        },
+        {
+          "type": 0,
+          "lang": "en",
+          "platform": "generic",
+          "condition": "",
+          "metadata": [
+            {
+              "item_key": "Default",
+              "item_value": "JumpBlock1"
+            }
+          ],
+          "speech": [
+            "That's great!  Glad we could help."
+          ],
+          "suggestions": [],
+          "id": "28657cb0-10ca-11ec-9167-81c40ff42cd1"
         },
         {
           "type": 4,
@@ -54,9 +93,9 @@
           ],
           "payload": {
             "component_type": "jump",
-            "nodeName": "JumpBlock2",
+            "nodeName": "JumpBlock1",
             "selectedResult": {
-              "value": "e34c05bb-744c-4133-9343-5293b4da81e4",
+              "value": "28657580-10ca-11ec-a7a0-e79d60a99dd7",
               "label": "AskQuestion",
               "jumpType": "node"
             },
@@ -68,9 +107,9 @@
               }
             ],
             "selectedProject": "",
-            "id": "ac00c5f4-b367-40fa-8908-3060b4035d8f"
+            "id": "28657670-10ca-11ec-ad4d-2bee2d6d0241"
           },
-          "id": "ac00c5f4-b367-40fa-8908-3060b4035d8f"
+          "id": "28657670-10ca-11ec-ad4d-2bee2d6d0241"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -83,12 +122,12 @@
   "fallbackIntent": false,
   "events": [
     {
-      "name": "event_Internet_Computer__path_2__1"
+      "name": "event_internet_computer__path_3__1"
     }
   ],
   "conditionalResponses": [],
   "condition": "",
   "conditionalFollowupEvents": [],
   "endInteraction": false,
-  "parentId": "e34d8914-c28b-45d4-a078-bdd50ce122d7"
+  "parentId": "faaafee4-d787-4bf5-8d70-07fbc2fbaf04"
 }

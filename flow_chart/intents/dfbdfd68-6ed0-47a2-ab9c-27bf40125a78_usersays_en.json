@@ -1,9 +1,9 @@
 [
   {
-    "id": "02c6143e-b525-4946-aa3f-b79a5d4e3e90",
+    "id": "a83de882-16cc-4f8f-8a4b-e1ee5577d2a1",
     "data": [
       {
-        "text": "deploy ",
+        "text": "DEVICE ",
         "userDefined": false
       }
     ],
@@ -13,10 +13,10 @@
     "isAuto": false
   },
   {
-    "id": "67720fa6-4d6a-4ad4-a96d-3a80b56f317c",
+    "id": "0bb61680-30c6-4098-a5db-3bf85573ec73",
     "data": [
       {
-        "text": "deployed ",
+        "text": "How do I know if my device supports Internet Identity? ",
         "userDefined": false
       }
     ],
@@ -26,10 +26,10 @@
     "isAuto": false
   },
   {
-    "id": "a79c3fcd-9672-412b-9d14-80e0b21897fc",
+    "id": "11ba9171-224a-4777-8b86-18ef4b3c3bda",
     "data": [
       {
-        "text": "How do I deploy an application to a node? ",
+        "text": "What if I lose my phone, can I still use my Internet Identity? ",
         "userDefined": false
       }
     ],
@@ -39,10 +39,10 @@
     "isAuto": false
   },
   {
-    "id": "08d9c65c-bc05-4182-a4d4-7348a4dc9162",
+    "id": "190b06e0-db54-4564-b2ba-f8acd6547840",
     "data": [
       {
-        "text": "How do I deploy an application to the internet computer? ",
+        "text": "How do I add more devices to my Internet Identity? ",
         "userDefined": false
       }
     ],
