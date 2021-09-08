@@ -10,8 +10,6 @@ import { Chat } from '@progress/kendo-react-conversational-ui';
 import { ic_chatbot } from '../../../../declarations/ic_chatbot';
 import FaqCard from '../FaqCard/FaqCard';
 
-// TODO: support alternate_replies!!!
-
 // The User instance of the bot.
 const bot = {
   id: 0,
@@ -81,7 +79,6 @@ const ICChatBot = () => {
       // Add the user message.
       setMessages(prevMessages => [...prevMessages, event.message]);
 
-      // TODO: Wait for init_session to set sessionId before we allow a question!!!
       try {
         // Add a bot is typing message.
         addBotIsTypingMessage();
@@ -121,13 +118,37 @@ const ICChatBot = () => {
       setMessages(prevMessages => [...prevMessages, botMessage]);
   };
 
+  // Get the text for a message block.
+  const getMessageText = messageBlock => {
+    if (!messageBlock.text)
+      return undefined;
+
+    // If alternate replies are defined, choose randomly between the possible replies.
+    if (messageBlock.alternate_replies?.length) {
+      const totalReplies = 1 + messageBlock.alternate_replies.length;
+      const replyIndex = getRandomInt(0, totalReplies - 1);
+      return (replyIndex === 0) ?
+        messageBlock.text :
+        messageBlock.alternate_replies[replyIndex - 1];
+    }
+    else
+      return messageBlock.text;
+  }
+
+  // Return a random number between min and max.
+  const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
   // Process each message block in the specified messageBlocks array.
   const processMessageBlocks = messageBlocks => {
     messageBlocks.forEach(messageBlock => {
       // Create the bot message based on the component_type.
       const botMessage = {
         author: bot,
-        text: messageBlock.text ? messageBlock.text : undefined,
+        text: getMessageText(messageBlock),
         timestamp: new Date()
       };
       switch (messageBlock.component_type) {
