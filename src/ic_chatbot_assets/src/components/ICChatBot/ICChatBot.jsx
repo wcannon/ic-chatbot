@@ -10,7 +10,7 @@ import { Chat } from '@progress/kendo-react-conversational-ui';
 import { ic_chatbot } from '../../../../declarations/ic_chatbot';
 import FaqCard from '../FaqCard/FaqCard';
 
-// TODO: Add favicon!!!
+// TODO: support alternate_replies!!!
 
 // The User instance of the bot.
 const bot = {
@@ -48,13 +48,8 @@ const ICChatBot = () => {
     }
     catch {
       // Add an error message.
-      // TODO: Have a function to add a basic text message such as this!!!
-      const botMessage = {
-        author: bot,
-        text: 'Sorry, couldn\'t establish communication with mission control. Please try again later.',
-        timestamp: new Date()
-      };
-      setMessages(prevMessages => [...prevMessages, botMessage]);
+      addBotTextMessage(
+        'Sorry, couldn\'t establish communication with mission control. Please try again later.');
     }
   }, []);
 
@@ -94,19 +89,24 @@ const ICChatBot = () => {
       }
       catch {
         // Add an error message.
-        const botMessage = {
-          author: bot,
-          text: 'Sorry, something went wrong. Please ask another question.',
-          timestamp: new Date()
-        };
-        setMessages(prevMessages => [...prevMessages, botMessage]);
+        addBotTextMessage('Sorry, something went wrong. Please ask another question.');
       }
     },
     [sessionId]
   );
 
+  // Add a text message created by the bot.
+  const addBotTextMessage = text => {
+    const botMessage = {
+        author: bot,
+        text: text,
+        timestamp: new Date()
+      };
+      setMessages(prevMessages => [...prevMessages, botMessage]);
+  };
+
   // Process each message block in the specified messageBlocks array.
-  const processMessageBlocks = (messageBlocks) => {
+  const processMessageBlocks = messageBlocks => {
     messageBlocks.forEach(messageBlock => {
       // Create the bot message based on the component_type.
       const botMessage = {
@@ -132,7 +132,7 @@ const ICChatBot = () => {
           break;
         case 'quick_replies':
           const suggestedActions = [];
-          response.quick_replies.forEach(quickReply => {
+          messageBlock.quick_replies.forEach(quickReply => {
             suggestedActions.push({
               type: 'reply',
               value: quickReply.title
