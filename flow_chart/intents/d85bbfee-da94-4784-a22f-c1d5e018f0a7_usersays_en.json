@@ -284,5 +284,18 @@
     "count": 0,
     "updated": 0,
     "isAuto": false
+  },
+  {
+    "id": "3462ca52-bb98-457c-a7e2-893e07892abc",
+    "data": [
+      {
+        "text": "What proposals can I vote on?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
   }
 ]

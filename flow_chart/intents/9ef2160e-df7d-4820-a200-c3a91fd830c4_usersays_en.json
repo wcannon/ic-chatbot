@@ -245,5 +245,31 @@
     "count": 0,
     "updated": 0,
     "isAuto": false
+  },
+  {
+    "id": "23a8d49c-0fda-476a-8082-3c517d1cbb96",
+    "data": [
+      {
+        "text": "Who created the Internet Computer?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
+  },
+  {
+    "id": "6823df9c-0fda-476a-8082-3c517d1cbb96",
+    "data": [
+      {
+        "text": "Who created IC?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
   }
 ]

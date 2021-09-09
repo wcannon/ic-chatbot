@@ -154,5 +154,18 @@
     "count": 0,
     "updated": 0,
     "isAuto": false
+  },
+  {
+    "id": "ce3456ce-ea99-4404-be43-65d79238ccde",
+    "data": [
+      {
+        "text": "What language can be used to build on the Internet Computer?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
   }
 ]

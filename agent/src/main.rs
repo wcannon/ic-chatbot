@@ -287,8 +287,10 @@ enum ArgType {
 async fn main() -> Result<()> {
     // let opts: Opts = Opts::parse();
 
-    let canister_id = Principal::from_str("rrkah-fqaaa-aaaaa-aaaaq-cai").unwrap();
-    let replica = "http://localhost:8000/";
+    let canister_id = Principal::from_str("jtozz-6yaaa-aaaai-qangq-cai").unwrap();
+    let replica = "https://ic0.app";
+    // let canister_id = Principal::from_str("ryjl3-tyaaa-aaaaa-aaaba-cai").unwrap();
+    // let replica = "http://localhost:8000/";
     // let candid = Some(PathBuf::from("../../src/ic_chatbot/main.did"));
     let candid = Some(PathBuf::from("../src/ic_chatbot/main.did"));
 

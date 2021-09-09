@@ -219,5 +219,18 @@
     "count": 0,
     "updated": 0,
     "isAuto": false
+  },
+  {
+    "id": "456234371-4872-4390-a9f2-5ef05991d4d6",
+    "data": [
+      {
+        "text": "How can I deploy software on the internet computer?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0,
+    "isAuto": false
   }
 ]
