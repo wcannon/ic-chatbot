@@ -34,6 +34,9 @@ const ICChatBot = () => {
   // Initialize session.
   useEffect(async () => {
     try {
+      // Focus the input element on page load.
+      document.querySelector('input').focus();
+
       // Add a bot is typing message.
       addBotIsTypingMessage();
 
@@ -69,6 +72,9 @@ const ICChatBot = () => {
   const onFaqBackButtonClick = useCallback(
     () => {
       setDisplayFaq(false);
+
+      // Focus the input element when FAQ back button is clicked.
+      document.querySelector('input').focus();
     },
     []
   );
