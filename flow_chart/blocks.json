@@ -670,7 +670,7 @@
             "reprompt": [],
             "metadata": [
               {
-                "item_key": "default",
+                "item_key": "Default",
                 "item_value": "quickreplies"
               }
             ],
@@ -948,7 +948,7 @@
             "component_type": "text",
             "nodeName": "WrongInputBlock",
             "context": [],
-            "text": "I didn't get that! Can you say Yes/No? ",
+            "text": "I didn't recognize that response. Can you please answer Yes or No?",
             "alternate_replies": [],
             "audio_file": "",
             "ssml": "",
