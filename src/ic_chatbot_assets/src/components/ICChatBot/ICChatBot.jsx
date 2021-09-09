@@ -13,7 +13,7 @@ import FaqCard from '../FaqCard/FaqCard';
 // The User instance of the bot.
 const bot = {
   id: 0,
-  avatarUrl: 'assets/astro.png'
+  avatarUrl: 'astro.png'
 };
 
 // The User instance of the local user.
