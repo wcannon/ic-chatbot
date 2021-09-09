@@ -28,19 +28,25 @@ If you want to test your project locally, you can use the following commands:
 # Starts the replica, running in the background
 dfx start --background
 
+#Install node in another terminal
+npm install
+
+#Start node in another terminal
+npm start 
+
 # Deploys your canisters to the replica and generates your candid interface
 dfx deploy
+
+#Once you obtain the canister-id of ic_chatbot after deploy, open agent/srs/main.rs file and in the main() function, set canister_id and replica variables accordingly. 
+#Then, open the agent folder
+cd agent/
+
+#Run the agent software
+cargo run
 ```
 
-Once the job completes, your application will be available at `http://localhost:8000?canisterId={asset_canister_id}`.
+Once the job completes, your application will be available at `http://localhost:8080`.
 
-Additionally, if you are making frontend changes, you can start a development server with
-
-```bash
-npm start
-```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 8000.
 
 ### Note on frontend environment variables
 
